@@ -11,15 +11,19 @@
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-design-icons-iconfont@5.0.1/dist/material-design-icons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+    <script src="https://kit.fontawesome.com/edcb8962d6.js" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
     <link rel="stylesheet" href="{% static 'pages/css/base.css' %}">
+    {% block css %} {% endblock css %}
 </head>
 <body>
 
-    <div id="app">
+    <div id="top">
         <v-app>
             <nav>
                 <div class="container" id="header">
@@ -28,16 +32,16 @@
                             <img src="{% static 'pages/img/seafly-logo.png' %}" alt="logo" width="78px">
                         </a>
                     </div>
-                    <div id="menus" v-if="!is_search">
+                    <div id="menus" v-if="!is_search" class="disappear">
                         <ul>
                             <li v-for="(item, key) in menus" :key="key"><a href="#">[[ item.name ]]</a></li>
                         </ul>
                     </div>
                     <div id="buttons" class="align--item" v-if="!is_search">
-                        <span class="btn--item">
+                        <span class="btn--item disappear">
                             <v-btn color="primary" small class="mr-1" :to="{name: 'devis'}">DEVIS GRATUIT</v-btn>
                         </span>
-                        <span v-if="is_good_size" class="align--item">
+                        <span v-if="is_good_size" class="align--item disappear">
                             <v-select
                                     :items="btns"
                                     label="Langues"
@@ -49,6 +53,12 @@
                                 <v-icon color="primary">search</v-icon>
                             </v-btn>
                         </span>
+
+                        <!-- BURGER BUTTON -->
+                        <span class="btn--item" id="bugger--btn">
+                            <v-app-bar-nav-icon color="primary" class="" @click.prevent="drawer = true"/>
+                        </span>
+                        <!-- END BURGER BUTTON -->
                     </div>
                     <transition name="translate">
                         <div class="search--bar align--item" v-if="is_search">
@@ -82,7 +92,7 @@
                         <v-container>
                             <v-row>
                                 <v-col md="12">
-                                    <img src="./../assets/seafly-logo.png" width="78"/>
+                                    <img src="{% static 'pages/img/seafly-logo.png' %}" alt="logo" width="78px">
                                 </v-col>
                             </v-row>
                         </v-container>
@@ -93,8 +103,8 @@
                                 </v-list-item-action>
                                 <v-list-item-content>
                                     <v-list-item-title>
-                                        <router-link :to="item.route" tag="span" v-if="item.route !== undefined">{{ item.name }}</router-link>
-                                        <span v-if="item.route === undefined">{{item.name}}</span>
+                                        <router-link :to="item.route" tag="span" v-if="item.route !== undefined">[[ item.name ]]</router-link>
+                                        <span v-if="item.route === undefined">[[item.name]]</span>
                                     </v-list-item-title>
                                 </v-list-item-content>
                             </v-list-item>
@@ -102,23 +112,90 @@
                         <v-layout row style="width: 100%" class="mt-10">
                             <v-btn color="primary" small class="mb-10" style="margin: auto" :to="{name: 'devis'}">DEVIS GRATUIT</v-btn>
                             <div class="align--item drawer--lang">
-                                <v-btn outlined fab x-small color="white" v-for="(item, key) in btns" :key="key" class="ma-2 mt-3 mb-3">{{item}}</v-btn>
+                                <v-btn outlined fab x-small color="white" v-for="(item, key) in btns" :key="key" class="ma-2 mt-3 mb-3">[[ item ]]</v-btn>
                             </div>
                         </v-layout>
                     </v-navigation-drawer>
             </nav>
-            {% block content %} {% endblock content %}
         </v-app>
     </div>
+    <div class="container">
+            {% block content %} {% endblock content %}
+    </div>
+
+
+    <footer>
+        <class id="bottom" class="text--primary" app>
+            <v-container>
+                <div class="footer--items align--item">
+                    <div class="footer--item" :style="{width: item.width + '%'}" v-for="(item, key) in footers" :key="key">
+                        <div class="footer--item--title">
+                            <h3>[[ item.name ]]</h3>
+                        </div>
+                        <div class="footer--item--content text--primary">
+                            <ul>
+                                <li v-for="(subitem , key) in item.links" :key="key"><a href="#">[[ subitem.name ]]</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="footer--item" style="width: 23%">
+                        <div class="footer--item--title">
+                            <h3>Nous Contacter</h3>
+                        </div>
+                        <div class="footer--item--content">
+                            <div class="footer--item--subtitle">
+                                Sea Fly Services Co., Ltd.
+                            </div>
+                            <div class="align--item">
+                                <ul style="width: 65%">
+                                    <li v-for="contact in contacts" :key="contact"><a href="#">[[ contact ]]</a></li>
+                                    <li>
+                                        <v-btn class="ma-2 white--text" style="background: #3B5998; color: white" x-small fab color="facebook">
+                                            <v-icon>fab fa-facebook-f</v-icon>
+                                        </v-btn>
+                                        <v-btn class="ma-2 white--text" style="background: #2867B2; color: white" x-small fab color="linkedin">
+                                            <v-icon>fab fa-linkedin-in</v-icon>
+                                        </v-btn>
+                                    </li>
+                                </ul>
+                                <div class="map pr-3" style="width: 35%">
+                                    <img src="{% static 'pages/img/bottom-map.jpg' %}" alt="" style="width: 100%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="footer--item" style="width: 25%; border-right: 1px solid #dddddd;">
+                        <div class="footer--item--title">
+                            <h3>Nos réseaux</h3>
+                        </div>
+                        <div class="footer--item--content">
+                            <div class="footer--item--content">
+                                <div class="imgs">
+                                    <img src="{% static 'pages/img/ftcc-logo.png' %}">
+                                    <img src="{% static 'pages/img/east-west.jpg' %}">
+                                    <img src="{% static 'pages/img/5star-logo.jpg' %}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="footer--bar"><div class="footer--copy">©Sea Fly Services - 2018 tous droits réservés.</div><div class="footer--dev">Developper par
+                    <a href="#">CkikDev.cm</a></div></div>
+            </v-container>
+        </class>
+    </footer>
+
 
     <script>
 
     </script>
 
     <script>
-        new Vue({
-            delimiters: ['[[', ']]'],
-            vuetify: new Vuetify({
+        let vuetify = new Vuetify({
                 icons: {
                     iconfont: 'md' || 'fa'
                 },
@@ -131,8 +208,12 @@
                         },
                     },
                 }
-            }),
-            el: '#app',
+            });
+        // TOP VUE
+        new Vue({
+            delimiters: ['[[', ']]'],
+            vuetify: vuetify,
+            el: '#top',
             data: () => {
             return {
                 drawer: false,
@@ -234,7 +315,97 @@
                     this.is_search = false
                 }
             }
+        });
+
+        // BOTTOM VUE
+        new Vue({
+            delimiters: ['[[', ']]'],
+            vuetify: vuetify,
+            el: '#bottom',
+            data: () => ({
+                footers: [
+                    {
+                        name: 'Notre société',
+                        links: [
+                            {
+                                name: 'Notre Société',
+                                to: 'about'
+                            }
+                            ,
+                            {
+                                name: 'Promotions',
+                                to: {name: 'promos'}
+                            }
+                            ,
+                            {
+                                name: 'Carrière',
+                                to: {name: 'desc', params: {name: 'career'}}
+                            }
+                            ,
+                            {
+                                name: 'Nous Contacter',
+                                to: {name: 'contact'}
+                            }
+                        ],
+                        width: 12
+                    },
+                    {
+                        name: 'Nos Services',
+                        links: [
+                            {
+                                name: 'Fret Maritime',
+                                to: {name: 'desc', params: {name: 'fret-maritime'}}
+                            },
+                            {
+                                name: 'Fret Aérien',
+                                to: {name: 'desc', params: {name: 'fret-aerien'}}
+                            },
+                            {
+                                name: 'Service lettre, petit colis express',
+                                to: {name: 'desc', params: {name: 'colis-express'}}
+                            },
+                            {
+                                name: 'Déménagements',
+                                to: {name: 'desc', params: {name: 'demenagements-internationaux'}}
+                            },
+                            {
+                                name: 'Formalités Douanières',
+                                to: {name: 'desc', params: {name: 'formalites-douanieres'}}
+                            },
+                            {
+                                name: 'Transport Frontalier',
+                                to: {name: 'desc', params: {name: 'transports-frontaliers'}}
+                            },
+                        ],
+                        width: 20
+                    },
+                    {
+                        name: 'Outils & Ressourcesfo',
+                        links: [
+                            {
+                                name: 'Conversions Volumétriques',
+                                to: {name: 'convert'}
+                            },
+                            {
+                                name: 'Incoterms',
+                                to: 'transports-frontaliers'
+                            },
+                            {
+                                name: 'Spécifications sur les Conteneurs',
+                                to:  {name: 'specification'}
+                            },
+                        ],
+                        width: 20
+                    }
+                ],
+                contacts: [
+                    '93/1 Soi Suntornsiri, Huaikwang,',
+                    'Bangkok,Thailand 10310',
+                    'Tel: +66(0) 26903523 - 7'
+                ]
+            })
         })
     </script>
+    {% block js %} {% endblock js %}
 </body>
 </html>

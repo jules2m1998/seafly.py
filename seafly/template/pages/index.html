@@ -1,4 +1,208 @@
 {% extends 'pages/base.html' %}
-{% block content %}
+{% load static%}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'pages/css/index.css' %}">
+    <style>
+.img-1{
+    grid-area: img-1;
+    background-image: url("static/pages/img/seashipment.jpg");
+}
+.img-2{
+    grid-area: img-2;
+    background-image: url("static/pages/img/airshipment.jpg");
+}
+.img-3{
+    grid-area: img-3;
+    background-image: url("static/pages/img/doortodoor.jpg");
+}
+.img-4{
+    grid-area: img-4;
+    background-image: url("static/pages/img/removal.jpg");
+}
+.img-11{
+    grid-area: img-11;
+    background-image: url("static/pages/img/customs.jpg");
+}
+.img-12{
+    grid-area: img-12;
+    background-image: url("static/pages/img/crossborder.jpg");
+}
+.img-13{
+    grid-area: img-13;
+    background-image: url("static/pages/img/france.jpg");
+}
+.img-14{
+    grid-area: img-14;
+    background-image: url("static/pages/img/domtom.jpg");
+}
+.img-15{
+    grid-area: img-15;
+    background-image: url("static/pages/img/china.jpg");
+}
+.img-16{
+    grid-area: img-16;
+    background-image: url("static/pages/img/international.jpg");
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+    <span id="gallery">
+        <span class="gallery">
+                <v-app>
+                    <div class="image--gallery mt-1">
+                        <div class="img img--left" v-for="item1 in gallery.left" :key="item1.name" :class="'img-' + item1.position">
+                            <div class="title ml-1 mt-1">[[ item1.name ]]</div>
+                            <div class="img--hover">
+                                <div class="title ml-1 mt-1">[[ item1.name ]]</div>
+                                <div class="description-item ml-2 mt-1">[[ item1.description ]]</div>
+                                <v-btn outlined color="white" class="ml-3 mt-1" x-small :to="item1.route">Plus d'information</v-btn>
+                            </div>
+                        </div>
+                        <div class="img img--right" v-for="item2 in gallery.right" :key="item2.name" :class="'img-1' + item2.position">
+                            <div class="hover--head">
+                                <div class="ml-1 subtitle" v-if="item2.is_expd">Expédition</div>
+                                <div class="title ml-1">[[ item2.name ]]</div>
+                            </div>
+                            <div class="img--hover">
+                                <div class="description-item ml-3 mt-3">[[ item2.description ]]</div>
+                                <v-btn outlined color="white" class="ml-3 mt-1" x-small :to="item2.route">Plus d'information</v-btn>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="table--col mt-4">
+                <div class="item" v-for="item2 in table" :key="item2.name">
+                    <h3 class="title">[[ item2.name ]]</h3>
+                    <div class="content" :class="{separed: item2.img !== false}">
+                        <div :class="{left: item2.img !== false}">
+                            [[ item2.text ]]
+                        </div>
+                        <div class="right" v-if="item2.img !== false">
+                            <img src="../../assets/img/homepromotion.jpg" alt="">
+                        </div>
+                        <div class="button mt-4" v-if="item2.buttons">
+                            <red-button class="mr-2"></red-button>
+                            <green-button></green-button>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <a href="#"><v-icon color="primary">arrow_right</v-icon>[[ item2.bottomTitle]]</a>
+                    </div>
+                </div>
+            </div>
+            </v-app>
+        </span>
+    </span>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'pages/js/component/red-button.js' %}"></script>
+    <script src="{% static 'pages/js/component/green-button.js' %}"></script>
+    <script>
+        // GALLERY VUE
+        new Vue({
+            delimiters: ['[[', ']]'],
+            vuetify: vuetify,
+            el: '#gallery',
+            data: () => ({
+                gallery: {
+                left: [
+                    {
+                        name: 'Fret Maritime',
+                        description: 'Envoyez votre marchandise par Conteneur (Conteneur complet/groupage). Groupage vers toutes les destinations.',
+                        route: {name: 'desc', params: {name: 'fret-maritime'}},
+                        position: 1,
+                    },
+                    {
+                        name: 'Fret Aérien',
+                        description: 'Besoin d\'un service rapide, nous nous occupons de tout Aéroports commerciaux dans le monde pour un service rapide.',
+                        route: {name: 'desc', params: {name: 'fret-aerien'}},
+                        position: 2,
+                    },
+                    {
+                        name: 'Service lettre, petit colis express',
+                        description: '3-5 jours de transport, service porte à porte par service courrier vers toutes destinations.',
+                        route: {name: 'desc', params: {name: 'colis-express'}},
+                        position: 3,
+                    },
+                    {
+                        name: 'Déménagements',
+                        description: 'Nous pouvons vous aider dans toutes vos démarches de l\'emballage à l\'envoi, documents jusqu\'à votre nouvelle destination.',
+                        route: {name: 'desc', params: {name: 'demenagements-internationaux'}},
+                        position: 4,
+                    }
+                ],
+                right: [
+                    {
+                        name: 'Formalités Douanières',
+                        description: 'Nous vous conseillons sur les formalités douanières, et le processus d\'import/export.',
+                        route: {name: 'desc', params: {name: 'formalites-douanieres'}},
+                        position: 1,
+                    },
+                    {
+                        name: 'Transport Frontalier',
+                        description: 'Grâce à notre réseau, nous organisons des transports frontaliers avec la Birmanie, Laos, Vietnam, Cambodge.',
+                        route: {name: 'desc', params: {name: 'transports-frontaliers'}},
+                        position: 2,
+                    },
+                    {
+                        name: 'FRANCE',
+                        is_expd: true,
+                        description: 'Equipe francophone, un service d\'expéditon plus simple et efficace.',
+                        route: {name: 'desc', params: {name: 'expedition-france'}},
+                        position: 3,
+                    },
+                    {
+                        name: 'DOM TOM',
+                        is_expd: true,
+                        description: 'Nouvelle Calédonie (Nouméa), La Réunion, Martinique, Guadeloupe, nous déservons toutes ces destinations.',
+                        route: {name: 'desc', params: {name: 'expedition-dom-tom'}},
+                        position: 4,
+                    },
+                    {
+                        name: 'CHINE',
+                        is_expd: true,
+                        description: 'Un envoi de Chine, nous organisons chacun des aspects du transport à des prix compétitifs.',
+                        route: {name: 'desc', params: {name: 'expedition-chine'}},
+                        position: 5,
+                    },
+                    {
+                        name: 'Expédition à l\'International',
+                        description: '',
+                        route: {name: 'desc', params: {name: 'expedition-internationaux'}},
+                        position: 6,
+                    }
+                ],
+            },
+                table: [
+                {
+                    name: 'Promotions',
+                    text: 'Découvrez les promotions actuelles pour les expéditions ou services pour profiter des meilleures offres.',
+                    img: true,
+                    link: {name: 'promos'},
+                    bottomTitle: 'Tout afficher'
+                },
+                {
+                    name: 'Expédition Dom Tom',
+                    text: 'Nouvelle Calédonie (Nouméa), La Réunion, Martinique, Guadeloupe, nous déservons toutes ces destinations.',
+                    img: false,
+                    link: {name: 'desc', params: {name: 'expedition-dom-tom'}},
+                    bottomTitle: 'Plus d\'informations'
+                },
+                {
+                    name: 'Obtenez votre cotation\n',
+                    text: 'Utilisez notre formulaire pour nous fournir les détails de votre demande nous reviendrons vers vous le plus tôt possible pour vous accompagner.\n',
+                    img: false,
+                    link: {name: 'contact'},
+                    buttons: true,
+                    bottomTitle: 'Nous contacter'
+                }
+            ]
+            })
+        })
+    </script>
 {% endblock %}
