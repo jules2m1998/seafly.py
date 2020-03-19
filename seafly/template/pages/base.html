@@ -1,0 +1,240 @@
+<!doctype html>
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Seafly</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-design-icons-iconfont@5.0.1/dist/material-design-icons.min.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <link rel="stylesheet" href="{% static 'pages/css/base.css' %}">
+</head>
+<body>
+
+    <div id="app">
+        <v-app>
+            <nav>
+                <div class="container" id="header">
+                    <div id="logo">
+                        <a href="#">
+                            <img src="{% static 'pages/img/seafly-logo.png' %}" alt="logo" width="78px">
+                        </a>
+                    </div>
+                    <div id="menus" v-if="!is_search">
+                        <ul>
+                            <li v-for="(item, key) in menus" :key="key"><a href="#">[[ item.name ]]</a></li>
+                        </ul>
+                    </div>
+                    <div id="buttons" class="align--item" v-if="!is_search">
+                        <span class="btn--item">
+                            <v-btn color="primary" small class="mr-1" :to="{name: 'devis'}">DEVIS GRATUIT</v-btn>
+                        </span>
+                        <span v-if="is_good_size" class="align--item">
+                            <v-select
+                                    :items="btns"
+                                    label="Langues"
+                                    style="position: relative; bottom: .3rem;margin: 0 .7rem 0 .7rem"
+                                    dense></v-select>
+                        </span>
+                        <span class="btn--item">
+                            <v-btn icon class="btn--item" @click.prevent="search">
+                                <v-icon color="primary">search</v-icon>
+                            </v-btn>
+                        </span>
+                    </div>
+                    <transition name="translate">
+                        <div class="search--bar align--item" v-if="is_search">
+                            <div class="search--elt">
+                                <input type="text"
+                                       placeholder="Rechercher..."
+                                       class="search--input"
+                                       v-model="my_search"
+                                       id="search"
+                                >
+                                <v-btn icon class="btn--item input-btn" @click.prevent="search" id="go">
+                                    <v-icon>search</v-icon>
+                                </v-btn>
+                            </div>
+                            <v-btn icon class="btn--item input-btn" @click.prevent="closed">
+                                <v-icon color="primary" class="">close</v-icon>
+                            </v-btn>
+                        </div>
+                    </transition>
+
+                </div>
+                <v-navigation-drawer
+                            v-model="drawer"
+                            dark app
+                            class="darken-3 py-0"
+                            color="primary"
+                            style="overflow: paged-x"
+                            absolute
+                            temporary
+                    >
+                        <v-container>
+                            <v-row>
+                                <v-col md="12">
+                                    <img src="./../assets/seafly-logo.png" width="78"/>
+                                </v-col>
+                            </v-row>
+                        </v-container>
+                        <v-list nav>
+                            <v-list-item v-for="(item, key) in menus" :key="key">
+                                <v-list-item-action>
+                                    <v-icon small>fa fa-tachometer-alt</v-icon>
+                                </v-list-item-action>
+                                <v-list-item-content>
+                                    <v-list-item-title>
+                                        <router-link :to="item.route" tag="span" v-if="item.route !== undefined">{{ item.name }}</router-link>
+                                        <span v-if="item.route === undefined">{{item.name}}</span>
+                                    </v-list-item-title>
+                                </v-list-item-content>
+                            </v-list-item>
+                        </v-list>
+                        <v-layout row style="width: 100%" class="mt-10">
+                            <v-btn color="primary" small class="mb-10" style="margin: auto" :to="{name: 'devis'}">DEVIS GRATUIT</v-btn>
+                            <div class="align--item drawer--lang">
+                                <v-btn outlined fab x-small color="white" v-for="(item, key) in btns" :key="key" class="ma-2 mt-3 mb-3">{{item}}</v-btn>
+                            </div>
+                        </v-layout>
+                    </v-navigation-drawer>
+            </nav>
+            {% block content %} {% endblock content %}
+        </v-app>
+    </div>
+
+    <script>
+
+    </script>
+
+    <script>
+        new Vue({
+            delimiters: ['[[', ']]'],
+            vuetify: new Vuetify({
+                icons: {
+                    iconfont: 'md' || 'fa'
+                },
+                theme: {
+                    themes: {
+                        light: {
+                            primary: '#ed120b',
+                            linkedin: '#2867B2',
+                            facebook: '#3B5998'
+                        },
+                    },
+                }
+            }),
+            el: '#app',
+            data: () => {
+            return {
+                drawer: false,
+                menus: [
+                        {
+                            name: 'Notre Société',
+                            route: {name: 'desc', params: {name: 'about'}}
+                        },
+                        {
+                            name: 'Nos Services',
+                            sub: [
+                                {
+                                    name: 'Fret Maritime',
+                                    route: {name: 'desc', params: {name: 'fret-maritime'}}
+                                },
+                                {
+                                    name: 'Fret Aérien',
+                                    route: {name: 'desc', params: {name: 'fret-aerien'}}
+                                },
+                                {
+                                    name: 'Service lettre, petit colis express',
+                                    route: {name: 'desc', params: {name: 'colis-express'}}
+                                },
+                                {
+                                    name: 'Déménagements',
+                                    route: {name: 'desc', params: {name: 'demenagements-internationaux'}}
+                                },
+                                {
+                                    name: 'Formalités Douanières',
+                                    route: {name: 'desc', params: {name: 'formalites-douanieres'}}
+                                },
+                                {
+                                    name: 'Transport Frontalier',
+                                    route: {name: 'desc', params: {name: 'transports-frontaliers'}}
+                                },
+                            ]
+                        },
+                        {
+                            name: 'Destinations',
+                            sub: [
+                                {
+                                    name: 'DOM TOM',
+                                    route: {name: 'desc', params: {name: 'expedition-dom-tom'}}
+                                },
+                                {
+                                    name: 'France',
+                                    route: {name: 'desc', params: {name: 'expedition-france'}}
+                                },
+                                {
+                                    name: 'Chine',
+                                    route: {name: 'desc', params: {name: 'expedition-chine'}}
+                                },
+                                {
+                                    name: 'Expédition à l\'international',
+                                    route: {name: 'desc', params: {name: 'expedition-internationaux'}}
+                                },
+                            ]
+                        },
+                        {
+                            name: 'Promotions',
+                            route: {name: 'promos'}
+                        },
+                        {
+                            name: 'F.A.Q',
+                            route: {name: 'faq'}
+                        },
+                        {
+                            name: 'Nous Contacter',
+                            route: {name: 'contact'}
+                        }
+                    ],
+                test : 'Tesxt',
+                btns: [
+                    'en',
+                    'fr',
+                    'th'
+                ],
+                is_search: false,
+                is_good_size: true,
+                my_search: ''
+            }
+            },
+            mounted() {
+
+            },
+            methods: {
+                search: function() {
+                    if(!this.is_search) {
+                      this.is_search = true;
+                    } else{
+                      if(this.my_search === ''){
+                          this.closed();
+                      } else {
+                          console.log("Search")
+                      }
+                    }
+                },
+                closed () {
+                    this.is_search = false
+                }
+            }
+        })
+    </script>
+</body>
+</html>
