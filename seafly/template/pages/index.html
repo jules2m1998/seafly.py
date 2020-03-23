@@ -4,48 +4,47 @@
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/index.css' %}">
     <style>
-.img-1{
-    grid-area: img-1;
-    background-image: url("static/pages/img/seashipment.jpg");
-}
-.img-2{
-    grid-area: img-2;
-    background-image: url("static/pages/img/airshipment.jpg");
-}
-.img-3{
-    grid-area: img-3;
-    background-image: url("static/pages/img/doortodoor.jpg");
-}
-.img-4{
-    grid-area: img-4;
-    background-image: url("static/pages/img/removal.jpg");
-}
-.img-11{
-    grid-area: img-11;
-    background-image: url("static/pages/img/customs.jpg");
-}
-.img-12{
-    grid-area: img-12;
-    background-image: url("static/pages/img/crossborder.jpg");
-}
-.img-13{
-    grid-area: img-13;
-    background-image: url("static/pages/img/france.jpg");
-}
-.img-14{
-    grid-area: img-14;
-    background-image: url("static/pages/img/domtom.jpg");
-}
-.img-15{
-    grid-area: img-15;
-    background-image: url("static/pages/img/china.jpg");
-}
-.img-16{
-    grid-area: img-16;
-    background-image: url("static/pages/img/international.jpg");
-}
-
-</style>
+        .img-1{
+            grid-area: img-1;
+            background-image: url("static/pages/img/seashipment.jpg");
+        }
+        .img-2{
+            grid-area: img-2;
+            background-image: url("static/pages/img/airshipment.jpg");
+        }
+        .img-3{
+            grid-area: img-3;
+            background-image: url("static/pages/img/doortodoor.jpg");
+        }
+        .img-4{
+            grid-area: img-4;
+            background-image: url("static/pages/img/removal.jpg");
+        }
+        .img-11{
+            grid-area: img-11;
+            background-image: url("static/pages/img/customs.jpg");
+        }
+        .img-12{
+            grid-area: img-12;
+            background-image: url("static/pages/img/crossborder.jpg");
+        }
+        .img-13{
+            grid-area: img-13;
+            background-image: url("static/pages/img/france.jpg");
+        }
+        .img-14{
+            grid-area: img-14;
+            background-image: url("static/pages/img/domtom.jpg");
+        }
+        .img-15{
+            grid-area: img-15;
+            background-image: url("static/pages/img/china.jpg");
+        }
+        .img-16{
+            grid-area: img-16;
+            background-image: url("static/pages/img/international.jpg");
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
@@ -75,25 +74,25 @@
 
 
                     <div class="table--col mt-4">
-                <div class="item" v-for="item2 in table" :key="item2.name">
-                    <h3 class="title">[[ item2.name ]]</h3>
-                    <div class="content" :class="{separed: item2.img !== false}">
-                        <div :class="{left: item2.img !== false}">
-                            [[ item2.text ]]
-                        </div>
-                        <div class="right" v-if="item2.img !== false">
-                            <img src="../../assets/img/homepromotion.jpg" alt="">
-                        </div>
-                        <div class="button mt-4" v-if="item2.buttons">
-                            <red-button class="mr-2"></red-button>
-                            <green-button></green-button>
+                        <div class="item" v-for="item2 in table" :key="item2.name">
+                            <h3 class="title">[[ item2.name ]]</h3>
+                            <div class="content" :class="{separed: item2.img !== false}">
+                                <div :class="{left: item2.img !== false}">
+                                    [[ item2.text ]]
+                                </div>
+                                <div class="right" v-if="item2.img !== false">
+                                    <img src="../../assets/img/homepromotion.jpg" alt="">
+                                </div>
+                                <div class="button mt-4" v-if="item2.buttons">
+                                    <red-button class="mr-2"></red-button>
+                                    <green-button></green-button>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <a href="#"><v-icon color="primary">arrow_right</v-icon>[[ item2.bottomTitle]]</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="footer">
-                        <a href="#"><v-icon color="primary">arrow_right</v-icon>[[ item2.bottomTitle]]</a>
-                    </div>
-                </div>
-            </div>
             </v-app>
         </span>
     </span>

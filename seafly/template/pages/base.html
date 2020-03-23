@@ -6,6 +6,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'pages/img/ico/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'pages/img/ico/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'pages/img/ico/favicon-16x16.png' %}">
+    <link rel="mask-icon" href="{% static 'pages/img/ico/safari-pinned-tab.svg' %}" color="#5bbad5">
+
     <title>Seafly</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
@@ -18,8 +24,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-    <link rel="stylesheet" href="{% static 'pages/css/base.css' %}">
     {% block css %} {% endblock css %}
+    <link rel="stylesheet" href="{% static 'pages/css/base.css' %}">
 </head>
 <body>
 
@@ -32,10 +38,27 @@
                             <img src="{% static 'pages/img/seafly-logo.png' %}" alt="logo" width="78px">
                         </a>
                     </div>
-                    <div id="menus" v-if="!is_search" class="disappear">
-                        <ul>
-                            <li v-for="(item, key) in menus" :key="key"><a href="#">[[ item.name ]]</a></li>
-                        </ul>
+                    <div id="menus" v-if="!is_search" class="disappear ml-5">
+                        <span class="menu--item mr-4" v-for="(item, key) in menus" :key="key">
+                            <div class="text-center align--item">
+                                <v-menu open-on-hover offset-y>
+                                  <template v-slot:activator="{ on }">
+                                      <a href="#" class="pa-1 menu--item--text" v-on="on"> [[ item.name ]]</a>
+                                  </template>
+                                  <div v-if="item.sub !== undefined">
+                                    <v-list>
+                                      <v-list-item
+                                              v-for="(item, index) in item.sub"
+                                              :key="index"
+                                              color="primary"
+                                      >
+                                          <v-list-item-title><a href="#" style="text-decoration: none">[[ item.name ]]</a></v-list-item-title>
+                                      </v-list-item>
+                                    </v-list>
+                                </div>
+                                </v-menu>
+                              </div>
+                        </span>
                     </div>
                     <div id="buttons" class="align--item" v-if="!is_search">
                         <span class="btn--item disappear">
@@ -285,7 +308,12 @@
                             route: {name: 'contact'}
                         }
                     ],
-                test : 'Tesxt',
+                test : 'Tesxt',items: [
+                        { title: 'Click Me' },
+                        { title: 'Click Me' },
+                        { title: 'Click Me' },
+                        { title: 'Click Me 2' },
+                      ],
                 btns: [
                     'en',
                     'fr',
