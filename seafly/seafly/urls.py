@@ -21,6 +21,7 @@ from pages import views
 
 urlpatterns = [
     path('', views.index),
+    path('<str:pagename>', views.getPage),
     path('pages/', include('pages.urls')),
     path('admin/', admin.site.urls),
 ]

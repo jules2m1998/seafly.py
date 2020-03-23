@@ -1,0 +1,85 @@
+{% extends 'pages/base.html' %}
+{% load static%}
+
+{% block css %}
+<style>
+    .topImg{
+        width: 100%;
+        height: 16rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("static/pages/img/{{page.imgTop}}");
+    }
+
+    .contact{
+        width: 100%;
+        display: flex;
+        color: #d91a31!important;
+        font-size: 1.7rem;
+        margin-top: 18px;
+    }
+
+    .description{
+        font-size: 0.9em;
+        display: block;
+        width: 100%;
+        float: left;
+        padding: 0.5em 0 0 0;
+    }
+    .content{
+        display: grid;
+        grid-template-columns: 5fr 2fr;
+        margin-top: 15px;
+    }
+    .content .right .rightImg{
+        width: 100%;
+        height: 14rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("static/pages/img/{{page.imgRight}}");
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="topImg">
+
+    </div>
+    <div class="content" id="contact">
+        <div class="left">
+            {{ page.content }}
+        </div>
+        <div class="right">
+            <div class="rightImg">
+
+            </div>
+            <div class="contact">
+                <v-icon color="black" style="font-size: 1.8rem">phone</v-icon>
+                <div class="number ml-3">089-666-6575</div>
+            </div>
+            <div class="description">
+                <p>Notre experience de 20 ans a votre disposition pour votre envoi.</p>
+            </div>
+            <div class="buttons">
+                <button-red-green/>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'pages/js/component/red-button.js' %}"></script>
+    <script src="{% static 'pages/js/component/green-button.js' %}"></script>
+    <script src="{% static 'pages/js/component/button-red-green.js' %}"></script>
+<script>
+    new Vue({
+        delimiters: ['[[', ']]'],
+        vuetify: vuetify,
+        el: '#contact'
+    })
+</script>
+{% endblock %}
