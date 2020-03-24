@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+import markdown2
 from pages.models import Pages
 from django.template import loader
 
@@ -10,6 +11,7 @@ def index(request):
 
 def getPage(request, pagename):
     page = Pages.objects.get(name=pagename)
+    page.content = markdown2.markdown(page.content)
     context = {
         'page': page
     }

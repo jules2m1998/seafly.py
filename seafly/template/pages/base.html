@@ -43,7 +43,7 @@
                             <div class="text-center align--item">
                                 <v-menu open-on-hover offset-y>
                                   <template v-slot:activator="{ on }">
-                                      <a href="#" class="pa-1 menu--item--text" v-on="on"> [[ item.name ]]</a>
+                                      <a href="#" class="pa-1 menu--item--text" v-on="on"> [[ item.name.toUpperCase() ]]</a>
                                   </template>
                                   <div v-if="item.sub !== undefined">
                                     <v-list>
@@ -150,7 +150,7 @@
     <footer>
         <class id="bottom" class="text--primary" app>
             <v-container>
-                <div class="footer--items align--item">
+                <div class="footer--items">
                     <div class="footer--item" :style="{width: item.width + '%'}" v-for="(item, key) in footers" :key="key">
                         <div class="footer--item--title">
                             <h3>[[ item.name ]]</h3>
@@ -206,8 +206,8 @@
                         </div>
                     </div>
                 </div>
-                    <div class="footer--bar"><div class="footer--copy">©Sea Fly Services - 2018 tous droits réservés.</div><div class="footer--dev">Developper par
-                    <a href="#">CkikDev.cm</a></div></div>
+                    <div class="footer--bar"><div class="footer--copy">©Sea Fly Services - 2018 tous droits réservés.</div><div class="footer--dev">Developpé par
+                    <a href="#" style="color: var(--primary)">CkikDev.cm</a></div></div>
             </v-container>
         </class>
     </footer>
@@ -325,7 +325,7 @@
             }
             },
             mounted() {
-
+                document.getElementById('top').style.visibility = 'visible';
             },
             methods: {
                 search: function() {
@@ -431,7 +431,10 @@
                     'Bangkok,Thailand 10310',
                     'Tel: +66(0) 26903523 - 7'
                 ]
-            })
+            }),
+            mounted(){
+                document.getElementById('bottom').style.visibility = 'visible';
+            }
         })
     </script>
     {% block js %} {% endblock js %}

@@ -201,7 +201,10 @@
                     bottomTitle: 'Nous contacter'
                 }
             ]
-            })
+            }),
+            mounted () {
+                document.getElementById('gallery').style.visibility = 'visible';
+            }
         })
     </script>
 {% endblock %}
