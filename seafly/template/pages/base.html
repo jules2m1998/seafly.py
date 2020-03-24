@@ -34,7 +34,7 @@
             <nav>
                 <div class="container" id="header">
                     <div id="logo">
-                        <a href="#">
+                        <a href="{% url 'index' %}">
                             <img src="{% static 'pages/img/seafly-logo.png' %}" alt="logo" width="78px">
                         </a>
                     </div>
@@ -43,7 +43,7 @@
                             <div class="text-center align--item">
                                 <v-menu open-on-hover offset-y>
                                   <template v-slot:activator="{ on }">
-                                      <a href="#" class="pa-1 menu--item--text" v-on="on"> [[ item.name.toUpperCase() ]]</a>
+                                      <a :href="'/' + item.route" :class="linkActive(item.route)" v-on="on"> [[ item.name.toUpperCase() ]]</a>
                                   </template>
                                   <div v-if="item.sub !== undefined">
                                     <v-list>
@@ -52,7 +52,7 @@
                                               :key="index"
                                               color="primary"
                                       >
-                                          <v-list-item-title><a href="#" style="text-decoration: none">[[ item.name ]]</a></v-list-item-title>
+                                          <v-list-item-title><a :href="'/' + item.route" :class="linkActive(item.route)" style="text-decoration: none">[[ item.name ]]</a></v-list-item-title>
                                       </v-list-item>
                                     </v-list>
                                 </div>
@@ -243,34 +243,34 @@
                 menus: [
                         {
                             name: 'Notre Société',
-                            route: {name: 'desc', params: {name: 'about'}}
+                            route: 'about'
                         },
                         {
                             name: 'Nos Services',
                             sub: [
                                 {
                                     name: 'Fret Maritime',
-                                    route: {name: 'desc', params: {name: 'fret-maritime'}}
+                                    route: 'fret-maritime'
                                 },
                                 {
                                     name: 'Fret Aérien',
-                                    route: {name: 'desc', params: {name: 'fret-aerien'}}
+                                    route: 'fret-aerien'
                                 },
                                 {
                                     name: 'Service lettre, petit colis express',
-                                    route: {name: 'desc', params: {name: 'colis-express'}}
+                                    route: 'colis-express'
                                 },
                                 {
                                     name: 'Déménagements',
-                                    route: {name: 'desc', params: {name: 'demenagements-internationaux'}}
+                                    route: 'demenagements-internationaux'
                                 },
                                 {
                                     name: 'Formalités Douanières',
-                                    route: {name: 'desc', params: {name: 'formalites-douanieres'}}
+                                    route: 'formalites-douanieres'
                                 },
                                 {
                                     name: 'Transport Frontalier',
-                                    route: {name: 'desc', params: {name: 'transports-frontaliers'}}
+                                    route: 'transports-frontaliers'
                                 },
                             ]
                         },
@@ -279,33 +279,33 @@
                             sub: [
                                 {
                                     name: 'DOM TOM',
-                                    route: {name: 'desc', params: {name: 'expedition-dom-tom'}}
+                                    route: 'expedition-dom-tom'
                                 },
                                 {
                                     name: 'France',
-                                    route: {name: 'desc', params: {name: 'expedition-france'}}
+                                    route: 'expedition-france'
                                 },
                                 {
                                     name: 'Chine',
-                                    route: {name: 'desc', params: {name: 'expedition-chine'}}
+                                    route: 'expedition-chine'
                                 },
                                 {
                                     name: 'Expédition à l\'international',
-                                    route: {name: 'desc', params: {name: 'expedition-internationaux'}}
+                                    route: 'expedition-internationaux'
                                 },
                             ]
                         },
                         {
                             name: 'Promotions',
-                            route: {name: 'promos'}
+                            route: 'promos'
                         },
                         {
                             name: 'F.A.Q',
-                            route: {name: 'faq'}
+                            route: 'faq'
                         },
                         {
                             name: 'Nous Contacter',
-                            route: {name: 'contact'}
+                            route: 'contact'
                         }
                     ],
                 test : 'Tesxt',items: [
@@ -341,6 +341,9 @@
                 },
                 closed () {
                     this.is_search = false
+                },
+                linkActive(path) {
+                    return window.location.pathname.includes(path) ? 'active-link' : '';
                 }
             }
         });

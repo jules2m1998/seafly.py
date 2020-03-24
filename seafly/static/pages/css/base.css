@@ -30,6 +30,10 @@ body{
 #menus a:hover{
     border-bottom: 0.3em solid var(--primary);
 }
+
+.active-link{
+    border-bottom: 0.3em solid var(--primary)!important;
+}
 #buttons{
     position: relative;
     top: 50px;

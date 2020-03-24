@@ -20,7 +20,9 @@ from django.urls import path, include
 from pages import views
 
 urlpatterns = [
-    path('', views.index),
+    path('faq', views.getFaq),
+    path('promos', views.getPromos, name='about'),
+    path('', views.index, name='index'),
     path('<str:pagename>', views.getPage),
     path('pages/', include('pages.urls')),
     path('admin/', admin.site.urls),
