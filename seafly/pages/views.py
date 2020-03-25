@@ -25,5 +25,9 @@ def getPromos(request):
     return render(request, "pages/promos.html")
 
 
-def getFaq (request):
+def getFaq(request):
     return render(request, "pages/faq.html")
+
+
+def getContact(request):
+    return render(request, "pages/contact.html")

@@ -21,6 +21,7 @@ from pages import views
 
 urlpatterns = [
     path('faq', views.getFaq),
+    path('contact', views.getContact),
     path('promos', views.getPromos, name='about'),
     path('', views.index, name='index'),
     path('<str:pagename>', views.getPage),
