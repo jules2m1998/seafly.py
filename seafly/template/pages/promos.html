@@ -73,9 +73,9 @@
                 <div class="promos--title">Promotions actuelles</div>
                 <div class="promos--content">
                     <div class="promo-item" v-for="(item,key) in promos" :key="key">
-                        <a href="#" class="promo--img--link" :style="{'background-image' : 'url( {% static 'pages/img/promos/' %}' + item.img.directory + ')'}"></a>
-                        <a href="#" class="promo--title">[[ item.title.text ]]</a>
-                        <a href="#" class="promo--more" style="color: var(--primary)"><v-icon color="primary">arrow_right</v-icon> Plus d'informations</a>
+                        <a :href="item.img.to" class="promo--img--link" :style="{'background-image' : 'url( {% static 'pages/img/promos/' %}' + item.img.directory + ')'}"></a>
+                        <a :href="item.img.to" class="promo--title">[[ item.title.text ]]</a>
+                        <a :href="item.img.to" class="promo--more" style="color: var(--primary)"><v-icon color="primary">arrow_right</v-icon> Plus d'informations</a>
                     </div>
                 </div>
             </div>
@@ -97,67 +97,47 @@
             promos: [
                 {
                     title: {
-                        link: 'home',
                         text: 'Groupage Maritime Bangkok - Pointe des Galets'
                     },
                     img: {
-                        to: 'views',
+                        to: 'promos/groupage-maritime-bangkok-pointe-des-galets',
                         directory: 'La-Reunion.png'
-                    },
-                    more: {
-                        link: 'home'
                     }
                 },
                 {
                     title: {
-                        link: 'home',
                         text: 'Service courrier, petit colis en express (Bangkok vers France)'
                     },
                     img: {
-                        to: 'views',
+                        to: 'promos/service-courrier-petit-colis-en-express-bangkok-vers-france',
                         directory: 'Promo-Petit-Colis-700ko.png'
-                    },
-                    more: {
-                        link: 'home'
                     }
                 },
                 {
                     title: {
-                        link: 'home',
                         text: 'Conteneur 20’, Fret Bangkok vers Anvers'
                     },
                     img: {
-                        to: 'views',
+                        to: 'promos/conteneur-20-fret-bangkok-vers-anvers',
                         directory: 'Promo-Test-3.jpg'
-                    },
-                    more: {
-                        link: 'home'
                     }
                 },
                 {
                     title: {
-                        link: 'home',
                         text: 'Groupage depuis Bangkok Port vers Port Marseille ou Port Le Havre'
                     },
                     img: {
-                        to: 'views',
+                        to: 'promos/groupage-depuis-bangkok-port-vers-port-marseille-ou-port-le-havre',
                         directory: 'Test-Promo-1.jpg'
-                    },
-                    more: {
-                        link: 'home'
                     }
                 },
                 {
                     title: {
-                        link: 'home',
                         text: 'Transport routier depuis Bangkok vers Phnom Penh'
                     },
                     img: {
-                        to: 'views',
+                        to: 'promos/transport-routier-depuis-bangkok-vers-phnom',
                         directory: 'Test-Promo-2.jpg'
-                    },
-                    more: {
-                        link: 'home'
                     }
                 },
             ]

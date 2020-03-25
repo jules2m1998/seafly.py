@@ -10,7 +10,7 @@ class GoogleMap {
             let center = {lat: 13.7771722, lng: 100.5760527},
             map = new google.maps.Map(element, {
               center: center,
-              zoom: 13
+              zoom: 15
             });
             let marker = new google.maps.Marker({
                 position: center,

@@ -23,6 +23,7 @@ urlpatterns = [
     path('faq', views.getFaq),
     path('contact', views.getContact),
     path('promos', views.getPromos, name='about'),
+    path('promos/<str:pagename>', views.getPromotions),
     path('', views.index, name='index'),
     path('<str:pagename>', views.getPage),
     path('pages/', include('pages.urls')),

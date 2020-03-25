@@ -31,3 +31,16 @@ def getFaq(request):
 
 def getContact(request):
     return render(request, "pages/contact.html")
+
+
+def getPromotions(request, pagename):
+    try:
+        page = Pages.objects.get(name="promos/" + pagename)
+    except:
+        return redirect("/")
+
+    page.content = markdown2.markdown(page.content)
+    context = {
+        'page': page
+    }
+    return render(request, "pages/page-promos.html", context)

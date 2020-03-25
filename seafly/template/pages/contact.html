@@ -21,7 +21,9 @@
         background-color: #cccccc;
         margin-top: 15px;
     }
-
+    #contact{
+        visibility: hidden;
+    }
 
     .contact--title{
         font-size: 1.6em;
@@ -72,8 +74,9 @@
     <div class="topImg">
 
     </div>
+<div id="contact">
     <v-app>
-        <div class="contact" id="contact">
+        <div class="contact">
             <div class="left">
                 <div class="contact--title">
                     <h3>Contactez Nous</h3>
@@ -83,7 +86,7 @@
                     <div class="contact--para" v-for="(subitem, subkey) in item.content" :key="subkey">
                         [[ subitem ]]
                     </div>
-                    <div class="link" v-if="key === 0"> Lien Google Maps : <router-link to="home">Sea Fly Services Co., Ltd.</router-link> </div>
+                    <div class="link" v-if="key === 0"> Lien Google Maps : <a href="/">Sea Fly Services Co., Ltd.</a> </div>
                 </div>
                 <green-button-code></green-button-code>
                 <div class="my-map mt-3" id="map">
@@ -94,7 +97,7 @@
                 <div style="width: 100%;
                             margin: 35px 10px;
                             box-shadow: 0px 3px 10px -2px rgba(64, 61, 61, 0.6);
-                            padding: 10px;" class="primary">
+                            padding: 10px;">
                     <form action="">
                         <h2 class="form--contact--title" style="margin-top: 10px; margin-bottom: 15px;">Nous contacter</h2>
                         <v-text-field
@@ -119,12 +122,14 @@
                                 name="input-7-4"
                                 label="Votre message"
                                 value=""></v-textarea>
-                        <v-btn class="mb-5" style="background: #1E88E5" dark large>Envoyer</v-btn>
+                        <v-btn class="mb-5" color="blue" dark large>Envoyer</v-btn>
                 </form>
                 </div>
             </div>
         </div>
     </v-app>
+
+</div>
 
 {% endblock %}
 
@@ -136,9 +141,9 @@
     new Vue({
         delimiters: ['[[', ']]'],
         vuetify: vuetify,
-        el: '#' + view,
+        el: '#contact',
         mounted () {
-            document.getElementById(view).style.visibility = 'visible';
+            document.getElementById('contact').style.visibility = 'visible';
             document.getElementsByClassName("topImg")[0].style.visibility = 'visible';
             this.contact_spliter();
         },
