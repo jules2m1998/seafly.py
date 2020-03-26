@@ -157,7 +157,7 @@
                         </div>
                         <div class="footer--item--content text--primary">
                             <ul>
-                                <li v-for="(subitem , key) in item.links" :key="key"><a href="#">[[ subitem.name ]]</a></li>
+                                <li v-for="(subitem , key) in item.links" :key="key"><a :href="subitem.to">[[ subitem.name ]]</a></li>
                             </ul>
                         </div>
                     </div>
@@ -173,7 +173,7 @@
                             </div>
                             <div class="align--item">
                                 <ul style="width: 65%">
-                                    <li v-for="contact in contacts" :key="contact"><a href="#">[[ contact ]]</a></li>
+                                    <li v-for="contact in contacts" :key="contact"><a href="contact">[[ contact ]]</a></li>
                                     <li>
                                         <v-btn class="ma-2 white--text" style="background: #3B5998; color: white" x-small fab color="facebook">
                                             <v-icon>fab fa-facebook-f</v-icon>
@@ -184,7 +184,7 @@
                                     </li>
                                 </ul>
                                 <div class="map pr-3" style="width: 35%">
-                                    <img src="{% static 'pages/img/bottom-map.jpg' %}" alt="" style="width: 100%">
+                                    <a href="contact"><img src="{% static 'pages/img/bottom-map.jpg' %}" alt="" style="width: 100%"></a>
                                 </div>
                             </div>
                         </div>
@@ -198,16 +198,16 @@
                         <div class="footer--item--content">
                             <div class="footer--item--content">
                                 <div class="imgs">
-                                    <img src="{% static 'pages/img/ftcc-logo.png' %}">
-                                    <img src="{% static 'pages/img/east-west.jpg' %}">
-                                    <img src="{% static 'pages/img/5star-logo.jpg' %}">
+                                    <a href="/"><img src="{% static 'pages/img/ftcc-logo.png' %}"></a>
+                                    <a href="/"><img src="{% static 'pages/img/east-west.jpg' %}"></a>
+                                    <a href="/"><img src="{% static 'pages/img/5star-logo.jpg' %}"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                     <div class="footer--bar"><div class="footer--copy">©Sea Fly Services - 2018 tous droits réservés.</div><div class="footer--dev">Developpé par
-                    <a href="#" style="color: var(--primary)">CkikDev.cm</a></div></div>
+                    <a href="#" style="color: var(--primary)">ChickDev.cm</a></div></div>
             </v-container>
         </class>
     </footer>
@@ -365,17 +365,17 @@
                             ,
                             {
                                 name: 'Promotions',
-                                to: {name: 'promos'}
+                                to: 'promos'
                             }
                             ,
                             {
                                 name: 'Carrière',
-                                to: {name: 'desc', params: {name: 'career'}}
+                                to: 'career'
                             }
                             ,
                             {
                                 name: 'Nous Contacter',
-                                to: {name: 'contact'}
+                                to: 'contact'
                             }
                         ],
                         width: 12
@@ -385,27 +385,27 @@
                         links: [
                             {
                                 name: 'Fret Maritime',
-                                to: {name: 'desc', params: {name: 'fret-maritime'}}
+                                to: 'fret-maritime'
                             },
                             {
                                 name: 'Fret Aérien',
-                                to: {name: 'desc', params: {name: 'fret-aerien'}}
+                                to: 'fret-aerien'
                             },
                             {
                                 name: 'Service lettre, petit colis express',
-                                to: {name: 'desc', params: {name: 'colis-express'}}
+                                to: 'colis-express'
                             },
                             {
                                 name: 'Déménagements',
-                                to: {name: 'desc', params: {name: 'demenagements-internationaux'}}
+                                to: 'demenagements-internationaux'
                             },
                             {
                                 name: 'Formalités Douanières',
-                                to: {name: 'desc', params: {name: 'formalites-douanieres'}}
+                                to: 'formalites-douanieres'
                             },
                             {
                                 name: 'Transport Frontalier',
-                                to: {name: 'desc', params: {name: 'transports-frontaliers'}}
+                                to: 'transports-frontaliers'
                             },
                         ],
                         width: 20
@@ -415,7 +415,7 @@
                         links: [
                             {
                                 name: 'Conversions Volumétriques',
-                                to: {name: 'convert'}
+                                to: 'convert'
                             },
                             {
                                 name: 'Incoterms',
@@ -423,7 +423,7 @@
                             },
                             {
                                 name: 'Spécifications sur les Conteneurs',
-                                to:  {name: 'specification'}
+                                to:  'specification'
                             },
                         ],
                         width: 20

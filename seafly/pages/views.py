@@ -33,6 +33,10 @@ def getContact(request):
     return render(request, "pages/contact.html")
 
 
+def getConvert(request):
+    return render(request, "pages/conversion.html")
+
+
 def getPromotions(request, pagename):
     try:
         page = Pages.objects.get(name="promos/" + pagename)

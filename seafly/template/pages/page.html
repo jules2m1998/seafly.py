@@ -107,35 +107,41 @@
 {% endblock %}
 
 {% block content %}
-    <div class="topImg">
+    <div>
+        <div class="topImg">
 
     </div>
-    <div class="content" id="contact">
-        <div class="left">
-            <div class="title">
-                {{ page.title }}
-            </div>
-            <div class="description">
-                {{ page.content }}
-            </div>
-        </div>
-        <div class="right">
-            {% if page.visibleImgRight %}
-            <div class="rightImg">
+        <div id="contact">
+            <v-app>
+                <div class="content">
+                    <div class="left">
+                        <div class="title">
+                            {{ page.title }}
+                        </div>
+                        <div class="description">
+                            {{ page.content }}
+                        </div>
+                    </div>
+                    <div class="right">
+                        {% if page.visibleImgRight %}
+                        <div class="rightImg">
 
-            </div>
-            {% endif %}
-            <div class="contact">
-                <div style="width: auto; margin: auto">
-                    <div class="number ml-3"><v-icon color="black" style="font-size: 1.8rem;">phone</v-icon>089-666-6575</div>
+                        </div>
+                        {% endif %}
+                        <div class="contact">
+                            <div style="width: auto; margin: auto">
+                                <div class="number ml-3"><a href="tel:026903523" style="text-decoration: none"><v-icon color="black" style="font-size: 1.8rem;">phone</v-icon>02-690-3523</a></div>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <p>Notre experience de 20 ans a votre disposition pour votre envoi.</p>
+                        </div>
+                        <div class="buttons">
+                            <button-red-green/>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="desc">
-                <p>Notre experience de 20 ans a votre disposition pour votre envoi.</p>
-            </div>
-            <div class="buttons">
-                <button-red-green/>
-            </div>
+            </v-app>
         </div>
     </div>
 

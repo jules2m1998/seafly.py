@@ -194,8 +194,11 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
 }
-.footer--item--content img{
+.footer--item--content a{
     width: 50%;
+}
+.footer--item--content a img{
+    width: 100%;
 }
 .footer--dev{
     font-size: 0.8em;
