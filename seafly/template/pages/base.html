@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'pages/img/ico/favicon-16x16.png' %}">
     <link rel="mask-icon" href="{% static 'pages/img/ico/safari-pinned-tab.svg' %}" color="#5bbad5">
 
-    <title>Seafly</title>
+    <title>{% block title %} {% endblock title %}</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
@@ -21,6 +21,10 @@
 
 
     <script src="https://kit.fontawesome.com/edcb8962d6.js" crossorigin="anonymous"></script>
+    <script
+          src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
@@ -120,22 +124,20 @@
                             </v-row>
                         </v-container>
                         <div id="drawer--menu">
-                            <div class="drawer--menu--item">
+                            <div class="drawer--menu--item" v-for="(item, key) in menus" :key="key">
                                 <div class="drawer--menu--head">
-                                    <div class="drawer--menu--icon"><v-icon color="white" class="">close</v-icon></div>
-                                    <div class="drawer--menu--title"><a href="#" color="white">Notre société</a></div>
+                                    <div class="drawer--menu--icon"><v-icon color="white" class="">[[item.ico]]</v-icon></div>
+                                    <div class="drawer--menu--title"><a :href="item.route !== undefined ? '/' + item.route : '#'" color="white">[[item.name]]</a></div>
                                 </div>
-                                <div class="drawer--menu--accordeon">
+                                <div class="drawer--menu--accordeon" v-if="item.sub !== undefined">
                                     <ul>
-                                        <li><a href="#">Fret maritime</a></li>
-                                        <li><a href="#">Fret maritime</a></li>
-                                        <li><a href="#">Fret maritime</a></li>
+                                        <li v-for="(submenu, k) in item.sub" :key="k"><a :href="'/' + submenu.route">[[submenu.name]]</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <v-layout row style="width: 100%" class="mt-10">
-                            <v-btn color="primary" small class="mb-10" style="margin: auto" :to="{name: 'devis'}">DEVIS GRATUIT</v-btn>
+                            <v-btn color="primary" small class="mb-10" style="margin: auto" href="/devis">DEVIS GRATUIT</v-btn>
                             <div class="align--item drawer--lang">
                                 <v-btn outlined fab x-small color="white" v-for="(item, key) in btns" :key="key" class="ma-2 mt-3 mb-3">[[ item ]]</v-btn>
                             </div>
@@ -241,11 +243,12 @@
             el: '#top',
             data: () => {
             return {
-                drawer: true,
+                drawer: false,
                 menus: [
                         {
                             name: 'Notre Société',
-                            route: 'about'
+                            route: 'about',
+                            ico: 'apartment'
                         },
                         {
                             name: 'Nos Services',
@@ -274,7 +277,8 @@
                                     name: 'Transport Frontalier',
                                     route: 'transports-frontaliers'
                                 },
-                            ]
+                            ],
+                            ico: 'work'
                         },
                         {
                             name: 'Destinations',
@@ -295,19 +299,23 @@
                                     name: 'Expédition à l\'international',
                                     route: 'expedition-internationaux'
                                 },
-                            ]
+                            ],
+                            ico: 'pin_drop'
                         },
                         {
                             name: 'Promotions',
-                            route: 'promos'
+                            route: 'promos',
+                            ico: 'equalizer'
                         },
                         {
                             name: 'F.A.Q',
-                            route: 'faq'
+                            route: 'faq',
+                            ico: 'contact_support'
                         },
                         {
                             name: 'Nous Contacter',
-                            route: 'contact'
+                            route: 'contact',
+                            ico: 'contact_mail'
                         }
                     ],
                 test : 'Tesxt',items: [
@@ -442,6 +450,7 @@
             }
         })
     </script>
+    <script src="{% static 'pages/js/accordeon.js' %}"></script>
     {% block js %} {% endblock js %}
 </body>
 </html>
