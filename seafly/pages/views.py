@@ -37,6 +37,10 @@ def getConvert(request):
     return render(request, "pages/conversion.html")
 
 
+def getDevis(request):
+    return render(request, "pages/devis.html")
+
+
 def getPromotions(request, pagename):
     try:
         page = Pages.objects.get(name="promos/" + pagename)

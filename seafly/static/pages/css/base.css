@@ -103,6 +103,52 @@ body{
     visibility: hidden;
 }
 
+#drawer--menu{
+    margin: 10px;
+    color: white;
+    display: flex;
+}
+.drawer--menu--item{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+.drawer--menu--head, .drawer--menu--accordeon{
+    width: 100%;
+}
+.drawer--menu--head{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+    padding: 7px;
+    border-radius: 1px;
+}
+.drawer--menu--accordeon{
+    width: 100%;
+    background: white;
+    color: var(--primary);
+}
+.drawer--menu--accordeon ul{
+    padding-left: 0!important;
+}
+.drawer--menu--accordeon ul li{
+    list-style: none;
+    width: 100%;
+}
+.drawer--menu--accordeon ul li a{
+    text-decoration: none;
+    border-bottom: 1px solid darkred;
+    padding: 5px;
+    display: block;
+    width: 100%!important;
+}
+.drawer--menu--title a {
+    text-decoration: none;
+    color: white!important;
+    margin-left: 8px;
+    position: relative;
+    top: 3px;
+}
 @media screen and (max-width: 800px) {
     #bugger--btn{
         display: inline;

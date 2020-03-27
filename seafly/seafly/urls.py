@@ -24,6 +24,7 @@ urlpatterns = [
     path('contact', views.getContact),
     path('promos', views.getPromos, name='about'),
     path('convert', views.getConvert, name='about'),
+    path('devis', views.getDevis),
     path('promos/<str:pagename>', views.getPromotions),
     path('', views.index, name='index'),
     path('<str:pagename>', views.getPage),

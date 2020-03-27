@@ -62,7 +62,7 @@
                     </div>
                     <div id="buttons" class="align--item" v-if="!is_search">
                         <span class="btn--item disappear">
-                            <v-btn color="primary" small class="mr-1" :to="{name: 'devis'}">DEVIS GRATUIT</v-btn>
+                            <v-btn color="primary" small class="mr-1" href="/devis">DEVIS GRATUIT</v-btn>
                         </span>
                         <span v-if="is_good_size" class="align--item disappear">
                             <v-select
@@ -119,19 +119,21 @@
                                 </v-col>
                             </v-row>
                         </v-container>
-                        <v-list nav>
-                            <v-list-item v-for="(item, key) in menus" :key="key">
-                                <v-list-item-action>
-                                    <v-icon small>fa fa-tachometer-alt</v-icon>
-                                </v-list-item-action>
-                                <v-list-item-content>
-                                    <v-list-item-title>
-                                        <router-link :to="item.route" tag="span" v-if="item.route !== undefined">[[ item.name ]]</router-link>
-                                        <span v-if="item.route === undefined">[[item.name]]</span>
-                                    </v-list-item-title>
-                                </v-list-item-content>
-                            </v-list-item>
-                        </v-list>
+                        <div id="drawer--menu">
+                            <div class="drawer--menu--item">
+                                <div class="drawer--menu--head">
+                                    <div class="drawer--menu--icon"><v-icon color="white" class="">close</v-icon></div>
+                                    <div class="drawer--menu--title"><a href="#" color="white">Notre société</a></div>
+                                </div>
+                                <div class="drawer--menu--accordeon">
+                                    <ul>
+                                        <li><a href="#">Fret maritime</a></li>
+                                        <li><a href="#">Fret maritime</a></li>
+                                        <li><a href="#">Fret maritime</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <v-layout row style="width: 100%" class="mt-10">
                             <v-btn color="primary" small class="mb-10" style="margin: auto" :to="{name: 'devis'}">DEVIS GRATUIT</v-btn>
                             <div class="align--item drawer--lang">
@@ -239,7 +241,7 @@
             el: '#top',
             data: () => {
             return {
-                drawer: false,
+                drawer: true,
                 menus: [
                         {
                             name: 'Notre Société',
