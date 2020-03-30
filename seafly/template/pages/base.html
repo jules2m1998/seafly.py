@@ -1,5 +1,6 @@
 <!doctype html>
 {% load static %}
+{% load i18n %}
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -66,7 +67,8 @@
                     </div>
                     <div id="buttons" class="align--item" v-if="!is_search">
                         <span class="btn--item disappear">
-                            <v-btn color="primary" small class="mr-1" href="/devis">DEVIS GRATUIT</v-btn>
+                            {% trans 'DEVIS GRATUIT' as devis %}
+                            <v-btn color="primary" small class="mr-1" href="/devis">{{ devis }}</v-btn>
                         </span>
                         <span v-if="is_good_size" class="align--item disappear">
                             <v-select
@@ -91,7 +93,7 @@
                         <div class="search--bar align--item" v-if="is_search">
                             <div class="search--elt">
                                 <input type="text"
-                                       placeholder="Rechercher..."
+                                       placeholder="{% trans 'Rechercher...' %}"
                                        class="search--input"
                                        v-model="my_search"
                                        id="search"
@@ -137,7 +139,7 @@
                             </div>
                         </div>
                         <v-layout row style="width: 100%" class="mt-10">
-                            <v-btn color="primary" small class="mb-10" style="margin: auto" href="/devis">DEVIS GRATUIT</v-btn>
+                            <v-btn color="primary" small class="mb-10" style="margin: auto" href="/devis">{{ devis }}</v-btn>
                             <div class="align--item drawer--lang">
                                 <v-btn outlined fab x-small color="white" v-for="(item, key) in btns" :key="key" class="ma-2 mt-3 mb-3">[[ item ]]</v-btn>
                             </div>
@@ -146,6 +148,7 @@
             </nav>
         </v-app>
     </div>
+    {% trans 'Nous Contacter' as contactUs %}
     <div class="container">
             {% block content %} {% endblock content %}
     </div>
@@ -169,7 +172,7 @@
 
                     <div class="footer--item" style="width: 23%">
                         <div class="footer--item--title">
-                            <h3>Nous Contacter</h3>
+                            <h3>{{ contactUs }}</h3>
                         </div>
                         <div class="footer--item--content">
                             <div class="footer--item--subtitle">
@@ -197,7 +200,8 @@
 
                     <div class="footer--item" style="width: 25%; border-right: 1px solid #dddddd;">
                         <div class="footer--item--title">
-                            <h3>Nos réseaux</h3>
+                            {% trans 'Nos réseaux' as reseaux %}
+                            <h3>{{ reseaux }}</h3>
                         </div>
                         <div class="footer--item--content">
                             <div class="footer--item--content">
@@ -210,18 +214,141 @@
                         </div>
                     </div>
                 </div>
-                    <div class="footer--bar"><div class="footer--copy">©Sea Fly Services - 2018 tous droits réservés.</div><div class="footer--dev">Developpé par
+                    <div class="footer--bar"><div class="footer--copy">©Sea Fly Services - 2018 tous droits réservés.</div><div class="footer--dev">{% trans 'Developpé par' %}
                     <a href="#" style="color: var(--primary)">ChickDev.cm</a></div></div>
             </v-container>
         </class>
     </footer>
-
 
     <script>
 
     </script>
 
     <script>
+        let menus = [
+                        {
+                            name: "{% trans 'Notre société' %}",
+                            route: 'about',
+                            ico: 'apartment'
+                        },
+                        {
+                            name: "{% trans 'Nos Services' %}",
+                            sub: [
+                                {
+                                    name: "{% trans 'Fret Maritime' %}",
+                                    route: 'fret-maritime'
+                                },
+                                {
+                                    name: "{% trans 'Fret Aérien' %}",
+                                    route: 'fret-aerien'
+                                },
+                                {
+                                    name: "{% trans 'Service lettre, petit colis express' %}",
+                                    route: 'colis-express'
+                                },
+                                {
+                                    name: "{% trans 'Déménagements' %}",
+                                    route: 'demenagements-internationaux'
+                                },
+                                {
+                                    name: "{% trans 'Formalités Douanières' %}",
+                                    route: 'formalites-douanieres'
+                                },
+                                {
+                                    name: "{% trans 'Transport Frontalier' %}",
+                                    route: 'transports-frontaliers'
+                                },
+                            ],
+                            ico: 'work'
+                        },
+                        {
+                            name: 'Destinations',
+                            sub: [
+                                {
+                                    name: "{% trans 'DOM TOM' %}",
+                                    route: 'expedition-dom-tom'
+                                },
+                                {
+                                    name: "{% trans 'France' %}",
+                                    route: 'expedition-france'
+                                },
+                                {
+                                    name: "{% trans 'Chine' %}",
+                                    route: 'expedition-chine'
+                                },
+                                {
+                                    name: "{% trans 'Expédition à l&apos;International' %}",
+                                    route: 'expedition-internationaux'
+                                },
+                            ],
+                            ico: 'pin_drop'
+                        },
+                        {
+                            name: "{% trans 'Promotions' %}",
+                            route: 'promos',
+                            ico: 'equalizer'
+                        },
+                        {
+                            name: "{% trans 'F.A.Q' %}",
+                            route: 'faq',
+                            ico: 'contact_support'
+                        },
+                        {
+                            name: "{{ contactUs }}",
+                            route: 'contact',
+                            ico: 'contact_mail'
+                        }
+                    ];
+        let footer = [
+                    {
+                        name: menus[0].name,
+                        links: [
+                            {
+                                name:  menus[0].name,
+                                to: menus[0].route
+                            }
+                            ,
+                            {
+                                name: menus[3].name,
+                                to: menus[3].route
+                            }
+                            ,
+                            {
+                                name: "{% trans 'Carrière' %}",
+                                to: 'career'
+                            }
+                            ,
+                            {
+                                name: menus[5].name,
+                                to: menus[5].route
+                            }
+                        ],
+                        width: 12
+                    },
+                    {
+                        name: menus[1].name,
+                        links: menus[1].sub,
+                        width: 20
+                    },
+                    {
+                        name: "{% trans 'Outils & Ressources' %}",
+                        links: [
+                            {
+                                name: "{% trans 'Conversions Volumétriques' %}",
+                                to: 'convert'
+                            },
+                            {
+                                name: "{% trans 'Incoterms' %}",
+                                to: 'transports-frontaliers'
+                            },
+                            {
+                                name: "{% trans 'Spécifications sur les Conteneurs' %}",
+                                to:  'specification'
+                            },
+                        ],
+                        width: 20
+                    }
+                ];
         let vuetify = new Vuetify({
                 icons: {
                     iconfont: 'md' || 'fa'
@@ -244,86 +371,7 @@
             data: () => {
             return {
                 drawer: false,
-                menus: [
-                        {
-                            name: 'Notre Société',
-                            route: 'about',
-                            ico: 'apartment'
-                        },
-                        {
-                            name: 'Nos Services',
-                            sub: [
-                                {
-                                    name: 'Fret Maritime',
-                                    route: 'fret-maritime'
-                                },
-                                {
-                                    name: 'Fret Aérien',
-                                    route: 'fret-aerien'
-                                },
-                                {
-                                    name: 'Service lettre, petit colis express',
-                                    route: 'colis-express'
-                                },
-                                {
-                                    name: 'Déménagements',
-                                    route: 'demenagements-internationaux'
-                                },
-                                {
-                                    name: 'Formalités Douanières',
-                                    route: 'formalites-douanieres'
-                                },
-                                {
-                                    name: 'Transport Frontalier',
-                                    route: 'transports-frontaliers'
-                                },
-                            ],
-                            ico: 'work'
-                        },
-                        {
-                            name: 'Destinations',
-                            sub: [
-                                {
-                                    name: 'DOM TOM',
-                                    route: 'expedition-dom-tom'
-                                },
-                                {
-                                    name: 'France',
-                                    route: 'expedition-france'
-                                },
-                                {
-                                    name: 'Chine',
-                                    route: 'expedition-chine'
-                                },
-                                {
-                                    name: 'Expédition à l\'international',
-                                    route: 'expedition-internationaux'
-                                },
-                            ],
-                            ico: 'pin_drop'
-                        },
-                        {
-                            name: 'Promotions',
-                            route: 'promos',
-                            ico: 'equalizer'
-                        },
-                        {
-                            name: 'F.A.Q',
-                            route: 'faq',
-                            ico: 'contact_support'
-                        },
-                        {
-                            name: 'Nous Contacter',
-                            route: 'contact',
-                            ico: 'contact_mail'
-                        }
-                    ],
-                test : 'Tesxt',items: [
-                        { title: 'Click Me' },
-                        { title: 'Click Me' },
-                        { title: 'Click Me' },
-                        { title: 'Click Me 2' },
-                      ],
+                menus: menus,
                 btns: [
                     'en',
                     'fr',
@@ -364,85 +412,11 @@
             vuetify: vuetify,
             el: '#bottom',
             data: () => ({
-                footers: [
-                    {
-                        name: 'Notre société',
-                        links: [
-                            {
-                                name: 'Notre Société',
-                                to: 'about'
-                            }
-                            ,
-                            {
-                                name: 'Promotions',
-                                to: 'promos'
-                            }
-                            ,
-                            {
-                                name: 'Carrière',
-                                to: 'career'
-                            }
-                            ,
-                            {
-                                name: 'Nous Contacter',
-                                to: 'contact'
-                            }
-                        ],
-                        width: 12
-                    },
-                    {
-                        name: 'Nos Services',
-                        links: [
-                            {
-                                name: 'Fret Maritime',
-                                to: 'fret-maritime'
-                            },
-                            {
-                                name: 'Fret Aérien',
-                                to: 'fret-aerien'
-                            },
-                            {
-                                name: 'Service lettre, petit colis express',
-                                to: 'colis-express'
-                            },
-                            {
-                                name: 'Déménagements',
-                                to: 'demenagements-internationaux'
-                            },
-                            {
-                                name: 'Formalités Douanières',
-                                to: 'formalites-douanieres'
-                            },
-                            {
-                                name: 'Transport Frontalier',
-                                to: 'transports-frontaliers'
-                            },
-                        ],
-                        width: 20
-                    },
-                    {
-                        name: 'Outils & Ressourcesfo',
-                        links: [
-                            {
-                                name: 'Conversions Volumétriques',
-                                to: 'convert'
-                            },
-                            {
-                                name: 'Incoterms',
-                                to: 'transports-frontaliers'
-                            },
-                            {
-                                name: 'Spécifications sur les Conteneurs',
-                                to:  'specification'
-                            },
-                        ],
-                        width: 20
-                    }
-                ],
+                footers: footer,
                 contacts: [
-                    '93/1 Soi Suntornsiri, Huaikwang,',
-                    'Bangkok,Thailand 10310',
-                    'Tel: +66(0) 26903523 - 7'
+                    "{% trans '93/1 Soi Suntornsiri, Huaikwang,' %}",
+                    "{% trans 'Bangkok,Thailand 10310' %}",
+                    "{% trans 'Tel: +66(0) 26903523 - 7' %}"
                 ]
             }),
             mounted(){

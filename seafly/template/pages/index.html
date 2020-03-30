@@ -1,5 +1,6 @@
 {% extends 'pages/base.html' %}
-{% load static%}
+{% load static %}
+{% load i18n %}
 
 {% block title %} Sea Fly Services Transitaire Français basé en Thaïlande | Nos 20 ans d’expérience rendent vos expeditions plus sures et plus sécurisées. {% endblock %}
 {% block css %}
@@ -112,66 +113,66 @@
                 gallery: {
                 left: [
                     {
-                        name: 'Fret Maritime',
-                        description: 'Envoyez votre marchandise par Conteneur (Conteneur complet/groupage). Groupage vers toutes les destinations.',
+                        name: menus[1].sub[0].name,
+                        description: "{% trans 'Envoyez votre marchandise par Conteneur (Conteneur complet/groupage). Groupage vers toutes les destinations.' %}",
                         route: 'fret-maritime',
                         position: 1,
                     },
                     {
-                        name: 'Fret Aérien',
-                        description: 'Besoin d\'un service rapide, nous nous occupons de tout Aéroports commerciaux dans le monde pour un service rapide.',
+                        name: menus[1].sub[1].name,
+                        description: "{% trans 'Besoin d&apos;un service rapide, nous nous occupons de tout Aéroports commerciaux dans le monde pour un service rapide.' %}",
                         route: 'fret-aerien',
                         position: 2,
                     },
                     {
-                        name: 'Service lettre, petit colis express',
-                        description: '3-5 jours de transport, service porte à porte par service courrier vers toutes destinations.',
+                        name: menus[1].sub[2].name,
+                        description: "{% trans '3-5 jours de transport, service porte à porte par service courrier vers toutes destinations.' %}",
                         route: 'colis-express',
                         position: 3,
                     },
                     {
-                        name: 'Déménagements',
-                        description: 'Nous pouvons vous aider dans toutes vos démarches de l\'emballage à l\'envoi, documents jusqu\'à votre nouvelle destination.',
+                        name: menus[1].sub[3].name,
+                        description: "{% trans 'Nous pouvons vous aider dans toutes vos démarches de l&apos;emballage à l&apos;envoi, documents jusqu&apos;à votre nouvelle destination.' %}",
                         route: 'demenagements-internationaux',
                         position: 4,
                     }
                 ],
                 right: [
                     {
-                        name: 'Formalités Douanières',
-                        description: 'Nous vous conseillons sur les formalités douanières, et le processus d\'import/export.',
+                        name: menus[1].sub[4].name,
+                        description: "{% trans 'Nous vous conseillons sur les formalités douanières, et le processus d&apos;import/export.' %}",
                         route: 'formalites-douanieres',
                         position: 1,
                     },
                     {
-                        name: 'Transport Frontalier',
-                        description: 'Grâce à notre réseau, nous organisons des transports frontaliers avec la Birmanie, Laos, Vietnam, Cambodge.',
+                        name: menus[1].sub[5].name,
+                        description: "{% trans 'Grâce à notre réseau, nous organisons des transports frontaliers avec la Birmanie, Laos, Vietnam, Cambodge.' %}",
                         route: 'transports-frontaliers',
                         position: 2,
                     },
                     {
-                        name: 'FRANCE',
+                        name: menus[2].sub[1].name,
                         is_expd: true,
-                        description: 'Equipe francophone, un service d\'expéditon plus simple et efficace.',
+                        description: "{% trans 'Equipe francophone, un service d&apos;expéditon plus simple et efficace.' %}",
                         route: 'expedition-france',
                         position: 3,
                     },
                     {
-                        name: 'DOM TOM',
+                        name: menus[2].sub[0].name,
                         is_expd: true,
-                        description: 'Nouvelle Calédonie (Nouméa), La Réunion, Martinique, Guadeloupe, nous déservons toutes ces destinations.',
+                        description: "{% trans 'Nouvelle Calédonie (Nouméa), La Réunion, Martinique, Guadeloupe, nous déservons toutes ces destinations.' %}",
                         route: 'expedition-dom-tom',
                         position: 4,
                     },
                     {
-                        name: 'CHINE',
+                        name: menus[2].sub[2].name,
                         is_expd: true,
-                        description: 'Un envoi de Chine, nous organisons chacun des aspects du transport à des prix compétitifs.',
+                        description: "{% trans 'Un envoi de Chine, nous organisons chacun des aspects du transport à des prix compétitifs.' %}",
                         route: 'expedition-chine',
                         position: 5,
                     },
                     {
-                        name: 'Expédition à l\'International',
+                        name: menus[2].sub[3].name,
                         description: '',
                         route: 'expedition-internationaux',
                         position: 6,
@@ -180,26 +181,26 @@
             },
                 table: [
                 {
-                    name: 'Promotions',
-                    text: 'Découvrez les promotions actuelles pour les expéditions ou services pour profiter des meilleures offres.',
+                    name: menus[3].name,
+                    text: "{% trans 'Découvrez les promotions actuelles pour les expéditions ou services pour profiter des meilleures offres.' %}",
                     img: true,
                     link: 'promos',
-                    bottomTitle: 'Tout afficher'
+                    bottomTitle: "{% trans 'Tout afficher' %}"
                 },
                 {
-                    name: 'Expédition Dom Tom',
-                    text: 'Nouvelle Calédonie (Nouméa), La Réunion, Martinique, Guadeloupe, nous déservons toutes ces destinations.',
+                    name: "{% trans 'Expédition Dom Tom' %}",
+                    text: "{% trans 'Nouvelle Calédonie (Nouméa), La Réunion, Martinique, Guadeloupe, nous déservons toutes ces destinations.' %}",
                     img: false,
                     link: 'expedition-dom-tom',
-                    bottomTitle: 'Plus d\'informations'
+                    bottomTitle: "{% trans 'Plus d&apos;informations' %}"
                 },
                 {
-                    name: 'Obtenez votre cotation\n',
-                    text: 'Utilisez notre formulaire pour nous fournir les détails de votre demande nous reviendrons vers vous le plus tôt possible pour vous accompagner.\n',
+                    name: "{% trans 'Obtenez votre cotation' %}",
+                    text: "{% trans 'Utilisez notre formulaire pour nous fournir les détails de votre demande nous reviendrons vers vous le plus tôt possible pour vous accompagner.' %}",
                     img: false,
                     link: 'contact',
                     buttons: true,
-                    bottomTitle: 'Nous contacter'
+                    bottomTitle: '{{ contactUs }}'
                 }
             ]
             }),

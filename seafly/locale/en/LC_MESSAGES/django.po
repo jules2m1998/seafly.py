@@ -1,0 +1,610 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-30 14:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\template\pages\base.html:70
+msgid "DEVIS GRATUIT"
+msgstr "GEET FREE QUOTE"
+
+#: .\template\pages\base.html:96
+msgid "Rechercher..."
+msgstr "Search..."
+
+#: .\template\pages\base.html:151
+msgid "Nous Contacter"
+msgstr "Contact Us"
+
+#: .\template\pages\base.html:203
+msgid "Nos réseaux"
+msgstr "Member & Network"
+
+#: .\template\pages\base.html:217
+msgid "Developpé par"
+msgstr "developped by"
+
+#: .\template\pages\base.html:230
+msgid "Notre société"
+msgstr "About us"
+
+#: .\template\pages\base.html:235
+msgid "Nos Services"
+msgstr "Our Services"
+
+#: .\template\pages\base.html:238
+msgid "Fret Maritime"
+msgstr "Sea Shipment"
+
+#: .\template\pages\base.html:242
+msgid "Fret Aérien"
+msgstr "Air Shipment"
+
+#: .\template\pages\base.html:246
+msgid "Service lettre, petit colis express"
+msgstr "Express Courier"
+
+#: .\template\pages\base.html:250
+msgid "Déménagements"
+msgstr "International Removal"
+
+#: .\template\pages\base.html:254
+msgid "Formalités Douanières"
+msgstr "Customs Services"
+
+#: .\template\pages\base.html:258
+msgid "Transport Frontalier"
+msgstr "Cross Border"
+
+#: .\template\pages\base.html:268
+msgid "DOM TOM"
+msgstr "DOM TOM"
+
+#: .\template\pages\base.html:272
+msgid "France"
+msgstr "France"
+
+#: .\template\pages\base.html:276
+msgid "Chine"
+msgstr "China"
+
+#: .\template\pages\base.html:280
+msgid "Expédition à l&apos;International"
+msgstr "International"
+
+#: .\template\pages\base.html:287
+msgid "Promotions"
+msgstr "Promotion"
+
+#: .\template\pages\base.html:292
+msgid "F.A.Q"
+msgstr "F.A.Q"
+
+#: .\template\pages\base.html:317
+msgid "Carrière"
+msgstr "Career"
+
+#: .\template\pages\base.html:334
+msgid "Outils & Ressources"
+msgstr "Tools & Documents"
+
+#: .\template\pages\base.html:337
+msgid "Conversions Volumétriques"
+msgstr "Volumetric Convert"
+
+#: .\template\pages\base.html:341
+msgid "Incoterms"
+msgstr "Incoterms"
+
+#: .\template\pages\base.html:345
+msgid "Spécifications sur les Conteneurs"
+msgstr "Container Size"
+
+#: .\template\pages\base.html:417
+msgid "93/1 Soi Suntornsiri, Huaikwang,"
+msgstr "93/1 Soi Suntornsiri, Huaikwang,"
+
+#: .\template\pages\base.html:418
+msgid "Bangkok,Thailand 10310"
+msgstr "Bangkok,Thailand 10310"
+
+#: .\template\pages\base.html:419
+msgid "Tel: +66(0) 26903523 - 7"
+msgstr "Tel: +66(0) 26903523 - 7"
+
+#: .\template\pages\contact.html:90
+msgid "Lien Google Maps :"
+msgstr "Navigation By Google Maps :"
+
+#: .\template\pages\contact.html:106 .\template\pages\devis.html:177
+msgid "Nom"
+msgstr "Name"
+
+#: .\template\pages\contact.html:111 .\template\pages\devis.html:181
+msgid "Email"
+msgstr "Email"
+
+#: .\template\pages\contact.html:115
+msgid "Téléphone"
+msgstr "Phone (Optional)"
+
+#: .\template\pages\contact.html:119
+#, fuzzy
+#| msgid "Notre société"
+msgid "Société"
+msgstr "Company"
+
+#: .\template\pages\contact.html:124
+msgid "Votre message"
+msgstr "Message"
+
+#: .\template\pages\contact.html:126 .\template\pages\devis.html:190
+msgid "Envoyer"
+msgstr "Send Message"
+
+#: .\template\pages\contact.html:154
+msgid "Sea Fly Services Co., Ltd."
+msgstr "Sea Fly Services Co., Ltd."
+
+#: .\template\pages\contact.html:155
+msgid "93/1 Soi Pracharat Bamphen 6 (Soi Suntornsiri)"
+msgstr "93/1 Soi Pracharat Bamphen 6 (Soi Suntornsiri)"
+
+#: .\template\pages\contact.html:156
+msgid "Huaikwang, Bangkok"
+msgstr "Huaikwang, Bangkok"
+
+#: .\template\pages\contact.html:157
+#, fuzzy
+#| msgid "Bangkok,Thailand 10310"
+msgid "Thailand 10310"
+msgstr "Bangkok,Thailand 10310"
+
+#: .\template\pages\contact.html:161
+msgid "Département commercial"
+msgstr "Sales"
+
+#: .\template\pages\contact.html:162
+#, fuzzy
+#| msgid "Tel: +66(0) 26903523 - 7"
+msgid "Tel: 66(0) 26903523 - 7"
+msgstr "Tel: +66(0) 26903523 - 7"
+
+#: .\template\pages\contact.html:166
+msgid "Heures d&apos;ouvertures"
+msgstr "Working Hours"
+
+#: .\template\pages\contact.html:167
+msgid "Du Lundi au Vendredi"
+msgstr "Monday - Friday"
+
+#: .\template\pages\contact.html:168
+msgid "09:00 - 17:30"
+msgstr "09:00 - 17:30"
+
+#: .\template\pages\conversion.html:103
+msgid ""
+"Le terme \"poids volumétrique\", parfois appelé \"dim\" ou encore poids "
+"dimensionnel, est employé par rapport à l&apos;espace que prend un colis "
+"dans l&apos;avion. Il peut coûter plus cher que le poids réel ( ou brut ) du "
+"paquet. Vous devrez calculer le poids dimensionnel sur chaque expédition, et "
+"comparer cela à son poids brut. Enfin le poids le plus conséquent des deux "
+"déterminera le poids taxable ou chargeable, donc votre coût d&apos;expédition"
+msgstr ""
+"Dimensional weight, also known as volumetric weight, is a pricing technique "
+"for commercial freight transport (including courier and postal services), "
+"which uses an estimated weight that is calculated from the length, width and "
+"height of a package. You should calculate dimensional weight on every "
+"shipment, and compare that to its actual weight, and use the greater of the "
+"two to determine your shipping cost. Use these forms if you need to convert "
+"lbs to kg or feet and inches to cms."
+
+#: .\template\pages\conversion.html:106
+msgid ""
+"Utilisez ces tableaux si vous devez convertir des livres en kilogramme ou "
+"encore pieds et pouces en cm."
+msgstr ""
+"Use these forms if you need to convert lbs to kg or feet and inches to cms."
+
+#: .\template\pages\conversion.html:110
+msgid "Conversion en kilogramme"
+msgstr "Convert to kg"
+
+#: .\template\pages\conversion.html:111
+msgid "Conversion en cm"
+msgstr "Convert to cms"
+
+#: .\template\pages\conversion.html:145
+#, fuzzy
+#| msgid "Carrière"
+msgid "Centimètre"
+msgstr "Career"
+
+#: .\template\pages\conversion.html:153
+msgid ""
+"Pour les expéditions légères le poids volumétrique sera utilisé si celui-ci "
+"excède le poids réel (en kilogrammes). Pour calculer le poids volumétrique, "
+"il faut entrer la largeur, la longueur et la hauteur de votre colis (en "
+"centimètres) dans les champs ci-dessous et appuyer sur le bouton calcul."
+msgstr ""
+"For lightweight shipments the volumetric weight will be charged if this "
+"exceeds the actual weight (in kilograms). To calculate the volumetric "
+"weight, enter the width, height and depth of your package (in centimetres) "
+"in the fields below and press the Calculate button."
+
+#: .\template\pages\conversion.html:157
+#, fuzzy
+#| msgid "Conversions Volumétriques"
+msgid "Conversion du Poids volumétrique"
+msgstr "Volumetric Convert"
+
+#: .\template\pages\conversion.html:162
+msgid "Longueur (cm)"
+msgstr "Width (cms)\t"
+
+#: .\template\pages\conversion.html:168
+msgid "Largeur (cm)"
+msgstr "Height (cms)"
+
+#: .\template\pages\conversion.html:174
+msgid "Hauteur (cm)"
+msgstr "Depth (cms)"
+
+#: .\template\pages\conversion.html:181
+msgid "Volume (cm3)"
+msgstr "Volume"
+
+#: .\template\pages\conversion.html:190
+msgid "Poids volumetrique (Kg)"
+msgstr "Volumetric Weight"
+
+#: .\template\pages\conversion.html:198
+msgid "CALCUL DU POIDS DE VOLUME SUR LE FRET AÉRIEN :"
+msgstr "CALCULATION OF VOLUME WEIGHT ON AIR FREIGHT"
+
+#: .\template\pages\conversion.html:200
+msgid "- Exemple :"
+msgstr "Example:"
+
+#: .\template\pages\conversion.html:202
+#, fuzzy
+#| msgid ""
+#| "40 x 48 x 60 cm, poids brut = 5 kilogrammes Le poids volume est : 40 x 48 "
+#| "x 60 = 115.200 volumes (cm³) Le volume kilogramme est de 115.200 / 6.000 "
+#| "= 19.2 Votre poids de volume est plus élevé que le poids réel (19.2 "
+#| "kilogrammes contre 5 kilogrammes), donc, votre poids imputable sera de "
+#| "19.5 kilogrammes. Le poids de chargement de la compagnie aérienne est "
+#| "calculé en fonction des deux poids réel et volume, c"
+msgid ""
+"40 x 48 x 60 cm, poids brut = 5 kilogrammes Le poids volume est : 40 x 48 x "
+"60 = 115.200 volumes (cm³) Le volume kilogramme est de 115.200 / 6.000 = "
+"19.2 Votre poids de volume est plus élevé que le poids réel (19.2 "
+"kilogrammes contre 5 kilogrammes), donc, votre poids imputable sera de 19.5 "
+"kilogrammes. Le poids de chargement de la compagnie aérienne est calculé en "
+"fonction des deux poids réel et volume, c&apos;est-à-dire  : 6m³ = 1000 kg "
+"(poids de volume)."
+msgstr ""
+"40x48x60 cms, gross weight = 5 kgs <br/>  volume weight is: <br/> 40x48x60 = "
+"115,200 Volume (cm3) <br/>115,200 / 6,000 = 19.2 volume kgs<br/><br/> Your "
+"volume weight is higher than the actual weight (19.2 kgs vs 5 kgs), "
+"therefore, your chargeable weight will be 19.2 kgs. The airlines charge "
+"based on both the actual weight and dimensional weight, where 6 cubic meters "
+"= 1000 dimensional kgs"
+
+#: .\template\pages\conversion.html:215 .\template\pages\faq.html:137
+#: .\template\pages\page-promos.html:156
+msgid "Notre experience de 20 ans a votre disposition pour votre envoi."
+msgstr ""
+"We are ready to assist your transportation with our 20 years of experiences."
+
+#: .\template\pages\devis.html:75
+msgid "Veuillez utiliser ce formulaire pour votre demande d'envoi."
+msgstr ""
+"Please use this form to get the quotation for your shipment. Please contact "
+"us if you have more question or any help."
+
+#: .\template\pages\devis.html:80
+msgid "Départ"
+msgstr "Departure"
+
+#: .\template\pages\devis.html:86 .\template\pages\devis.html:143
+msgid "Pays"
+msgstr "Country"
+
+#: .\template\pages\devis.html:87 .\template\pages\devis.html:144
+msgid "Sélectionner votre pays"
+msgstr "Please select you country"
+
+#: .\template\pages\devis.html:89
+msgid "Lieu d&apos;enlèvement"
+msgstr "City / Zip Code"
+
+#: .\template\pages\devis.html:95
+msgid "Information"
+msgstr "Shipment Information"
+
+#: .\template\pages\devis.html:97
+msgid "Marchandise"
+msgstr "Commodity"
+
+#: .\template\pages\devis.html:102
+msgid "Poids"
+msgstr "Weight (Approximately)"
+
+#: .\template\pages\devis.html:107 .\template\pages\devis.html:117
+msgid "Unité"
+msgstr "unit"
+
+#: .\template\pages\devis.html:112
+#, fuzzy
+#| msgid "Volume (cm3)"
+msgid "Volume"
+msgstr "Volume"
+
+#: .\template\pages\devis.html:124
+msgid "Type de l&apos;emballage"
+msgstr "Packing"
+
+#: .\template\pages\devis.html:125
+msgid "Sélectionner votre type d&apos;emballage"
+msgstr "Unpacked"
+
+#: .\template\pages\devis.html:130
+msgid "Dimension"
+msgstr "Packing"
+
+#: .\template\pages\devis.html:132
+msgid "Veuillez nous informer les dimensions (si possible)"
+msgstr "Please provide th dimension (if possible)"
+
+#: .\template\pages\devis.html:137
+msgid "Arrivée"
+msgstr "Destination"
+
+#: .\template\pages\devis.html:146
+msgid "Lieu de livraison"
+msgstr "City / Zip Code"
+
+#: .\template\pages\devis.html:152
+msgid "Modes de transport"
+msgstr "Mode of transportation"
+
+#: .\template\pages\devis.html:158
+msgid "Date d&apos;expédition prévue"
+msgstr "Expected date of shipment"
+
+#: .\template\pages\devis.html:163
+msgid "Sélectionner"
+msgstr "Select"
+
+#: .\template\pages\devis.html:169
+msgid "Information supplémentaire / conditions spéciales (facultatif)"
+msgstr "Additional Information / Requirement (Option) "
+
+#: .\template\pages\devis.html:171
+msgid ""
+"Merci de nous communiquer un maximum d'informations pour etablir votre devis."
+msgstr ""
+"Please provide us the most information you have to get the fastest quotation "
+"from our sales team."
+
+#: .\template\pages\devis.html:185
+#, fuzzy
+#| msgid "Téléphone"
+msgid "Téléphone (facultatif)"
+msgstr "Phone (Optional)"
+
+#: .\template\pages\devis.html:209
+msgid "via air"
+msgstr "By Air"
+
+#: .\template\pages\devis.html:209
+#, fuzzy
+#| msgid "Fret Maritime"
+msgid "via maritime"
+msgstr "Sea Shipment"
+
+#: .\template\pages\devis.html:209
+msgid "via ferroviaire"
+msgstr "By Road"
+
+#: .\template\pages\devis.html:209
+msgid "Veillez me conseiller la meuilleur solution"
+msgstr " Please advise the best."
+
+#: .\template\pages\faq.html:5
+msgid "FAQ – Foire aux questions"
+msgstr "Shipping Frequently Asked Questions"
+
+#: .\template\pages\faq.html:125
+#, fuzzy
+#| msgid "Plus d&apos;informations"
+msgid "Plus d'information"
+msgstr "More information"
+
+#: .\template\pages\faq.html:164
+msgid "Que contient notre offre Porte à Porte ?"
+msgstr ""
+"Does my shipment require special packaging for the transportation of goods?"
+
+#: .\template\pages\faq.html:168
+msgid "Quelle solution est la plus économique pour mon envoi ?"
+msgstr "Which solution is the most economical for my shipment?"
+
+#: .\template\pages\faq.html:172
+msgid "Quelles sont les dimensions et volumes des conteneurs ?"
+msgstr "What are the dimensions and volumes of the containers?"
+
+#: .\template\pages\faq.html:176
+msgid "Comment calculez le volume de mon envoi ?"
+msgstr "How to calculate the volume of my shipment?"
+
+#: .\template\pages\faq.html:180
+msgid ""
+"Par aérien, quelle est la différence entre poids réel et poids taxable ?"
+msgstr "What is the difference between a real weight and a taxable weight?"
+
+#: .\template\pages\faq.html:184
+msgid "Qu&apos;est ce qu&apos;un transitaire ?"
+msgstr "What is a freight forwarder?"
+
+#: .\template\pages\faq.html:188
+msgid ""
+"Mon envoi nécessite-t-il un emballage spécial pour le transport de "
+"marchandises?"
+msgstr ""
+"Does my shipment require special packaging for the transportation of goods?"
+
+#: .\template\pages\index.html:117
+msgid ""
+"Envoyez votre marchandise par Conteneur (Conteneur complet/groupage). "
+"Groupage vers toutes les destinations."
+msgstr ""
+"Send your goods by container (FCL/LCL) Consolidation to all destinations"
+
+#: .\template\pages\index.html:123
+msgid ""
+"Besoin d&apos;un service rapide, nous nous occupons de tout Aéroports "
+"commerciaux dans le monde pour un service rapide."
+msgstr ""
+"Needing a fast service, we link to all commercial airports in the world for "
+"a fast services."
+
+#: .\template\pages\index.html:129
+msgid ""
+"3-5 jours de transport, service porte à porte par service courrier vers "
+"toutes destinations."
+msgstr ""
+"Shipment is handle from the pickup location all the way to the recipient's "
+"location."
+
+#: .\template\pages\index.html:135
+msgid ""
+"Nous pouvons vous aider dans toutes vos démarches de l&apos;emballage à "
+"l&apos;envoi, documents jusqu&apos;à votre nouvelle destination."
+msgstr ""
+"We can assist you in all steps of your shipment from packing, documentation "
+"to your new location."
+
+#: .\template\pages\index.html:143
+msgid ""
+"Nous vous conseillons sur les formalités douanières, et le processus d&apos;"
+"import/export."
+msgstr ""
+"We can assist you in all steps of your shipment from packing, documentation "
+"to your new location."
+
+#: .\template\pages\index.html:149
+msgid ""
+"Grâce à notre réseau, nous organisons des transports frontaliers avec la "
+"Birmanie, Laos, Vietnam, Cambodge."
+msgstr ""
+"With our network we manage cross border shipments with Myanmar, Laos, "
+"Vietnam, Cambodia"
+
+#: .\template\pages\index.html:156
+msgid ""
+"Equipe francophone, un service d&apos;expéditon plus simple et efficace."
+msgstr ""
+"French speaking management, your shipping process will be easier and "
+"efficient."
+
+#: .\template\pages\index.html:163 .\template\pages\index.html:192
+msgid ""
+"Nouvelle Calédonie (Nouméa), La Réunion, Martinique, Guadeloupe, nous "
+"déservons toutes ces destinations."
+msgstr ""
+"New Caledonia, Noumea, La Reunion, Martinique, Guadeloupe, we serve these "
+"destinations with Thailand"
+
+#: .\template\pages\index.html:170
+msgid ""
+"Un envoi de Chine, nous organisons chacun des aspects du transport à des "
+"prix compétitifs."
+msgstr ""
+"An order from China, we manage your shipment from both sides with "
+"competitive prices."
+
+#: .\template\pages\index.html:185
+msgid ""
+"Découvrez les promotions actuelles pour les expéditions ou services pour "
+"profiter des meilleures offres."
+msgstr ""
+"Discover here current promotion for shipment or services to enjoy the best "
+"rates."
+
+#: .\template\pages\index.html:188
+msgid "Tout afficher"
+msgstr "View all"
+
+#: .\template\pages\index.html:191
+#, fuzzy
+#| msgid "Expédition à l"
+msgid "Expédition Dom Tom"
+msgstr "International"
+
+#: .\template\pages\index.html:195
+msgid "Plus d&apos;informations"
+msgstr "More information"
+
+#: .\template\pages\index.html:198
+msgid "Obtenez votre cotation"
+msgstr "Get Your Quote"
+
+#: .\template\pages\index.html:199
+msgid ""
+"Utilisez notre formulaire pour nous fournir les détails de votre demande "
+"nous reviendrons vers vous le plus tôt possible pour vous accompagner."
+msgstr ""
+"Utilisez notre formulaire pour nous fournir les détails de votre demande "
+"nous reviendrons vers vous le plus tôt possible pour vous accompagner."
+
+#: .\template\pages\promos.html:74
+#, fuzzy
+#| msgid "Promotions"
+msgid "Promotions actuelles"
+msgstr "Promotion"
+
+#: .\template\pages\promos.html:81
+#, fuzzy
+#| msgid "Plus d&apos;informations"
+msgid "Plus d'informations"
+msgstr "More information"
+
+#: .\template\pages\promos.html:103
+msgid "Groupage Maritime Bangkok - Pointe des Galets"
+msgstr "Groupage Maritime Bangkok - Pointe des Galets"
+
+#: .\template\pages\promos.html:112
+#, fuzzy
+#| msgid "Service lettre, petit colis express"
+msgid "Service courrier, petit colis en express (Bangkok vers France)"
+msgstr "Express Courier"
+
+#: .\template\pages\promos.html:121
+msgid "Conteneur 20’, Fret Bangkok vers Anvers"
+msgstr "20 'container, Freight Bangkok to Antwerp"
+
+#: .\template\pages\promos.html:130
+msgid "Groupage depuis Bangkok Port vers Port Marseille ou Port Le Havre"
+msgstr "Groupage from Bangkok Port to Port Marseille or Port Le Havre"
+
+#: .\template\pages\promos.html:139
+msgid "Transport routier depuis Bangkok vers Phnom Penh"
+msgstr "Road transport from Bangkok to Phnom Penh"
+
+#~ msgid "bonjour"
+#~ msgstr "Good morning"

@@ -1,5 +1,6 @@
 {% extends 'pages/base.html' %}
 {% load static%}
+{% load i18n %}
 
 
 {% block title %} {{ page.title }} {% endblock %}
@@ -152,7 +153,7 @@
                 </div>
             </div>
             <div class="desc">
-                <p>Notre experience de 20 ans a votre disposition pour votre envoi.</p>
+                <p>{% trans "Notre experience de 20 ans a votre disposition pour votre envoi." %}</p>
             </div>
             <div class="buttons">
                 <button-red-green/>

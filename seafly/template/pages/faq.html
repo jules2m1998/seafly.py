@@ -1,7 +1,9 @@
 {% extends 'pages/base.html' %}
 {% load static%}
+{% load i18n %}
 
-{% block title %} FAQ – Foire aux questions {% endblock %}
+{% trans 'FAQ – Foire aux questions' as foire %}
+{% block title %} {{ foire }} {% endblock %}
 {% block css %}
 <style>
     :root{
@@ -114,13 +116,13 @@
     <div id="faq" class="content">
         <div class="left">
             <div class="title">
-                FAQ – Foire aux questions
+                {{ foire }}
             </div>
             <v-app>
                 <div class="description">
                     <div class="faq--question-item mb-7" v-for="(question, key) in links" :key="key">
                         <h3 style="font-weight: normal" class="mb-1"><a href="#" class="faq--question">[[question.name]]</a></h3>
-                        <a href="#" class="faq--question-more">Plus d'information ></a>
+                        <a href="#" class="faq--question-more">{% trans "Plus d'information" %} ></a>
                     </div>
                 </div>
             </v-app>
@@ -132,7 +134,7 @@
                     </div>
                 </div>
                 <div class="desc">
-                    <p>Notre experience de 20 ans a votre disposition pour votre envoi.</p>
+                    <p>{% trans "Notre experience de 20 ans a votre disposition pour votre envoi." %}</p>
                 </div>
                 <div class="buttons">
                     <button-red-green/>
@@ -159,31 +161,31 @@
         data:() => ({
             links: [
                 {
-                    name: 'Que contient notre offre Porte à Porte ?',
+                    name: "{% trans 'Que contient notre offre Porte à Porte ?' %}",
                     link: 'home'
                 },
                 {
-                    name: 'Quelle solution est la plus économique pour mon envoi ?',
+                    name: "{% trans 'Quelle solution est la plus économique pour mon envoi ?' %}",
                     link: 'home'
                 },
                 {
-                    name: 'Quelles sont les dimensions et volumes des conteneurs ?',
+                    name: "{% trans 'Quelles sont les dimensions et volumes des conteneurs ?' %}",
                     link: 'home'
                 },
                 {
-                    name: 'Comment calculez le volume de mon envoi ?',
+                    name: "{% trans 'Comment calculez le volume de mon envoi ?' %}",
                     link: 'home'
                 },
                 {
-                    name: 'Par aérien, quelle est la différence entre poids réel et poids taxable ?',
+                    name: "{% trans 'Par aérien, quelle est la différence entre poids réel et poids taxable ?' %}",
                     link: 'home'
                 },
                 {
-                    name: 'Qu\'est ce qu\'un transitaire ?',
+                    name: "{% trans 'Qu&apos;est ce qu&apos;un transitaire ?' %}",
                     link: 'home'
                 },
                 {
-                    name: 'Mon envoi nécessite-t-il un emballage spécial pour le transport de marchandises?',
+                    name: "{% trans 'Mon envoi nécessite-t-il un emballage spécial pour le transport de marchandises?' %}",
                     link: 'home'
                 },
             ]

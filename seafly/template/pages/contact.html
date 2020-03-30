@@ -1,5 +1,6 @@
 {% extends 'pages/base.html' %}
 {% load static%}
+{% load i18n %}
 {% block title %} Contactez Nous {% endblock %}
 {% block css %}
 <style>
@@ -79,14 +80,14 @@
         <div class="contact">
             <div class="left">
                 <div class="contact--title">
-                    <h3>Contactez Nous</h3>
+                    <h3>{{ contactUs}}</h3>
                 </div>
                 <div class="contact--content" v-for="(item, key) in contacts" :key="key">
                     <div class="contact--sub--title">[[ item.title ]]</div>
                     <div class="contact--para" v-for="(subitem, subkey) in item.content" :key="subkey">
                         [[ subitem ]]
                     </div>
-                    <div class="link" v-if="key === 0"> Lien Google Maps : <a href="/">Sea Fly Services Co., Ltd.</a> </div>
+                    <div class="link" v-if="key === 0"> {% trans 'Lien Google Maps :' %} <a href="/">Sea Fly Services Co., Ltd.</a> </div>
                 </div>
                 <green-button-code></green-button-code>
                 <div class="my-map mt-3" id="map">
@@ -99,30 +100,30 @@
                             box-shadow: 0px 3px 10px -2px rgba(64, 61, 61, 0.6);
                             padding: 10px;">
                     <form action="">
-                        <h2 class="form--contact--title" style="margin-top: 10px; margin-bottom: 15px;">Nous contacter</h2>
+                        <h2 class="form--contact--title" style="margin-top: 10px; margin-bottom: 15px;">{{ contactUs }}</h2>
                         <v-text-field
                                 solo
-                                label="Nom"
+                                label="{% trans 'Nom' %}"
                                 prepend-inner-icon="person"
                         ></v-text-field>
                         <v-text-field
                                 solo
-                                label="Email"
+                                label="{% trans 'Email' %}"
                                 prepend-inner-icon="email"></v-text-field>
                         <v-text-field
                                 solo
-                                label="Téléphone"
+                                label="{% trans 'Téléphone' %}"
                                 prepend-inner-icon="phone"></v-text-field>
                         <v-text-field
                                 solo
-                                label="Société"
+                                label="{% trans 'Société' %}"
                                 prepend-inner-icon="folder"></v-text-field>
                         <v-textarea
                                 outlined
                                 name="input-7-4"
-                                label="Votre message"
+                                label="{% trans 'Votre message' %}"
                                 value=""></v-textarea>
-                        <v-btn class="mb-5" color="blue" dark large>Envoyer</v-btn>
+                        <v-btn class="mb-5" color="blue" dark large>{% trans 'Envoyer' %}</v-btn>
                 </form>
                 </div>
             </div>
@@ -150,21 +151,21 @@
         data: () => ({
             contacts: [
                 {
-                    title: 'Sea Fly Services Co., Ltd.',
-                    content: '93/1 Soi Pracharat Bamphen 6 (Soi Suntornsiri)\n' +
-                        'Huaikwang, Bangkok\n' +
-                        'Thailand 10310\n' +
+                    title: '{% trans "Sea Fly Services Co., Ltd." %}',
+                    content: '{% trans "93/1 Soi Pracharat Bamphen 6 (Soi Suntornsiri)" %}\n' +
+                        '{% trans "Huaikwang, Bangkok" %}\n' +
+                        '{% trans "Thailand 10310" %}\n' +
                         'Tel: +66(0) 26903523 - 7'
                 },
                 {
-                    title: 'Département commercial\n',
-                    content: 'Tel: 66(0) 26903523 - 7\n' +
+                    title: '{% trans "Département commercial" %}\n',
+                    content: '{% trans "Tel: 66(0) 26903523 - 7" %}\n' +
                         'Email: sales@seafly-services.com\n'
                 },
                 {
-                    title: 'Heures d\'ouvertures',
-                    content: 'Du Lundi au Vendredi\n' +
-                        '09:00 - 17:30'
+                    title: '{% trans "Heures d&apos;ouvertures" %}',
+                    content: '{% trans "Du Lundi au Vendredi" %}\n' +
+                        '{% trans "09:00 - 17:30" %}'
                 },
             ]
         }),

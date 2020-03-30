@@ -1,5 +1,6 @@
 {% extends 'pages/base.html' %}
 {% load static%}
+{% load i18n %}
 
 {% block title %} Spécifications sur les Conteneurs {% endblock %}
 {% block css %}
@@ -95,21 +96,19 @@
             <div class="content">
                 <div class="left">
                     <div class="title">
-                        Spécifications sur les Conteneurs
+                        [[ title ]]
                     </div>
                     <v-app>
                         <div class="convertion">
-                            <p>Le terme "poids volumétrique", parfois appelé "dim" ou encore poids dimensionnel, est employé par rapport à l'espace que prend un colis dans l’avion. Il peut coûter plus cher que le poids réel ( ou brut ) du paquet.
-                                Vous devrez calculer le poids dimensionnel sur chaque expédition, et comparer cela à son poids brut.
-                                Enfin le poids le plus conséquent des deux déterminera le poids taxable ou chargeable, donc votre coût d'expédition
+                            <p>{% trans 'Le terme "poids volumétrique", parfois appelé "dim" ou encore poids dimensionnel, est employé par rapport à l&apos;espace que prend un colis dans l&apos;avion. Il peut coûter plus cher que le poids réel ( ou brut ) du paquet. Vous devrez calculer le poids dimensionnel sur chaque expédition, et comparer cela à son poids brut. Enfin le poids le plus conséquent des deux déterminera le poids taxable ou chargeable, donc votre coût d&apos;expédition' %}
                             </p>
                             <p class="mt-12">
-                                Utilisez ces tableaux si vous devez convertir des livres en kilogramme ou encore pieds et pouces en cm.
+                                {% trans 'Utilisez ces tableaux si vous devez convertir des livres en kilogramme ou encore pieds et pouces en cm.' %}
                             </p>
                             <div class="conversion--kg-cm">
                                 <div class="conversion--header grey lighten-3">
-                                    <h2 class="ma-2">Conversion en kilogramme</h2>
-                                    <h2 class="ma-2">Conversion en cm</h2>
+                                    <h2 class="ma-2">{% trans 'Conversion en kilogramme' %}</h2>
+                                    <h2 class="ma-2">{% trans 'Conversion en cm' %}</h2>
                                 </div>
                                 <div class="conversion--content mt-4">
                                     <div class="item">
@@ -143,7 +142,7 @@
                                         ></v-text-field>
                                         <div class="egal" style="font-size: 2rem">=</div>
                                         <v-text-field
-                                                label="Centimètre"
+                                                label="{% trans 'Centimètre' %}"
                                                 outlined
                                                 class="ml-2"
                                                 v-model="cm"
@@ -151,36 +150,35 @@
                                         ></v-text-field>
                                     </div>
                                 </div>
-                                <p>Pour les expéditions légères le poids volumétrique sera utilisé si celui-ci excède le poids réel (en kilogrammes).
-                                    Pour calculer le poids volumétrique, il faut entrer la largeur, la longueur et la hauteur de votre colis (en centimètres) dans les champs ci-dessous et appuyer sur le bouton calcul.</p>
+                                <p>{% trans "Pour les expéditions légères le poids volumétrique sera utilisé si celui-ci excède le poids réel (en kilogrammes). Pour calculer le poids volumétrique, il faut entrer la largeur, la longueur et la hauteur de votre colis (en centimètres) dans les champs ci-dessous et appuyer sur le bouton calcul." %} </p>
                             </div>
                             <div class="conversion--kg-cm">
                                 <div class="conversion--header grey lighten-3">
-                                    <h2 class="ma-2">Conversion du Poids volumétrique</h2>
+                                    <h2 class="ma-2">{% trans 'Conversion du Poids volumétrique' %}</h2>
                                 </div>
                                 <div class="conversion--content mt-4">
                                     <div class="item">
                                         <v-text-field
-                                                label="Longueur (cm)"
+                                                label="{% trans 'Longueur (cm)' %}"
                                                 outlined
                                                 class="mr-2"
                                                 v-model="long"
                                         ></v-text-field>
                                         <v-text-field
-                                                label="Largeur (cm)"
+                                                label="{% trans 'Largeur (cm)' %}"
                                                 outlined
                                                 class="mr-2"
                                                 v-model="lar"
                                         ></v-text-field>
                                         <v-text-field
-                                                label="Hauteur (cm)"
+                                                label="{% trans 'Hauteur (cm)' %}"
                                                 outlined
                                                 class="mr-2"
                                                 v-model="haut"
                                         ></v-text-field>
                                         <div class="egal" style="font-size: 2rem">=</div>
                                         <v-text-field
-                                                label="Volume (cm3)"
+                                                label="{% trans 'Volume (cm3)' %}"
                                                 outlined
                                                 class="ml-2"
                                                 v-model="vol"
@@ -189,7 +187,7 @@
                                     </div>
                                     <div class="item">
                                         <v-text-field
-                                                label="Poids volumetrique (Kg)"
+                                                label="{% trans 'Poids volumetrique (Kg)' %}"
                                                 outlined
                                                 class="mr-2"
                                                 v-model="pds"
@@ -197,15 +195,11 @@
                                         ></v-text-field>
                                     </div>
                                 </div>
-                                <h2 class="mt-4">CALCUL DU POIDS DE VOLUME SUR LE FRET AÉRIEN :</h2>
+                                <h2 class="mt-4">{% trans 'CALCUL DU POIDS DE VOLUME SUR LE FRET AÉRIEN :' %}</h2>
 
-                                <h3 class="mt-4 mb-3">- Exemple :</h3>
+                                <h3 class="mt-4 mb-3">{% trans '- Exemple :' %}</h3>
                                 <p>
-                                    40 x 48 x 60 cm, poids brut = 5 kilogrammes
-                                    Le poids volume est : 40 x 48 x 60 = 115.200 volumes (cm³)
-                                    Le volume kilogramme est de 115.200 / 6.000 = 19.2
-                                    Votre poids de volume est plus élevé que le poids réel (19.2 kilogrammes contre 5 kilogrammes), donc, votre poids imputable sera de 19.5 kilogrammes.
-                                    Le poids de chargement de la compagnie aérienne est calculé en fonction des deux poids réel et volume, c'est-à-dire  : 6m³ = 1000 kg (poids de volume).
+                                    {% trans '40 x 48 x 60 cm, poids brut = 5 kilogrammes Le poids volume est : 40 x 48 x 60 = 115.200 volumes (cm³) Le volume kilogramme est de 115.200 / 6.000 = 19.2 Votre poids de volume est plus élevé que le poids réel (19.2 kilogrammes contre 5 kilogrammes), donc, votre poids imputable sera de 19.5 kilogrammes. Le poids de chargement de la compagnie aérienne est calculé en fonction des deux poids réel et volume, c&apos;est-à-dire  : 6m³ = 1000 kg (poids de volume).' %}
                                 </p>
                             </div>
                         </div>
@@ -218,7 +212,7 @@
                         </div>
                     </div>
                     <div class="desc">
-                        <p>Notre experience de 20 ans a votre disposition pour votre envoi.</p>
+                        <p>{% trans 'Notre experience de 20 ans a votre disposition pour votre envoi.' %}</p>
                     </div>
                     <div class="buttons">
                         <button-red-green></button-red-green>
@@ -245,6 +239,7 @@
             document.getElementsByClassName("topImg")[0].style.visibility = 'visible';
         },
         data: () => ({
+            title: footer[2].name,
             ibs : 0,
 
             ft:0,

@@ -1,5 +1,6 @@
 {% extends 'pages/base.html' %}
 {% load static%}
+{% load i18n %}
 
 {% block title %} Devis d’envoi {% endblock %}
 {% block css %}
@@ -69,124 +70,124 @@
         <v-app>
             <div class="devis">
                 <div class="devis--title">
-                    Devis d’envoi
+                    {{ devis }}
                 </div>
-                <p>Veuillez utiliser ce formulaire pour votre demande d'envoi.</p>
+                <p>{% trans "Veuillez utiliser ce formulaire pour votre demande d'envoi." %}</p>
                 <div class="form">
                     <div class="top--form">
                         <div class="left">
                             <div class="item">
-                                <div class="form--subtitle">Départ</div>
+                                <div class="form--subtitle">{% trans "Départ" %}</div>
                                 <div class="depart--form">
                                     <v-select
                                             ref="country"
                                             v-model="country"
                                             :items="countries"
-                                            label="Pays"
-                                            placeholder="--- Sélectionner votre pays ---"></v-select>
+                                            label="{% trans 'Pays' %}"
+                                            placeholder="--- {% trans 'Sélectionner votre pays' %} ---"></v-select>
                                     <v-text-field
-                                            label="Lieu d'enlèvement"
+                                            label="{% trans 'Lieu d&apos;enlèvement' %}"
                                             prepend-inner-icon="place"
                                             outlined></v-text-field>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="form--subtitle">Information</div>
+                                <div class="form--subtitle">{% trans "Information" %}</div>
                                 <v-text-field
-                                        label="Marchandise"
+                                        label="{% trans 'Marchandise' %}"
                                         prepend-inner-icon="info"
                                         outlined></v-text-field>
                                 <div class="grid-51">
                                     <v-text-field
-                                            label="Poids"
+                                            label="{% trans 'Poids' %}"
                                             prepend-inner-icon="info"
                                             outlined></v-text-field>
                                     <v-select
                                             :items="poids"
-                                            label="Unité"
+                                            label="{% trans 'Unité' %}"
                                             outlined></v-select>
                                 </div>
                                 <div class="grid-51">
                                     <v-text-field
-                                            label="Volume"
+                                            label="{% trans 'Volume' %}"
                                             prepend-inner-icon="info"
                                             outlined></v-text-field>
                                     <v-select
                                             :items="volumes"
-                                            label="Unité"
+                                            label="{% trans 'Unité' %}"
                                             outlined></v-select>
                                 </div>
                                 <v-select
                                         ref="country"
                                         v-model="country"
                                         :items="countries"
-                                        label="Type de l'emballage"
-                                        placeholder="--- Sélectionner votre type d'emballage ---"
+                                        label="{% trans 'Type de l&apos;emballage' %}"
+                                        placeholder="--- {% trans 'Sélectionner votre type d&apos;emballage' %} ---"
                                         style="position: relative; top: -7px"></v-select>
                                 <v-textarea
                                         outlined
                                         name="input-7-4"
-                                        label="Dimension"
+                                        label="{% trans 'Dimension' %}"
                                         value=""
-                                        placeholder="Veuillez nous informer les dimensions (si possible)"></v-textarea>
+                                        placeholder="{% trans 'Veuillez nous informer les dimensions (si possible)' %}"></v-textarea>
                             </div>
                         </div>
                         <div class="right">
                             <div class="item">
-                                <div class="form--subtitle">Arrivée</div>
+                                <div class="form--subtitle">{% trans 'Arrivée' %}</div>
                                 <div class="item">
                                     <v-select
                                             ref="country"
                                             v-model="country"
                                             :items="countries"
-                                            label="Pays"
-                                            placeholder="--- Sélectionner votre pays ---"></v-select>
+                                            label="{% trans 'Pays' %}"
+                                            placeholder="--- {% trans 'Sélectionner votre pays' %} ---"></v-select>
                                     <v-text-field
-                                            label="Lieu de livraison"
+                                            label="{% trans 'Lieu de livraison' %}"
                                             prepend-inner-icon="place"
                                             outlined></v-text-field>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="form--subtitle">Modes de transport</div>
+                                <div class="form--subtitle">{% trans 'Modes de transport' %}</div>
                                 <div>
                                     <v-checkbox v-for="(check, key) in checks" :key="key" :label="check"></v-checkbox>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="form--subtitle">Date d'expédition prévue</div>
+                                <div class="form--subtitle">{% trans 'Date d&apos;expédition prévue' %}</div>
                                 <v-select
                                         ref="country"
                                         v-model="country"
                                         :items="countries"
-                                        placeholder="--- Sélectionner ---"></v-select>
+                                        placeholder="--- {% trans 'Sélectionner' %} ---"></v-select>
 
                                 <v-textarea
                                         outlined
                                         name="input-7-4"
                                         value=""
-                                        placeholder="Information supplémentaire / conditions spéciales (facultatif)"></v-textarea>
+                                        placeholder="{% trans 'Information supplémentaire / conditions spéciales (facultatif)' %}"></v-textarea>
                             </div>
-                            <p>Merci de nous communiquer un maximum d'informations pour etablir votre devis.</p>
+                            <p>{% trans "Merci de nous communiquer un maximum d'informations pour etablir votre devis." %}</p>
                         </div>
                     </div>
                     <div class="bottom--form">
                         <div class="form--subtitle">Contact</div>
                         <v-text-field
-                                label="Nom"
+                                label="{% trans 'Nom' %}"
                                 prepend-inner-icon="person"
                                 outlined></v-text-field>
                         <v-text-field
-                                label="Email"
+                                label="{% trans 'Email' %}"
                                 prepend-inner-icon="mail"
                                 outlined></v-text-field>
                         <v-text-field
-                                label="Téléphone (facultatif)"
+                                label="{% trans 'Téléphone (facultatif)' %}"
                                 prepend-inner-icon="phone"
                                 name="tel"
                                 outlined></v-text-field>
                     </div>
-                    <v-btn color="blue" class="mb-5" dark large>Envoyer</v-btn>
+                    <v-btn color="blue" class="mb-5" dark large>{% trans 'Envoyer' %}</v-btn>
                 </div>
             </div>
         </v-app>
@@ -205,7 +206,7 @@
         },
         data: () => ({
             countries: ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua &amp; Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia &amp; Herzegovina', 'Botswana', 'Brazil', 'British Virgin Islands', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Cape Verde', 'Cayman Islands', 'Chad', 'Chile', 'China', 'Colombia', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote D Ivoire', 'Croatia', 'Cruise Ship', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Estonia', 'Ethiopia', 'Falkland Islands', 'Faroe Islands', 'Fiji', 'Finland', 'France', 'French Polynesia', 'French West Indies', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kuwait', 'Kyrgyz Republic', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Mauritania', 'Mauritius', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Namibia', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palestine', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Reunion', 'Romania', 'Russia', 'Rwanda', 'Saint Pierre &amp; Miquelon', 'Samoa', 'San Marino', 'Satellite', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'South Africa', 'South Korea', 'Spain', 'Sri Lanka', 'St Kitts &amp; Nevis', 'St Lucia', 'St Vincent', 'St. Lucia', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', "Timor L'Este", 'Togo', 'Tonga', 'Trinidad &amp; Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks &amp; Caicos', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Venezuela', 'Vietnam', 'Virgin Islands (US)', 'Yemen', 'Zambia', 'Zimbabwe'],
-            checks: ['via air', 'via maritime', 'via ferroviaire', 'Veillez me conseiller la meuilleur solution'],
+            checks: ['{% trans "via air" %}', '{% trans "via maritime" %}', '{% trans "via ferroviaire" %}', '{% trans "Veillez me conseiller la meuilleur solution" %}'],
             poids: ['KG', 'LB'],
             volumes: ['M3', '20\'F', '40\'F'],
         })

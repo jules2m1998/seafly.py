@@ -1,8 +1,8 @@
 {% extends 'pages/base.html' %}
 {% load static%}
+{% load i18n %}
 
-
-{% block title %} Promotions actuelles {% endblock %}
+{% block title %} {% trans 'Promotions actuelles' %} {% endblock %}
 {% block css %}
 
 <style>
@@ -72,12 +72,12 @@
         </div>
         <v-app>
             <div class="mb-4">
-                <div class="promos--title">Promotions actuelles</div>
+                <div class="promos--title">{% trans 'Promotions actuelles' %}</div>
                 <div class="promos--content">
                     <div class="promo-item" v-for="(item,key) in promos" :key="key">
                         <a :href="item.img.to" class="promo--img--link" :style="{'background-image' : 'url( {% static 'pages/img/promos/' %}' + item.img.directory + ')'}"></a>
                         <a :href="item.img.to" class="promo--title">[[ item.title.text ]]</a>
-                        <a :href="item.img.to" class="promo--more" style="color: var(--primary)"><v-icon color="primary">arrow_right</v-icon> Plus d'informations</a>
+                        <a :href="item.img.to" class="promo--more" style="color: var(--primary)"><v-icon color="primary">arrow_right</v-icon> {% trans 'Plus d&apos;informations' %}</a>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
             promos: [
                 {
                     title: {
-                        text: 'Groupage Maritime Bangkok - Pointe des Galets'
+                        text: "{% trans 'Groupage Maritime Bangkok - Pointe des Galets' %}"
                     },
                     img: {
                         to: 'promos/groupage-maritime-bangkok-pointe-des-galets',
@@ -108,7 +108,7 @@
                 },
                 {
                     title: {
-                        text: 'Service courrier, petit colis en express (Bangkok vers France)'
+                        text: "{% trans 'Service courrier, petit colis en express (Bangkok vers France)' %}"
                     },
                     img: {
                         to: 'promos/service-courrier-petit-colis-en-express-bangkok-vers-france',
@@ -117,7 +117,7 @@
                 },
                 {
                     title: {
-                        text: 'Conteneur 20’, Fret Bangkok vers Anvers'
+                        text: "{% trans 'Conteneur 20’, Fret Bangkok vers Anvers' %}"
                     },
                     img: {
                         to: 'promos/conteneur-20-fret-bangkok-vers-anvers',
@@ -126,7 +126,7 @@
                 },
                 {
                     title: {
-                        text: 'Groupage depuis Bangkok Port vers Port Marseille ou Port Le Havre'
+                        text: "{% trans 'Groupage depuis Bangkok Port vers Port Marseille ou Port Le Havre' %}"
                     },
                     img: {
                         to: 'promos/groupage-depuis-bangkok-port-vers-port-marseille-ou-port-le-havre',
@@ -135,7 +135,7 @@
                 },
                 {
                     title: {
-                        text: 'Transport routier depuis Bangkok vers Phnom Penh'
+                        text: "{% trans 'Transport routier depuis Bangkok vers Phnom Penh' %}"
                     },
                     img: {
                         to: 'promos/transport-routier-depuis-bangkok-vers-phnom',
