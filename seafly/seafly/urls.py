@@ -22,10 +22,10 @@ from pages import views
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
+    path('admin/', admin.site.urls),
 ]
 
 urlpatterns += i18n_patterns(
-    path('i18n/', include('django.conf.urls.i18n')),
     path('faq', views.getFaq),
     path('contact', views.getContact),
     path('promos', views.getPromos, name='about'),
@@ -35,7 +35,6 @@ urlpatterns += i18n_patterns(
     path('', views.index, name='index'),
     path('<str:pagename>', views.getPage),
     path('pages/', include('pages.urls')),
-    path('admin/', admin.site.urls),
 )
 
 if settings.DEBUG:

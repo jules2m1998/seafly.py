@@ -1,6 +1,5 @@
 from django.db import models
 from django import forms
-from django.utils.translation import ugettext_lazy as _
 
 
 # Create your models here.
@@ -8,9 +7,13 @@ from django.utils.translation import ugettext_lazy as _
 class Pages(models.Model):
     name = models.CharField(max_length=200, unique=True)
     title = models.CharField(max_length=200, unique=True)
+    title_en = models.CharField(max_length=200, default='')
+    title_th = models.CharField(max_length=200, default='')
     imgTop = models.CharField(max_length=200)
     imgRight = models.CharField(max_length=200)
-    content = models.CharField(max_length=3000, default=' ')
+    content = models.CharField(max_length=3000, default='')
+    content_en = models.CharField(max_length=3000, default='')
+    content_th = models.CharField(max_length=3000, default='')
     visibleImgRight = models.BooleanField(default=True)
 
     def __str__(self):
@@ -19,6 +22,8 @@ class Pages(models.Model):
 
 class Pages_Form(forms.ModelForm):
     content = forms.CharField(widget=forms.Textarea)
+    content_en = forms.CharField(widget=forms.Textarea)
+    content_th = forms.CharField(widget=forms.Textarea)
 
     class Meta:
         model = Pages

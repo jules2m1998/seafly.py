@@ -72,19 +72,19 @@
                         </span>
                         <span v-if="is_good_size" class="align--item disappear">
                             {% get_current_language as LANGUAGES_CODE %}
-                            <form action="{% url 'set_language' %}" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="next" value="{{ redirect_to }}">
-                                <select name="language" id="">
-                                    {% get_available_languages as LANGUAGES %}
-                                    {% get_language_info_list for LANGUAGES as languages %}
+                            <form action="{% url 'set_language' %}" method="post" id="form">
+                              {% csrf_token %}
+                              <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+                              <label>
+                                <select name="language" id="selectlang" onchange="changeLang()">
+                                  {% get_language_info_list for LANGUAGES as languages %}
                                     {% for language in languages %}
-                                        <option value="{{ language.code }}" {% if language.code == LANGUAGES_CODE %} selected {% endif %}>
-                                            {{ language.name_local }} ({{ language.code }})
-                                        </option>
+                                      <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                                        {{ language.name_local }} ({{ language.code }})
+                                      </option>
                                     {% endfor %}
                                 </select>
-                                <input type="submit" value="go">
+                            </label>
                             </form>
                         </span>
                         <span class="btn--item">
@@ -151,7 +151,14 @@
                         <v-layout row style="width: 100%" class="mt-10">
                             <v-btn color="primary" small class="mb-10" style="margin: auto" href="/devis">{{ devis }}</v-btn>
                             <div class="align--item drawer--lang">
-                                <v-btn outlined fab x-small color="white" v-for="(item, key) in btns" :key="key" class="ma-2 mt-3 mb-3">[[ item ]]</v-btn>
+                                <form action="{% url 'set_language' %}" method="post" id="form">
+                                  {% csrf_token %}
+                                  <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+                                      {% get_language_info_list for LANGUAGES as languages %}
+                                        {% for language in languages %}
+                                            <v-btn outlined fab x-small color="white" class="ma-2 mt-3 mb-3 {% if language.code == LANGUAGE_CODE %}btn-select{% endif %}" type="submit" value="{{ language.code }}" name="language">{{ language.code }}</v-btn>
+                                        {% endfor %}
+                                </form>
                             </div>
                         </v-layout>
                     </v-navigation-drawer>
@@ -232,6 +239,10 @@
 
 
     <script>
+        function changeLang () {
+            document.querySelector("#form").submit()
+        }
+
 
         Vue.component('RedButton', {
           data: function () {

@@ -14,6 +14,13 @@ def getPage(request, pagename):
     except:
         return redirect("/")
 
+    switcher = {
+        'fr': [page.title, page.content],
+        'en': [page.title_en, page.content_en],
+        'th': [page.title_th, page.content_th],
+    }
+    page.title = switcher.get(request.LANGUAGE_CODE, '')[0]
+    page.content = switcher.get(request.LANGUAGE_CODE, '')[1]
     page.content = markdown2.markdown(page.content)
     context = {
         'page': page
