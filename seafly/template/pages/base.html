@@ -71,11 +71,21 @@
                             <v-btn color="primary" small class="mr-1" href="/devis">{{ devis }}</v-btn>
                         </span>
                         <span v-if="is_good_size" class="align--item disappear">
-                            <v-select
-                                    :items="btns"
-                                    label="Langues"
-                                    style="position: relative; bottom: .3rem;margin: 0 .7rem 0 .7rem"
-                                    dense></v-select>
+                            {% get_current_language as LANGUAGES_CODE %}
+                            <form action="{% url 'set_language' %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ redirect_to }}">
+                                <select name="language" id="">
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% get_language_info_list for LANGUAGES as languages %}
+                                    {% for language in languages %}
+                                        <option value="{{ language.code }}" {% if language.code == LANGUAGES_CODE %} selected {% endif %}>
+                                            {{ language.name_local }} ({{ language.code }})
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                <input type="submit" value="go">
+                            </form>
                         </span>
                         <span class="btn--item">
                             <v-btn icon class="btn--item" @click.prevent="search">
@@ -220,8 +230,39 @@
         </class>
     </footer>
 
+
     <script>
 
+        Vue.component('RedButton', {
+          data: function () {
+            return {
+              count: 0
+            }
+          },
+          template: '<v-btn color="primary" class="mb-2" style="background: #ed120b; color: white"" large>{{devis}}</v-btn>'
+        });
+        Vue.component('GreenButton', {
+          data: function () {
+            return {
+              count: 0
+            }
+          },
+          template: `<v-btn style="background: #47d037" class="white--text" href="http://line.me/ti/p/~@seafly" large><img src="{% static 'pages/img/line-square.png' %}" width="109px" alt=""></v-btn>`
+        });
+
+        Vue.component('button-red-green', {
+              data: function () {
+                return {
+                  count: 0
+                }
+              },
+              template: `<div>
+                            <div class="button--contact mr-4 mt-4">
+                                <red-button class="mr-2"></red-button>
+                                <green-button/>
+                            </div>
+                        </div>`
+            });
     </script>
 
     <script>
