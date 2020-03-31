@@ -1,0 +1,523 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-31 01:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\template\pages\base.html:70
+msgid "DEVIS GRATUIT"
+msgstr "อัตราค่าบริการขนส่ง"
+
+#: .\template\pages\base.html:106
+msgid "Rechercher..."
+msgstr "ค้นหา..."
+
+#: .\template\pages\base.html:168
+msgid "Nous Contacter"
+msgstr "ติดต่อเรา"
+
+#: .\template\pages\base.html:220
+msgid "Nos réseaux"
+msgstr "เครือข่ายสมาชิก"
+
+#: .\template\pages\base.html:234
+msgid "Developpé par"
+msgstr "พัฒนาโดย"
+
+#: .\template\pages\base.html:282
+msgid "Notre société"
+msgstr "เกี่ยวกับบริษัท"
+
+#: .\template\pages\base.html:287
+msgid "Nos Services"
+msgstr "บริการของเรา"
+
+#: .\template\pages\base.html:290
+msgid "Fret Maritime"
+msgstr "บริการขนส่งทางเรือ"
+
+#: .\template\pages\base.html:294
+msgid "Fret Aérien"
+msgstr "บริการขนส่งทางเครื่องบิน"
+
+#: .\template\pages\base.html:298
+msgid "Service lettre, petit colis express"
+msgstr "บริการจัดส่งพัสดุ"
+
+#: .\template\pages\base.html:302
+msgid "Déménagements"
+msgstr "บริการย้ายบ้านและของใช้ส่วนตัว"
+
+#: .\template\pages\base.html:306
+msgid "Formalités Douanières"
+msgstr "บริการผ่านพิธีการศุลกากร"
+
+#: .\template\pages\base.html:310
+msgid "Transport Frontalier"
+msgstr "บริการขนส่งผ่านชายแดน"
+
+#: .\template\pages\base.html:320
+msgid "DOM TOM"
+msgstr "การขนส่งระหว่างดอมทอม"
+
+#: .\template\pages\base.html:324
+msgid "France"
+msgstr "การขนส่งระหว่างฝรั่งเศส"
+
+#: .\template\pages\base.html:328
+msgid "Chine"
+msgstr "การขนส่งระหว่างจีน"
+
+#: .\template\pages\base.html:332
+msgid "Expédition à l&apos;International"
+msgstr "การขนส่งทั่วโลก"
+
+#: .\template\pages\base.html:339
+msgid "Promotions"
+msgstr "โปรโมชั่น"
+
+#: .\template\pages\base.html:344
+msgid "F.A.Q"
+msgstr "คำถามการขนส่ง"
+
+#: .\template\pages\base.html:369
+msgid "Carrière"
+msgstr "ร่วมงานกับเรา"
+
+#: .\template\pages\base.html:386
+msgid "Outils & Ressources"
+msgstr "ข้อมูลและเครื่องมือ"
+
+#: .\template\pages\base.html:389
+msgid "Conversions Volumétriques"
+msgstr "เครื่องมือคำนวณ"
+
+#: .\template\pages\base.html:393
+msgid "Incoterms"
+msgstr "ข้อตกลงการค้า Incoterms"
+
+#: .\template\pages\base.html:397
+msgid "Spécifications sur les Conteneurs"
+msgstr "ขนาดตู้คอนเทนเนอร์"
+
+#: .\template\pages\base.html:469
+msgid "93/1 Soi Suntornsiri, Huaikwang,"
+msgstr "93/1 ซ.สุนทรศิริ ถ.ประชาราฎร์บำเพ็ญ ห้วยขวาง"
+
+#: .\template\pages\base.html:470
+msgid "Bangkok,Thailand 10310"
+msgstr " กรุงเทพมหานคร 10310"
+
+#: .\template\pages\base.html:471
+msgid "Tel: +66(0) 26903523 - 7"
+msgstr "โทร: 02 6903523 - 7"
+
+#: .\template\pages\contact.html:90
+msgid "Lien Google Maps :"
+msgstr "นำทางโดยใช้ Google Maps :"
+
+#: .\template\pages\contact.html:106 .\template\pages\devis.html:177
+msgid "Nom"
+msgstr "ชื่อ"
+
+#: .\template\pages\contact.html:111 .\template\pages\devis.html:181
+msgid "Email"
+msgstr "อีเมล"
+
+#: .\template\pages\contact.html:115
+msgid "Téléphone"
+msgstr "เบอร์โทรศัพท์"
+
+#: .\template\pages\contact.html:119
+msgid "Société"
+msgstr "บริษัท/หน่วยงาน (ถ้ามี)"
+
+#: .\template\pages\contact.html:124
+msgid "Votre message"
+msgstr "ข้อความ"
+
+#: .\template\pages\contact.html:126 .\template\pages\devis.html:190
+msgid "Envoyer"
+msgstr "ส่งข้อความ"
+
+#: .\template\pages\contact.html:154
+msgid "Sea Fly Services Co., Ltd."
+msgstr "ซีฟลาย เซอร์วิส"
+
+#: .\template\pages\contact.html:155
+msgid "93/1 Soi Pracharat Bamphen 6 (Soi Suntornsiri)"
+msgstr "93/1 ซ.สุนทรศิริ ถ.ประชาราษฎร์บำเพ็ญ"
+
+#: .\template\pages\contact.html:156
+msgid "Huaikwang, Bangkok"
+msgstr "ห้วยขวาง กรุงเทพมหานคร"
+
+#: .\template\pages\contact.html:157
+msgid "Thailand 10310"
+msgstr "10310"
+
+#: .\template\pages\contact.html:161
+msgid "Département commercial"
+msgstr "ฝ่ายขาย"
+
+#: .\template\pages\contact.html:162
+msgid "Tel: 66(0) 26903523 - 7"
+msgstr "โทร: 02-6903523-7"
+
+#: .\template\pages\contact.html:166
+msgid "Heures d&apos;ouvertures"
+msgstr "วันและเวลาทำการ"
+
+#: .\template\pages\contact.html:167
+msgid "Du Lundi au Vendredi"
+msgstr "จันทร์ - ศุกร์"
+
+#: .\template\pages\contact.html:168
+msgid "09:00 - 17:30"
+msgstr "09:00 - 17:30"
+
+#: .\template\pages\conversion.html:103
+msgid ""
+"Le terme \"poids volumétrique\", parfois appelé \"dim\" ou encore poids "
+"dimensionnel, est employé par rapport à l&apos;espace que prend un colis "
+"dans l&apos;avion. Il peut coûter plus cher que le poids réel ( ou brut ) du "
+"paquet. Vous devrez calculer le poids dimensionnel sur chaque expédition, et "
+"comparer cela à son poids brut. Enfin le poids le plus conséquent des deux "
+"déterminera le poids taxable ou chargeable, donc votre coût d&apos;expédition"
+msgstr "Volumetric weight บางครั้งเรียกว่า \"dim\" หรือ dimensional weight จะใช้เมื่อขนาดของสินค้ามีขนาดใหญ่ และเมื่อคำนวณแล้ว น้ำหนัก dimensional weight มีค่ามากกว่า น้ำหนักจริงของสินค้า  ซึ่งในการคิดค่าระวางสินค้า จะต้องใช้น้ำหนักที่หนักมากกว่า มาคำนวณ"
+
+#: .\template\pages\conversion.html:106
+msgid ""
+"Utilisez ces tableaux si vous devez convertir des livres en kilogramme ou "
+"encore pieds et pouces en cm."
+msgstr " "
+
+#: .\template\pages\conversion.html:110
+msgid "Conversion en kilogramme"
+msgstr "คำนวณเป็นกิโลกรัม"
+
+#: .\template\pages\conversion.html:111
+msgid "Conversion en cm"
+msgstr "คำนวณเป็นเซนติเมตร"
+
+#: .\template\pages\conversion.html:145
+msgid "Centimètre"
+msgstr "เซนติเมตร"
+
+#: .\template\pages\conversion.html:153
+msgid ""
+"Pour les expéditions légères le poids volumétrique sera utilisé si celui-ci "
+"excède le poids réel (en kilogrammes). Pour calculer le poids volumétrique, "
+"il faut entrer la largeur, la longueur et la hauteur de votre colis (en "
+"centimètres) dans les champs ci-dessous et appuyer sur le bouton calcul."
+msgstr ""
+
+#: .\template\pages\conversion.html:157
+msgid "Conversion du Poids volumétrique"
+msgstr "คำนวณเป็นน้ำหนัก volumetric weight	"
+
+#: .\template\pages\conversion.html:162
+msgid "Longueur (cm)"
+msgstr "กว้าง (cms)"
+
+#: .\template\pages\conversion.html:168
+msgid "Largeur (cm)"
+msgstr "สูง (cms)"
+
+#: .\template\pages\conversion.html:174
+msgid "Hauteur (cm)"
+msgstr "ยาว (cms)"
+
+#: .\template\pages\conversion.html:181
+msgid "Volume (cm3)"
+msgstr "ปริมาณ"
+
+#: .\template\pages\conversion.html:190
+msgid "Poids volumetrique (Kg)"
+msgstr "น้ำหนักปริมาตร (กก.)"
+
+#: .\template\pages\conversion.html:198
+msgid "CALCUL DU POIDS DE VOLUME SUR LE FRET AÉRIEN :"
+msgstr "วิธีการคิด"
+
+#: .\template\pages\conversion.html:200
+msgid "- Exemple :"
+msgstr "- วิธีการคิด"
+
+#: .\template\pages\conversion.html:202
+msgid ""
+"40 x 48 x 60 cm, poids brut = 5 kilogrammes Le poids volume est : 40 x 48 x "
+"60 = 115.200 volumes (cm³) Le volume kilogramme est de 115.200 / 6.000 = "
+"19.2 Votre poids de volume est plus élevé que le poids réel (19.2 "
+"kilogrammes contre 5 kilogrammes), donc, votre poids imputable sera de 19.5 "
+"kilogrammes. Le poids de chargement de la compagnie aérienne est calculé en "
+"fonction des deux poids réel et volume, c&apos;est-à-dire  : 6m³ = 1000 kg "
+"(poids de volume)."
+msgstr "ตัวอย่าง 40x48x60 cms, gross weight = 5 kgs volume weight คือ: 40x48x60 = 115,200 Volume 115,200 หารด้วย 6,000 = 19.2 volume kgs น้ำหนัก volume weight หนักกว่า grossl weight (19.2 kg ต่อ 5 kgs), เพราะฉะนั้น จะคำนวณค่าใช้จ่ายจะ ต้องใช้น้ำหนัก 19.2 kgs. "
+
+#: .\template\pages\conversion.html:215 .\template\pages\faq.html:137
+#: .\template\pages\page-promos.html:156 .\template\pages\page.html:138
+msgid "Notre experience de 20 ans a votre disposition pour votre envoi."
+msgstr "เรายินดีให้คำปรึกษาทุกเรื่องด้านการขนส่งระหว่างประเทศ ด้วยทีมงานและประสบการณ์กว่า 20 ปีของเรา"
+
+#: .\template\pages\devis.html:75
+msgid "Veuillez utiliser ce formulaire pour votre demande d'envoi."
+msgstr "กรุณาใช้แบบฟอร์มด้านล่างนี้เพื่อส่งรายละเอียดให้กับเรา เพื่อทำการคำนวณค่าใช้จ่ายในการขนส่งในขั้นตอนต่อไป"
+
+#: .\template\pages\devis.html:80
+msgid "Départ"
+msgstr "ต้นทาง (สถานที่รับสินค้า)"
+
+#: .\template\pages\devis.html:86 .\template\pages\devis.html:143
+msgid "Pays"
+msgstr "ประเทศ"
+
+#: .\template\pages\devis.html:87 .\template\pages\devis.html:144
+msgid "Sélectionner votre pays"
+msgstr "กรุณาเลือก"
+
+#: .\template\pages\devis.html:89
+msgid "Lieu d&apos;enlèvement"
+msgstr "เมือง/รหัสไปรษณีย์"
+
+#: .\template\pages\devis.html:95
+msgid "Information"
+msgstr "รายละเอียดการขนส่ง"
+
+#: .\template\pages\devis.html:97
+msgid "Marchandise"
+msgstr "สินค้า/ของที่ต้องการส่ง"
+
+#: .\template\pages\devis.html:102
+msgid "Poids"
+msgstr "น้ำหนัก (โดยประมาณ)"
+
+#: .\template\pages\devis.html:107 .\template\pages\devis.html:117
+msgid "Unité"
+msgstr "เอกภาพ"
+
+#: .\template\pages\devis.html:112
+msgid "Volume"
+msgstr "ปริมาตร (โดยประมาณ)"
+
+#: .\template\pages\devis.html:124
+msgid "Type de l&apos;emballage"
+msgstr "แพ็คกิ้ง"
+
+#: .\template\pages\devis.html:125
+msgid "Sélectionner votre type d&apos;emballage"
+msgstr "ยังไม่ได้แพ็ค"
+
+#: .\template\pages\devis.html:130
+msgid "Dimension"
+msgstr "ขนาด กว้างยาวสูง"
+
+#: .\template\pages\devis.html:132
+msgid "Veuillez nous informer les dimensions (si possible)"
+msgstr "กรุณาระบุขนาดความ กว้างxยาวxสูง (หากทำการวัดแล้ว)"
+
+#: .\template\pages\devis.html:137
+msgid "Arrivée"
+msgstr "ปลายทาง (สถานที่ส่งสินค้า)"
+
+#: .\template\pages\devis.html:146
+msgid "Lieu de livraison"
+msgstr "เมือง/รหัสไปรษณีย์"
+
+#: .\template\pages\devis.html:152
+msgid "Modes de transport"
+msgstr "ประเภทการขนส่ง"
+
+#: .\template\pages\devis.html:158
+msgid "Date d&apos;expédition prévue"
+msgstr "คาดว่าจะขนส่งในช่วงเวลา"
+
+#: .\template\pages\devis.html:163
+msgid "Sélectionner"
+msgstr "เลือก"
+
+#: .\template\pages\devis.html:169
+msgid "Information supplémentaire / conditions spéciales (facultatif)"
+msgstr "ข้อมูลอื่นๆ ความต้องการพิเศษ (ถ้ามี)"
+
+#: .\template\pages\devis.html:171
+msgid ""
+"Merci de nous communiquer un maximum d'informations pour etablir votre devis."
+msgstr "กรุณาระบุรายละเอียดให้ได้มากที่สุด เพื่อที่จะทำให้เราคำนวณค่าใช้จ่ายได้เร็วขึ้น"
+
+#: .\template\pages\devis.html:185
+msgid "Téléphone (facultatif)"
+msgstr "โทรศัพท์"
+
+#: .\template\pages\devis.html:209
+msgid "via air"
+msgstr "ทางเครื่องบิน"
+
+#: .\template\pages\devis.html:209
+msgid "via maritime"
+msgstr "ทางเรือ "
+
+#: .\template\pages\devis.html:209
+msgid "via ferroviaire"
+msgstr "ทางรถ"
+
+#: .\template\pages\devis.html:209
+msgid "Veillez me conseiller la meuilleur solution"
+msgstr "ให้เราเลือกวิธีที่เหมาะสมให้"
+
+#: .\template\pages\faq.html:5
+msgid "FAQ – Foire aux questions"
+msgstr ""
+
+#: .\template\pages\faq.html:125
+msgid "Plus d'information"
+msgstr ""
+
+#: .\template\pages\faq.html:164
+msgid "Que contient notre offre Porte à Porte ?"
+msgstr ""
+
+#: .\template\pages\faq.html:168
+msgid "Quelle solution est la plus économique pour mon envoi ?"
+msgstr ""
+
+#: .\template\pages\faq.html:172
+msgid "Quelles sont les dimensions et volumes des conteneurs ?"
+msgstr ""
+
+#: .\template\pages\faq.html:176
+msgid "Comment calculez le volume de mon envoi ?"
+msgstr ""
+
+#: .\template\pages\faq.html:180
+msgid ""
+"Par aérien, quelle est la différence entre poids réel et poids taxable ?"
+msgstr ""
+
+#: .\template\pages\faq.html:184
+msgid "Qu&apos;est ce qu&apos;un transitaire ?"
+msgstr ""
+
+#: .\template\pages\faq.html:188
+msgid ""
+"Mon envoi nécessite-t-il un emballage spécial pour le transport de "
+"marchandises?"
+msgstr ""
+
+#: .\template\pages\index.html:115
+msgid ""
+"Envoyez votre marchandise par Conteneur (Conteneur complet/groupage). "
+"Groupage vers toutes les destinations."
+msgstr "บริการขนส่งสินค้าไปยังท่าเรือต่างประเทศทั่วโลก ทั้งนำเข้าและส่งออก สามารถส่งได้ทั้งแบบเต็มตู้และไม่เต็มตู้"
+
+#: .\template\pages\index.html:121
+msgid ""
+"Besoin d&apos;un service rapide, nous nous occupons de tout Aéroports "
+"commerciaux dans le monde pour un service rapide."
+msgstr "เราสามารถขนส่งสินค้าไปยังแอร์พอร์ตต่างๆ ทั่วโลกด้วยความรวดเร็ว โดยเรามีสายการบินให้เลือกใช้ได้ตามความต้องการ"
+
+#: .\template\pages\index.html:127
+msgid ""
+"3-5 jours de transport, service porte à porte par service courrier vers "
+"toutes destinations."
+msgstr "บริการจัดส่งของเราสามารถรับสินค้าที่จุดรับสินค้า และนำไปส่งถึงมือผู้รับด้วยความรวดเร็ว เหมาะสำหรับเอกสารและพัสดุขนาดเล็กจนถึงขนาดกลาง"
+
+#: .\template\pages\index.html:133
+msgid ""
+"Nous pouvons vous aider dans toutes vos démarches de l&apos;emballage à "
+"l&apos;envoi, documents jusqu&apos;à votre nouvelle destination."
+msgstr "หากคุณต้องการย้ายบ้านหรือของใช้ส่วนตัวจากต่างประเทศมาประเทศไทย หรือย้ายจากประเทศไทยไปต่างประเทศ เรามีทีมงานที่เชี่ยวชาญด้านการย้ายบ้านไปต่างประเทศโดยเฉพาะ"
+
+#: .\template\pages\index.html:141
+msgid ""
+"Nous vous conseillons sur les formalités douanières, et le processus d&apos;"
+"import/export."
+msgstr ""
+
+#: .\template\pages\index.html:147
+msgid ""
+"Grâce à notre réseau, nous organisons des transports frontaliers avec la "
+"Birmanie, Laos, Vietnam, Cambodge."
+msgstr "บริการขนส่งสินค้าผ่านชายแดนไปยังประเทศเพื่อนบ้าน โดยเรามีทีมงานคอยอำนวยความสะดวกในการขนส่งทุกขั้นตอน"
+
+#: .\template\pages\index.html:154
+msgid ""
+"Equipe francophone, un service d&apos;expéditon plus simple et efficace."
+msgstr "บริการนำเข้าและส่งออกไปยังประเทศฝรั่งเศส ด้วยทีมงานจากประเทศฝรั่งเศส และประสบการณ์กว่า 20 ปีของเรา"
+
+#: .\template\pages\index.html:161 .\template\pages\index.html:190
+msgid ""
+"Nouvelle Calédonie (Nouméa), La Réunion, Martinique, Guadeloupe, nous "
+"déservons toutes ces destinations."
+msgstr "บริการนำเข้าและส่งออกไปยังประเทศต่างๆ ในกลุ่มประเทศดอมดอม"
+
+#: .\template\pages\index.html:168
+msgid ""
+"Un envoi de Chine, nous organisons chacun des aspects du transport à des "
+"prix compétitifs."
+msgstr "บริการนำเข้าและส่งออกไปยังประเทศจีน ด้วยพาร์ทเนอร์ในเมื่องใหญ่ที่ประเทศจีน มีประสบการณ์สูงและเชื่อถือได้"
+
+#: .\template\pages\index.html:183
+msgid ""
+"Découvrez les promotions actuelles pour les expéditions ou services pour "
+"profiter des meilleures offres."
+msgstr "ติดตามโปรโมชั่นและราคาขนส่งอัตราพิเศษไปยังเมืองต่างๆ ทั่วโลกทั้งทางเรือและทางเครื่องบินได้ที่นี่"
+
+#: .\template\pages\index.html:186
+msgid "Tout afficher"
+msgstr "ดูโปรโมชั่น"
+
+#: .\template\pages\index.html:189
+msgid "Expédition Dom Tom"
+msgstr "การขนส่งระหว่างดอมทอม"
+
+#: .\template\pages\index.html:193 .\template\pages\promos.html:80
+msgid "Plus d&apos;informations"
+msgstr "รายละเอียดเพิ่มเติม"
+
+#: .\template\pages\index.html:196
+msgid "Obtenez votre cotation"
+msgstr "สอบถามอัตราค่าขนส่ง"
+
+#: .\template\pages\index.html:197
+msgid ""
+"Utilisez notre formulaire pour nous fournir les détails de votre demande "
+"nous reviendrons vers vous le plus tôt possible pour vous accompagner."
+msgstr "คุณสามารถส่งรายละเอียดสินค้าหรือสิ่งของต่างๆ ที่ต้องการจะส่งออกหรือนำเข้า มาให้เราคำนวณค่าใช้จ่ายในการขนส่งได้ฟรี อีกทั้งเรายังยินดีให้คำแนะนำขั้นตอนและเอกสารต่างๆ ที่จำเป็นอีกด้วย"
+
+#: .\template\pages\promos.html:5 .\template\pages\promos.html:75
+msgid "Promotions actuelles"
+msgstr ""
+
+#: .\template\pages\promos.html:102
+msgid "Groupage Maritime Bangkok - Pointe des Galets"
+msgstr ""
+
+#: .\template\pages\promos.html:111
+msgid "Service courrier, petit colis en express (Bangkok vers France)"
+msgstr ""
+
+#: .\template\pages\promos.html:120
+msgid "Conteneur 20’, Fret Bangkok vers Anvers"
+msgstr ""
+
+#: .\template\pages\promos.html:129
+msgid "Groupage depuis Bangkok Port vers Port Marseille ou Port Le Havre"
+msgstr ""
+
+#: .\template\pages\promos.html:138
+msgid "Transport routier depuis Bangkok vers Phnom Penh"
+msgstr ""
