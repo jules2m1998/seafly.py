@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %} Sea Fly Services Transitaire Français basé en Thaïlande | Nos 20 ans d’expérience rendent vos expeditions plus sures et plus sécurisées. {% endblock %}
+{% block title %} {% trans 'Sea Fly Services Transitaire Français basé en Thaïlande | Nos 20 ans d’expérience rendent vos expeditions plus sures et plus sécurisées.' %} {% endblock %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'pages/css/index.css' %}">
     <style>
@@ -58,18 +58,18 @@
                             <div class="title ml-1 mt-1">[[ item1.name ]]</div>
                             <div class="img--hover">
                                 <div class="title ml-1 mt-1">[[ item1.name ]]</div>
-                                <div class="description-item ml-2 mt-1">[[ item1.description ]]</div>
-                                <v-btn outlined color="white" class="ml-3 mt-1" x-small :href="item1.route">Plus d'information</v-btn>
+                                <div class="description-item ml-2 mt-1" v-html="item1.description"></div>
+                                <v-btn outlined color="white" class="ml-3 mt-1" x-small :href="item1.route" v-html="table[1].bottomTitle"></v-btn>
                             </div>
                         </div>
                         <div class="img img--right" v-for="item2 in gallery.right" :key="item2.name" :class="'img-1' + item2.position">
                             <div class="hover--head">
-                                <div class="ml-1 subtitle" v-if="item2.is_expd">Expédition</div>
+                                <div class="ml-1 subtitle" v-if="item2.is_expd">{% trans "Expedition" %}</div>
                                 <div class="title ml-1">[[ item2.name ]]</div>
                             </div>
                             <div class="img--hover">
                                 <div class="description-item ml-3 mt-3">[[ item2.description ]]</div>
-                                <v-btn outlined color="white" class="ml-3 mt-1" x-small :href="item2.route">Plus d'information</v-btn>
+                                <v-btn outlined color="white" class="ml-3 mt-1" x-small :href="item2.route">[[ table[1].bottomTitle]]</v-btn>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                             <div class="footer">
-                                <a :href="item2.link"><v-icon color="primary">arrow_right</v-icon>[[ item2.bottomTitle]]</a>
+                                <a :href="item2.link"><v-icon color="primary">arrow_right</v-icon> <span v-html="item2.bottomTitle"></span></a>
                             </div>
                         </div>
                     </div>
@@ -176,7 +176,7 @@
                         position: 6,
                     }
                 ],
-            },
+                },
                 table: [
                 {
                     name: menus[3].name,
@@ -186,7 +186,7 @@
                     bottomTitle: "{% trans 'Tout afficher' %}"
                 },
                 {
-                    name: "{% trans 'Expédition Dom Tom' %}",
+                    name: '{% trans "Expédition Dom Tom" %}',
                     text: "{% trans 'Nouvelle Calédonie (Nouméa), La Réunion, Martinique, Guadeloupe, nous déservons toutes ces destinations.' %}",
                     img: false,
                     link: 'expedition-dom-tom',

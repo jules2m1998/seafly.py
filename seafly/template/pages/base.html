@@ -57,7 +57,7 @@
                                               :key="index"
                                               color="primary"
                                       >
-                                          <v-list-item-title><a :href="'/' + item.route" :class="linkActive(item.route)" style="text-decoration: none">[[ item.name ]]</a></v-list-item-title>
+                                          <v-list-item-title><a :href="'/' + item.route" :class="linkActive(item.route)" style="text-decoration: none" v-html="item.name"></a></v-list-item-title>
                                       </v-list-item>
                                     </v-list>
                                 </div>
@@ -167,7 +167,7 @@
     </div>
     {% trans 'Nous Contacter' as contactUs %}
     <div class="container">
-            {% block content %} {% endblock content %}
+        {% block content %} {% endblock content %}
     </div>
 
 
@@ -193,7 +193,7 @@
                         </div>
                         <div class="footer--item--content">
                             <div class="footer--item--subtitle">
-                                Sea Fly Services Co., Ltd.
+                                {% trans "Sea Fly Services Co., Ltd." %}
                             </div>
                             <div class="align--item">
                                 <ul style="width: 65%">
@@ -231,7 +231,7 @@
                         </div>
                     </div>
                 </div>
-                    <div class="footer--bar"><div class="footer--copy">©Sea Fly Services - 2018 tous droits réservés.</div><div class="footer--dev">{% trans 'Developpé par' %}
+                    <div class="footer--bar"><div class="footer--copy">{% trans '©Sea Fly Services - 2018 tous droits réservés.' %}</div><div class="footer--dev">{% trans 'Developpé par' %}
                     <a href="#" style="color: var(--primary)">ChickDev.cm</a></div></div>
             </v-container>
         </class>
@@ -314,7 +314,7 @@
                             ico: 'work'
                         },
                         {
-                            name: 'Destinations',
+                            name: '{% trans "Destinations" %}',
                             sub: [
                                 {
                                     name: "{% trans 'DOM TOM' %}",
@@ -391,7 +391,7 @@
                             },
                             {
                                 name: "{% trans 'Incoterms' %}",
-                                to: 'transports-frontaliers'
+                                to: 'incoterms'
                             },
                             {
                                 name: "{% trans 'Spécifications sur les Conteneurs' %}",

@@ -4,10 +4,6 @@ from django.shortcuts import redirect
 from pages.models import Pages
 
 
-def index(request):
-    return render(request, "pages/index.html")
-
-
 def getPage(request, pagename):
     try:
         page = Pages.objects.get(name=pagename)
@@ -28,26 +24,6 @@ def getPage(request, pagename):
     return render(request, "pages/page.html", context)
 
 
-def getPromos(request):
-    return render(request, "pages/promos.html")
-
-
-def getFaq(request):
-    return render(request, "pages/faq.html")
-
-
-def getContact(request):
-    return render(request, "pages/contact.html")
-
-
-def getConvert(request):
-    return render(request, "pages/conversion.html")
-
-
-def getDevis(request):
-    return render(request, "pages/devis.html")
-
-
 def getPromotions(request, pagename):
     try:
         page = Pages.objects.get(name="promos/" + pagename)
@@ -59,3 +35,10 @@ def getPromotions(request, pagename):
         'page': page
     }
     return render(request, "pages/page-promos.html", context)
+
+
+def getPages(request):
+    paths = request.path.split("/")
+    lenght = len(request.path.split("/"))
+    page = paths[lenght - 1] if paths[lenght - 1] != '' else 'index'
+    return render(request, "pages/{}.html".format(page))

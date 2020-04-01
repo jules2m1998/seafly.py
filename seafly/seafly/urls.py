@@ -26,13 +26,15 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    path('faq', views.getFaq),
-    path('contact', views.getContact),
-    path('promos', views.getPromos, name='about'),
-    path('convert', views.getConvert, name='about'),
-    path('devis', views.getDevis),
+    path('faq', views.getPages),
+    path('specification', views.getPages),
+    path('contact', views.getPages),
+    path('promos', views.getPages),
+    path('convert', views.getPages),
+    path('devis', views.getPages),
+    path('incoterms', views.getPages),
     path('promos/<str:pagename>', views.getPromotions),
-    path('', views.index, name='index'),
+    path('', views.getPages, name='index'),
     path('<str:pagename>', views.getPage),
     path('pages/', include('pages.urls')),
 )
