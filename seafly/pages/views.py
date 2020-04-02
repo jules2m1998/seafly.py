@@ -4,9 +4,18 @@ from django.shortcuts import redirect
 from pages.models import Pages
 
 
-def getPage(request, pagename):
+def getPageDB (request, pagename):
+    urlsplit = splitUrl(request)
     try:
-        page = Pages.objects.get(name=pagename)
+        if "promos" in urlsplit[0]:
+            page = Pages.objects.get(name="promos/" + pagename)
+            url = "pages/page-promos.html"
+        elif "faq" in urlsplit[0]:
+            page = Pages.objects.get(name="faq/" + pagename)
+            url = "pages/page.html"
+        else:
+            page = Pages.objects.get(name=pagename)
+            url = "pages/page.html"
     except:
         return redirect("/")
 
@@ -21,24 +30,20 @@ def getPage(request, pagename):
     context = {
         'page': page
     }
-    return render(request, "pages/page.html", context)
-
-
-def getPromotions(request, pagename):
-    try:
-        page = Pages.objects.get(name="promos/" + pagename)
-    except:
-        return redirect("/")
-
-    page.content = markdown2.markdown(page.content)
-    context = {
-        'page': page
-    }
-    return render(request, "pages/page-promos.html", context)
+    return render(request, url, context)
 
 
 def getPages(request):
-    paths = request.path.split("/")
-    lenght = len(request.path.split("/"))
+    paths = splitUrl(request)[0]
+    lenght = splitUrl(request)[1]
     page = paths[lenght - 1] if paths[lenght - 1] != '' else 'index'
     return render(request, "pages/{}.html".format(page))
+
+
+def getContact(request):
+    context = {}
+    return render(request, "pages/contact.html", context)
+
+
+def splitUrl (request):
+    return [request.path.split("/"), len(request.path.split("/"))]

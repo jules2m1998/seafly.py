@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-01 00:39+0100\n"
+"POT-Creation-Date: 2020-04-01 22:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Search..."
 msgid "Nous Contacter"
 msgstr "Contact Us"
 
-#: .\template\pages\base.html:196 .\template\pages\contact.html:154
+#: .\template\pages\base.html:196 .\template\pages\contact.html:152
 msgid "Sea Fly Services Co., Ltd."
 msgstr "Sea Fly Services Co., Ltd."
 
@@ -45,97 +45,97 @@ msgstr "©2018 Sea Fly Services. All Rights Reserved"
 msgid "Developpé par"
 msgstr "developped by"
 
-#: .\template\pages\base.html:282
+#: .\template\pages\base.html:295
 msgid "Notre société"
 msgstr "About us"
 
-#: .\template\pages\base.html:287
+#: .\template\pages\base.html:300
 msgid "Nos Services"
 msgstr "Our Services"
 
-#: .\template\pages\base.html:290
+#: .\template\pages\base.html:303
 msgid "Fret Maritime"
 msgstr "Sea Shipment"
 
-#: .\template\pages\base.html:294
+#: .\template\pages\base.html:307
 msgid "Fret Aérien"
 msgstr "Air Shipment"
 
-#: .\template\pages\base.html:298
+#: .\template\pages\base.html:311
 msgid "Service lettre, petit colis express"
 msgstr "Express Courier"
 
-#: .\template\pages\base.html:302
+#: .\template\pages\base.html:315
 msgid "Déménagements"
 msgstr "International Removal"
 
-#: .\template\pages\base.html:306
+#: .\template\pages\base.html:319
 msgid "Formalités Douanières"
 msgstr "Customs Services"
 
-#: .\template\pages\base.html:310
+#: .\template\pages\base.html:323
 msgid "Transport Frontalier"
 msgstr "Cross Border"
 
-#: .\template\pages\base.html:317
+#: .\template\pages\base.html:330
 msgid "Destinations"
 msgstr "Destination"
 
-#: .\template\pages\base.html:320
+#: .\template\pages\base.html:333
 msgid "DOM TOM"
 msgstr "DOM TOM"
 
-#: .\template\pages\base.html:324
+#: .\template\pages\base.html:337
 msgid "France"
 msgstr "France"
 
-#: .\template\pages\base.html:328
+#: .\template\pages\base.html:341
 msgid "Chine"
 msgstr "China"
 
-#: .\template\pages\base.html:332
+#: .\template\pages\base.html:345
 msgid "Expédition à l&apos;International"
 msgstr "International"
 
-#: .\template\pages\base.html:339
+#: .\template\pages\base.html:352
 msgid "Promotions"
 msgstr "Promotion"
 
-#: .\template\pages\base.html:344
+#: .\template\pages\base.html:357
 msgid "F.A.Q"
 msgstr "F.A.Q"
 
-#: .\template\pages\base.html:369
+#: .\template\pages\base.html:382
 msgid "Carrière"
 msgstr "Career"
 
-#: .\template\pages\base.html:386
+#: .\template\pages\base.html:399
 msgid "Outils & Ressources"
 msgstr "Tools & Documents"
 
-#: .\template\pages\base.html:389 .\template\pages\convert.html:5
+#: .\template\pages\base.html:402 .\template\pages\convert.html:5
 msgid "Conversions Volumétriques"
 msgstr "Volumetric Convert"
 
-#: .\template\pages\base.html:393 .\template\pages\incoterms.html:5
+#: .\template\pages\base.html:406 .\template\pages\incoterms.html:5
 #: .\template\pages\incoterms.html:102
 msgid "Incoterms"
 msgstr "Incoterms"
 
-#: .\template\pages\base.html:397 .\template\pages\specification.html:5
+#: .\template\pages\base.html:410 .\template\pages\specification.html:5
 #: .\template\pages\specification.html:84
 msgid "Spécifications sur les Conteneurs"
 msgstr "Container Size"
 
-#: .\template\pages\base.html:469
+#: .\template\pages\base.html:482
 msgid "93/1 Soi Suntornsiri, Huaikwang,"
 msgstr "93/1 Soi Suntornsiri, Huaikwang,"
 
-#: .\template\pages\base.html:470
+#: .\template\pages\base.html:483
 msgid "Bangkok,Thailand 10310"
 msgstr "Bangkok,Thailand 10310"
 
-#: .\template\pages\base.html:471
+#: .\template\pages\base.html:484
 msgid "Tel: +66(0) 26903523 - 7"
 msgstr "Tel: +66(0) 26903523 - 7"
 
@@ -181,39 +181,39 @@ msgstr "Message"
 msgid "Envoyer"
 msgstr "Send Message"
 
-#: .\template\pages\contact.html:155
+#: .\template\pages\contact.html:153
 msgid "93/1 Soi Pracharat Bamphen 6 (Soi Suntornsiri)"
 msgstr "93/1 Soi Pracharat Bamphen 6 (Soi Suntornsiri)"
 
-#: .\template\pages\contact.html:156
+#: .\template\pages\contact.html:154
 msgid "Huaikwang, Bangkok"
 msgstr "Huaikwang, Bangkok"
 
-#: .\template\pages\contact.html:157
+#: .\template\pages\contact.html:155
 #, fuzzy
 #| msgid "Bangkok,Thailand 10310"
 msgid "Thailand 10310"
 msgstr "Bangkok,Thailand 10310"
 
-#: .\template\pages\contact.html:161
+#: .\template\pages\contact.html:159
 msgid "Département commercial"
 msgstr "Sales"
 
-#: .\template\pages\contact.html:162
+#: .\template\pages\contact.html:160
 #, fuzzy
 #| msgid "Tel: +66(0) 26903523 - 7"
 msgid "Tel: 66(0) 26903523 - 7"
 msgstr "Tel: +66(0) 26903523 - 7"
 
-#: .\template\pages\contact.html:166
+#: .\template\pages\contact.html:164
 msgid "Heures d&apos;ouvertures"
 msgstr "Working Hours"
 
-#: .\template\pages\contact.html:167
+#: .\template\pages\contact.html:165
 msgid "Du Lundi au Vendredi"
 msgstr "Monday - Friday"
 
-#: .\template\pages\contact.html:168
+#: .\template\pages\contact.html:166
 msgid "09:00 - 17:30"
 msgstr "09:00 - 17:30"
 
@@ -335,7 +335,7 @@ msgstr ""
 
 #: .\template\pages\devis.html:5
 msgid "Devis d'envoi"
-msgstr ""
+msgstr "Shipping quote"
 
 #: .\template\pages\devis.html:75
 msgid "Veuillez utiliser ce formulaire pour votre demande d'envoi."
@@ -509,7 +509,12 @@ msgid ""
 "commerce international. Ils réduisent ou suppriment complètement les "
 "incertitudes découlant des différentes interprétations de ces termes dans "
 "les différents pays."
-msgstr "The buyer bears all costs and risks involved in taking the goods from the seller’s premises to the desired destination. The seller’s obligation is to make the goods available at his premises (works, factory, warehouse). This term represents minimum obligation for the seller. This term can be used across all modes of transport."
+msgstr ""
+"The buyer bears all costs and risks involved in taking the goods from the "
+"seller’s premises to the desired destination. The seller’s obligation is to "
+"make the goods available at his premises (works, factory, warehouse). This "
+"term represents minimum obligation for the seller. This term can be used "
+"across all modes of transport."
 
 #: .\template\pages\incoterms.html:155
 msgid ""
@@ -518,7 +523,12 @@ msgid ""
 "jusqu’à la destination finale des marchandises. Les formalités et frais "
 "d’exportation et d’importation, ainsi que les droits et taxes liés à ces "
 "deux opérations sont également à la charge de l’acheteur."
-msgstr "The buyer bears all costs and risks involved in taking the goods from the seller’s premises to the desired destination. The seller’s obligation is to make the goods available at his premises (works, factory, warehouse). This term represents minimum obligation for the seller. This term can be used across all modes of transport."
+msgstr ""
+"The buyer bears all costs and risks involved in taking the goods from the "
+"seller’s premises to the desired destination. The seller’s obligation is to "
+"make the goods available at his premises (works, factory, warehouse). This "
+"term represents minimum obligation for the seller. This term can be used "
+"across all modes of transport."
 
 #: .\template\pages\incoterms.html:157
 msgid ""
@@ -528,7 +538,14 @@ msgid ""
 "sont à la charge du vendeur. L’acheteur endosse le transport jusqu’à ces "
 "lieux d’activité, effectue les formalités à l’import et acquitte les droits "
 "et taxes liés."
-msgstr "The seller’s obligation is to hand over the goods, cleared for export, into the charge of the carrier named by the buyer at the named place or point. If no precise point is indicated by the buyer, the seller may choose within the place or range stipulated where the carrier shall take the goods into his charge. When the seller’s assistance is required in making the contract with the carrier the seller may act at the buyers risk and expense. This term can be used across all modes of transport."
+msgstr ""
+"The seller’s obligation is to hand over the goods, cleared for export, into "
+"the charge of the carrier named by the buyer at the named place or point. If "
+"no precise point is indicated by the buyer, the seller may choose within the "
+"place or range stipulated where the carrier shall take the goods into his "
+"charge. When the seller’s assistance is required in making the contract with "
+"the carrier the seller may act at the buyers risk and expense. This term can "
+"be used across all modes of transport."
 
 #: .\template\pages\incoterms.html:158
 msgid ""
@@ -539,7 +556,12 @@ msgid ""
 "frais. L’acheteur supporte les coûts de chargement, le transport maritime, "
 "les coûts de déchargement et de transport du port de destination jusqu’à ses "
 "lieux d’activité."
-msgstr "The seller has fulfilled his obligation when goods have been placed alongside the vessel at the port of shipment. The buyer is responsible for all costs and risks of loss or damage to the goods from that moment. The buyer is also required to clear the goods for export. This term should only be used for sea or inland waterway transport."
+msgstr ""
+"The seller has fulfilled his obligation when goods have been placed "
+"alongside the vessel at the port of shipment. The buyer is responsible for "
+"all costs and risks of loss or damage to the goods from that moment. The "
+"buyer is also required to clear the goods for export. This term should only "
+"be used for sea or inland waterway transport."
 
 #: .\template\pages\incoterms.html:159
 msgid ""
@@ -550,7 +572,11 @@ msgid ""
 "Le vendeur règle les frais de transport jusqu’au port d’embarquement, ainsi "
 "que les frais de chargement et effectue les formalités d’exportation, "
 "acquitte les frais, droits et taxes liés à ces formalités."
-msgstr "Once the goods have passed over the ship’s rail at the port of export the buyer is responsible for all costs and risks of loss or damage to the goods from that point. The seller is required to clear the goods for export. This term should only be used for sea or inland waterway transport."
+msgstr ""
+"Once the goods have passed over the ship’s rail at the port of export the "
+"buyer is responsible for all costs and risks of loss or damage to the goods "
+"from that point. The seller is required to clear the goods for export. This "
+"term should only be used for sea or inland waterway transport."
 
 #: .\template\pages\incoterms.html:160
 msgid ""
@@ -558,14 +584,25 @@ msgid ""
 "destination. Le transfert de risque est établi lorsque les marchandises sont "
 "mises à la disposition du premier transporteur. Ainsi, les frais d’assurance "
 "sont à la charger de l’acheteur."
-msgstr "The seller pays the freight for the carriage of goods to the named destination. The risk of loss or damage to the goods occurring after the delivery has been made to the carrier is transferred from the seller to the buyer. This term requires the seller to clear the goods for export and can be used across all modes of transport."
+msgstr ""
+"The seller pays the freight for the carriage of goods to the named "
+"destination. The risk of loss or damage to the goods occurring after the "
+"delivery has been made to the carrier is transferred from the seller to the "
+"buyer. This term requires the seller to clear the goods for export and can "
+"be used across all modes of transport."
 
 #: .\template\pages\incoterms.html:161
 msgid ""
 "Les conditions sont les mêmes que pour CPT. Le vendeur doit fournir une "
 "assurance couvrant pour l’acheteur, le risque de perte ou de dommage que la "
 "marchandise peut courir pendant le transport."
-msgstr "The seller has the same obligations as under CPT but has the responsibility of obtaining insurance against the buyer’s risk of loss or damage of goods during the carriage. The seller is required to clear the goods for export however is only required to obtain insurance on minimum coverage. This term requires the seller to clear the goods for export and can be used across all modes of transport."
+msgstr ""
+"The seller has the same obligations as under CPT but has the responsibility "
+"of obtaining insurance against the buyer’s risk of loss or damage of goods "
+"during the carriage. The seller is required to clear the goods for export "
+"however is only required to obtain insurance on minimum coverage. This term "
+"requires the seller to clear the goods for export and can be used across all "
+"modes of transport."
 
 #: .\template\pages\incoterms.html:162
 msgid ""
@@ -576,7 +613,12 @@ msgid ""
 "L’acheteur endosse les frais à partir de l’arrivée des marchandises au port "
 "de destination, effectue les formalités à l’import et acquitte les droits et "
 "taxes liés."
-msgstr "The seller must pay the costs and freight required in bringing the goods to the named port of destination. The risk of loss or damage is transferred from seller to buyer when the goods pass over the ship’s rail in the port of shipment. The seller is required to clear the goods for export. This term should only be used for sea or inland waterway transport."
+msgstr ""
+"The seller must pay the costs and freight required in bringing the goods to "
+"the named port of destination. The risk of loss or damage is transferred "
+"from seller to buyer when the goods pass over the ship’s rail in the port of "
+"shipment. The seller is required to clear the goods for export. This term "
+"should only be used for sea or inland waterway transport."
 
 #: .\template\pages\incoterms.html:163
 msgid ""
@@ -587,7 +629,12 @@ msgid ""
 "liés. L’acheteur endosse les frais à partir de l’arrivée des marchandises au "
 "port de destination, effectue les formalités à l’import et acquitte les "
 "droits et taxes liés."
-msgstr "The seller must pay the costs and freight required in bringing the goods to the named port of destination. The risk of loss or damage is transferred from seller to buyer when the goods pass over the ship’s rail in the port of shipment. The seller is required to clear the goods for export. This term should only be used for sea or inland waterway transport."
+msgstr ""
+"The seller must pay the costs and freight required in bringing the goods to "
+"the named port of destination. The risk of loss or damage is transferred "
+"from seller to buyer when the goods pass over the ship’s rail in the port of "
+"shipment. The seller is required to clear the goods for export. This term "
+"should only be used for sea or inland waterway transport."
 
 #: .\template\pages\incoterms.html:164
 msgid ""
@@ -597,7 +644,12 @@ msgid ""
 "mise à la disposition de l’acheteur au terminal convenu. L’acheteur effectue "
 "les formalités d’importation et acquitte les droits et taxes dus en raison "
 "de l’importation."
-msgstr "In addition to the main transport, the seller organizes and pays for the unloading of the goods at the point of destination and their transport to the agreed terminal. The transfer of risk is effective when the goods have been made available to the buyer at the agreed terminal. The buyer completes the import formalities and pays the duties and taxes due due to the import."
+msgstr ""
+"In addition to the main transport, the seller organizes and pays for the "
+"unloading of the goods at the point of destination and their transport to "
+"the agreed terminal. The transfer of risk is effective when the goods have "
+"been made available to the buyer at the agreed terminal. The buyer completes "
+"the import formalities and pays the duties and taxes due due to the import."
 
 #: .\template\pages\incoterms.html:164
 msgid "Ce terme remplace le terme DEQ."
@@ -611,7 +663,12 @@ msgid ""
 "moyen de transport, sans être déchargées. L’acheteur organise le "
 "déchargement, effectue les formalités d’importation et acquitte les droits "
 "et taxes dus en raison de l’importation."
-msgstr "The seller takes care of the transport of the goods to the agreed delivery point, so he assumes the costs and risks up to this point. The goods are made available to the buyer at destination on the means of transport, without being unloaded. The buyer organizes the unloading, performs the import formalities and pays the duties and taxes due due to the import."
+msgstr ""
+"The seller takes care of the transport of the goods to the agreed delivery "
+"point, so he assumes the costs and risks up to this point. The goods are "
+"made available to the buyer at destination on the means of transport, "
+"without being unloaded. The buyer organizes the unloading, performs the "
+"import formalities and pays the duties and taxes due due to the import."
 
 #: .\template\pages\incoterms.html:168
 msgid "Ce terme remplace les termes DAF, DES et DDU."
@@ -627,7 +684,15 @@ msgid ""
 "aucune obligation de prendre en charge les coûts d’inspection, tandis que le "
 "vendeur paie les frais des inspections avant expédition exigées par les "
 "autorités du pays d’exportation ou d’importation."
-msgstr "The goods are delivered to the place of destination, ready to be unloaded, while the seller has cleared customs for export and import and paid the duties and taxes related to these operations. In principle, the buyer bears the unloading costs, unless the contract stipulates that this unloading is the responsibility of the seller. At the same time, the buyer has no obligation to bear the costs of inspection, while the seller pays the costs of preshipment inspections required by the authorities of the country of export or import."
+msgstr ""
+"The goods are delivered to the place of destination, ready to be unloaded, "
+"while the seller has cleared customs for export and import and paid the "
+"duties and taxes related to these operations. In principle, the buyer bears "
+"the unloading costs, unless the contract stipulates that this unloading is "
+"the responsibility of the seller. At the same time, the buyer has no "
+"obligation to bear the costs of inspection, while the seller pays the costs "
+"of preshipment inspections required by the authorities of the country of "
+"export or import."
 
 #: .\template\pages\index.html:5
 msgid ""
@@ -770,4 +835,3 @@ msgstr "Groupage from Bangkok Port to Port Marseille or Port Le Havre"
 #: .\template\pages\promos.html:138
 msgid "Transport routier depuis Bangkok vers Phnom Penh"
 msgstr "Road transport from Bangkok to Phnom Penh"
-

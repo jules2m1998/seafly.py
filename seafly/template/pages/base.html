@@ -181,7 +181,7 @@
                         </div>
                         <div class="footer--item--content text--primary">
                             <ul>
-                                <li v-for="(subitem , key) in item.links" :key="key"><a :href="subitem.to">[[ subitem.name ]]</a></li>
+                                <li v-for="(subitem , key) in item.links" :key="key"><a :href="subitem.to !== undefined ? subitem.to : subitem.route">[[ subitem.name ]]</a></li>
                             </ul>
                         </div>
                     </div>
@@ -252,6 +252,7 @@
           },
           template: '<v-btn color="primary" class="mb-2" style="background: #ed120b; color: white"" large>{{devis}}</v-btn>'
         });
+
         Vue.component('GreenButton', {
           data: function () {
             return {
@@ -274,6 +275,18 @@
                             </div>
                         </div>`
             });
+
+        Vue.component('GreenButtonCode', {
+          data: function () {
+            return {
+              count: 0
+            }
+          },
+          template: `<v-btn class="white--text mt-3"
+                   style="background-image: url('{% static "pages/img/seafly-line.png" %}'); background-position: center; background-repeat: no-repeat; background-size: cover; width: 196px; box-shadow: 1px 1px 1px white!important;"
+                   large/>`
+        });
+
     </script>
 
     <script>

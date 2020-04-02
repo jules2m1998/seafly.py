@@ -20,6 +20,14 @@ class Pages(models.Model):
         return self.name
 
 
+class contact(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=200)
+    phone = models.CharField(max_length=20)
+    company = models.CharField(max_length=100)
+    message = models.CharField(max_length=1000)
+
+
 class Pages_Form(forms.ModelForm):
     content = forms.CharField(widget=forms.Textarea)
     content_en = forms.CharField(widget=forms.Textarea)

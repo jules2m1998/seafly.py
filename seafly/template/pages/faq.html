@@ -121,8 +121,8 @@
             <v-app>
                 <div class="description">
                     <div class="faq--question-item mb-7" v-for="(question, key) in links" :key="key">
-                        <h3 style="font-weight: normal" class="mb-1"><a href="#" class="faq--question">[[question.name]]</a></h3>
-                        <a href="#" class="faq--question-more">{% trans "Plus d'information" %} ></a>
+                        <h3 style="font-weight: normal" class="mb-1"><a :href="'faq/' + question.link" class="faq--question">[[question.name]]</a></h3>
+                        <a :href="'faq/' + question.link" class="faq--question-more">{% trans "Plus d'information" %} ></a>
                     </div>
                 </div>
             </v-app>
@@ -162,31 +162,31 @@
             links: [
                 {
                     name: "{% trans 'Que contient notre offre Porte à Porte ?' %}",
-                    link: 'home'
+                    link: 'que-contient-notre-offre-porte-a-porte'
                 },
                 {
                     name: "{% trans 'Quelle solution est la plus économique pour mon envoi ?' %}",
-                    link: 'home'
+                    link: 'quelle-solution-est-la-plus-economique-pour-mon-envoi'
                 },
                 {
                     name: "{% trans 'Quelles sont les dimensions et volumes des conteneurs ?' %}",
-                    link: 'home'
+                    link: 'quelles-sont-les-dimensions-et-volumes-des-conteneurs'
                 },
                 {
                     name: "{% trans 'Comment calculez le volume de mon envoi ?' %}",
-                    link: 'home'
+                    link: 'comment-calculez-le-volume-de-mon-envoi'
                 },
                 {
                     name: "{% trans 'Par aérien, quelle est la différence entre poids réel et poids taxable ?' %}",
-                    link: 'home'
+                    link: 'comment-connaitre-le-poids-de-mon-envoi'
                 },
                 {
                     name: "{% trans 'Qu&apos;est ce qu&apos;un transitaire ?' %}",
-                    link: 'home'
+                    link: 'quest-ce-quun-transitaire'
                 },
                 {
                     name: "{% trans 'Mon envoi nécessite-t-il un emballage spécial pour le transport de marchandises?' %}",
-                    link: 'home'
+                    link: 'mon-envoi-necessite-t-il-un-emballage-special-pour-le-transport-de-marchandises'
                 },
             ]
         })
