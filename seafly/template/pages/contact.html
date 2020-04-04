@@ -99,7 +99,11 @@
                             margin: 35px 10px;
                             box-shadow: 0px 3px 10px -2px rgba(64, 61, 61, 0.6);
                             padding: 10px;">
-                    ici : {% if post %} {{ post }} {% endif %}
+                    {% if success %}
+                    <v-alert type="success">
+                      {{success}}
+                    </v-alert>
+                    {% endif %}
                     <form action="contact" method="post">{% csrf_token %}
                         <h2 class="form--contact--title" style="margin-top: 10px; margin-bottom: 15px;">{{ contactUs }}</h2>
                         <v-text-field
@@ -107,31 +111,39 @@
                                 label="{% trans 'Nom' %}"
                                 prepend-inner-icon="person"
                                 name="name"
+                                {% if errors.name %} error-messages="{{errors.name.0}}" {% endif %}
+                                {% if post.name %} value="{{ post.name }}" {% endif %}
                         ></v-text-field>
                         <v-text-field
                                 solo
                                 label="{% trans 'Email' %}"
                                 prepend-inner-icon="email"
                                 name="email"
+                                {% if errors.email %} error-messages="{{errors.email.0}}" {% endif %}
+                                {% if post.email %} value="{{ post.email }}" {% endif %}
                         ></v-text-field>
                         <v-text-field
                                 solo
                                 label="{% trans 'Téléphone' %}"
                                 prepend-inner-icon="phone"
                                 name="phone"
+                                {% if errors.phone %} error-messages="{{errors.phone.0}}" {% endif %}
+                                {% if post.phone %} value="{{ post.phone }}" {% endif %}
                         ></v-text-field>
                         <v-text-field
                                 solo
                                 label="{% trans 'Société' %}"
                                 prepend-inner-icon="folder"
                                 name="company"
+                                {% if errors.company %} error-messages="{{errors.company.0}}" {% endif %}
+                                {% if post.company %} value="{{ post.company }}" {% endif %}
                         ></v-text-field>
                         <v-textarea
                                 outlined
-                                name="input-7-4"
-                                label="{% trans 'Votre message' %}"
-                                value=""
                                 name="message"
+                                label="{% trans 'Votre message' %}"
+                                {% if errors.message %} error-messages="{{errors.message.0}}" {% endif %}
+                                {% if post.message %} value="{{ post.message }}" {% endif %}
                         ></v-textarea>
                         <v-btn class="mb-5" color="blue" type="submit" dark large>{% trans 'Envoyer' %}</v-btn>
                 </form>
@@ -175,7 +187,7 @@
                     content: '{% trans "Du Lundi au Vendredi" %}\n' +
                         '{% trans "09:00 - 17:30" %}'
                 },
-            ]
+            ],
         }),
         methods: {
             contact_spliter () {

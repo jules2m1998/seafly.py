@@ -31,7 +31,7 @@ urlpatterns += i18n_patterns(
     path('contact', views.getContact),
     path('promos', views.getPages),
     path('convert', views.getPages),
-    path('devis', views.getPages),
+    path('devis', views.getDevis),
     path('incoterms', views.getPages),
     path('promos/<str:pagename>', views.getPageDB),
     path('faq/<str:pagename>', views.getPageDB),

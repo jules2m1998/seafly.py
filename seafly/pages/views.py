@@ -1,10 +1,15 @@
+from django.conf import settings
 from django.shortcuts import render
 import markdown2
 from django.shortcuts import redirect
-from pages.models import Pages
+from pages.models import Pages, contact as Contact
+from .utils import contactForm, splitUrl, devisForm, send_email_template
+from django.contrib import messages
+from django.core.mail import send_mail, EmailMultiAlternatives
+from django.template.loader import get_template
 
 
-def getPageDB (request, pagename):
+def getPageDB(request, pagename):
     urlsplit = splitUrl(request)
     try:
         if "promos" in urlsplit[0]:
@@ -42,8 +47,70 @@ def getPages(request):
 
 def getContact(request):
     context = {}
+    if request.POST:
+        form = contactForm(request.POST)
+        errors = form.is_valid()
+        post = request.POST
+        if not errors == {}:
+            context = {
+                "errors": errors,
+                "post": post,
+            }
+        else:
+            contact = Contact(name=post['name'], email=post['email'], phone=post['phone'], company=post['company'],
+                              message=post['message'])
+            contact.save()
+            subject = "Soumission du formulaire de contact"
+            from_mail = settings.EMAIL_HOST_USER
+            to_list = ['mevaajules2@gmail.com', settings.EMAIL_HOST_USER]
+            post._mutable = True
+            mail_informations = {
+                'subject': subject,
+                'body': 'ok',
+                'from_email': from_mail,
+                'to': to_list
+            }
+            context_template = {
+                'post': post
+            }
+            send_email_template(mail_informations, 'email_contact.html', context_template).send()
+            success = "Enregistrement effectué avec succes"
+            context = {
+                "success": success
+            }
     return render(request, "pages/contact.html", context)
 
 
-def splitUrl (request):
-    return [request.path.split("/"), len(request.path.split("/"))]
+def getDevis(request):
+    context = {}
+    if request.POST:
+        form = devisForm(request.POST)
+        errors = form.is_valid()
+        post = request.POST
+        if not errors == {}:
+            context = {
+                "errors": errors,
+                "post": post,
+                "mode": post.getlist('transport_mode'),
+            }
+        else:
+            form.getmodel().save()
+            subject = "Demande de devis"
+            from_mail = settings.EMAIL_HOST_USER
+            to_list = ['mevaajules2@gmail.com', settings.EMAIL_HOST_USER]
+            post._mutable = True
+            mail_informations = {
+                'subject': subject,
+                'body': 'ok',
+                'from_email': from_mail,
+                'to': to_list
+            }
+            post['transport_mode'] = ', '.join(post.getlist('transport_mode'))
+            print(post.getlist('transport_mode'))
+            context_template = {
+                'post': post
+            }
+            send_email_template(mail_informations, 'email_devis.html', context_template).send()
+            context['success'] = 'Demande de devis enregistrée avec succès'
+
+    return render(request, "pages/devis.html", context)
