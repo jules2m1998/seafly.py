@@ -2,7 +2,7 @@
 {% load static%}
 {% load i18n %}
 
-{% block title %} {% trans 'Search Result' %} | {% trans "Sea Fly Services Transitaire Français basé en Thaïlande" %} {% endblock %}
+{% block title %} {% trans 'Resultat de recherche' %} | {% trans "Sea Fly Services Transitaire Français basé en Thaïlande" %} {% endblock %}
 {% block css %}
 
 <style>
@@ -99,7 +99,7 @@
         </div>
         <v-app>
             <div class="mb-4">
-                <div class="promos--title">Resultats pour : {{query}}</div>
+                <div class="promos--title">{% trans 'Resultats pour' %} : {{query}}</div>
                 <div class="promos--content">
 
                 {% if results %}
@@ -114,7 +114,7 @@
                         <a href="/{{result.name}}" class="search-more">Afficher plus »</a>
                     </div>
                     {% endfor %}
-                {% else %} Désolé aucun élément trouvé ! {% endif %}
+                {% else %} {% trans 'Désolé aucun élément trouvé !' %} {% endif %}
 
                 </div>
             </div>

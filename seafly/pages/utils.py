@@ -1,6 +1,6 @@
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
-
+from django.utils.translation import ugettext as _
 from .models import devis
 
 
@@ -44,8 +44,9 @@ class myForm():
         if self.constraint == {}:
             if not len(self.text) < self.max_length:
                 return {'status': False, 'msg': [
-                    'Le text saisie dans le champs possède un tros grand nombre de caractère la taille maximale est {} caractères'.format(
-                        self.max_length)]}
+                    _('Le text saisie dans le champs possède un tros grand nombre de caractère la taille maximale est '
+                      '{} caractères'.format(
+                        self.max_length))]}
             else:
                 return {'status': True, 'msg': []}
         else:
@@ -65,8 +66,9 @@ class myForm():
             if self.max_length < len(self.text):
                 result['status'] = False
                 result['msg'].append(
-                    'Le text saisie dans le champs possède un tros grand nombre de caractère la taille maximale est {} caractères'.format(
-                        self.max_length))
+                    _('Le text saisie dans le champs possède un très grand nombre de caractère la taille maximale est '
+                      '{} caractères'.format(
+                        self.max_length)))
             return result
 
     def get_attrib(self):
@@ -85,30 +87,29 @@ class form():
 
 class contactForm(form):
     def __init__(self, post):
-        self.name = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire'}, text=post['name'])
+        self.name = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')}, text=post['name'])
         self.email = myForm(max_length=100,
-                            constraint={'email': 'Adresse mail invalid respecter le format : test@test.test !',
-                                        'required': 'Ce champs est obligatoire'},
-                            text=post['email'], alias="Adresse email de l'utilisateur")
+                            constraint={'email': _('Adresse mail invalid respecter le format : test@test.test !'),
+                                        'required': _('Ce champs est obligatoire')},
+                            text=post['email'])
         self.phone = myForm(max_length=100, constraint={
-            'number': 'Veillez saisir un numéro de téléphone valide au format +(XXX)XXXXXXXX..'},
+            'number': _('Veuillez saisir un numéro de téléphone valide au format +(XXX)XXXXXXXX..')},
                             text=post['phone'])
         self.company = myForm(max_length=100,
                               text=post['company'])
-        self.message = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire',
-                                                          'required': 'Ce champs est obligatoire'},
+        self.message = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')},
                               text=post['message'])
 
 
 class devisForm(form):
     def __init__(self, post):
-        self.name = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire'}, text=post['name'], alias="Nom de l'utlisateur")
+        self.name = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')}, text=post['name'])
         self.email = myForm(max_length=100,
-                            constraint={'email': 'Adresse mail invalid respecter le format : test@test.test !',
-                                        'required': 'Ce champs est obligatoire'},
+                            constraint={'email': _('Adresse mail invalid respecter le format : test@test.test !'),
+                                        'required': _('Ce champs est obligatoire')},
                             text=post['email'])
         self.phone = myForm(max_length=100, constraint={
-            'number': 'Veillez saisir un numéro de téléphone valide au format +(XXX)XXXXXXXX..'},
+            'number': _('Veuillez saisir un numéro de téléphone valide au format +(XXX)XXXXXXXX..')},
                             text=post['phone'])
         self.info_supp = myForm(max_length=100,
                                 text=post['info_supp'])
@@ -116,26 +117,26 @@ class devisForm(form):
                                       text=post['date_expedition'])
         self.transport_mode = myForm(max_length=100,
                                      text=post.getlist('transport_mode'))
-        self.livraison = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire'},
+        self.livraison = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')},
                                 text=post['livraison'])
-        self.livraison_country = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire'},
+        self.livraison_country = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')},
                                         text=post['livraison_country'])
         self.dimension = myForm(max_length=100,
                                 text=post['dimension'])
         self.type_emballage = myForm(max_length=100,
                                      text=post['type_emballage'])
-        self.volume = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire'},
+        self.volume = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')},
                              text=post.get('volume', ''))
-        self.volume_unite = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire'},
+        self.volume_unite = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')},
                                    text=post['volume_unite'])
-        self.poids = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire'}, text=post['poids'])
-        self.poids_unite = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire'},
+        self.poids = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')}, text=post['poids'])
+        self.poids_unite = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')},
                                   text=post.get('poids_unite', ''))
-        self.marchandise = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire'},
+        self.marchandise = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')},
                                   text=post['marchandise'])
-        self.lieu_enlevement = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire'},
+        self.lieu_enlevement = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')},
                                       text=post['lieu_enlevement'])
-        self.enlevement_country = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire'},
+        self.enlevement_country = myForm(max_length=100, constraint={'required': _('Ce champs est obligatoire')},
                                          text=post['enlevement_country'])
 
     def getmodel(self):
