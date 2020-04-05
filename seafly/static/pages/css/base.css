@@ -270,6 +270,28 @@ body{
     padding: 0.8em .5em 0.8em 0.5em;
     text-align: center;
 }
+.v-application--wrap{
+    min-height: auto!important;
+}
+.float--button{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+.mini--form--description{
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 16px;
+    font-size: 0.7rem;
+}
+.card__my{
+    padding-top: 70px!important;
+}
 @media screen and (max-width: 839px){
     .footer--item{
         width: 50%!important;

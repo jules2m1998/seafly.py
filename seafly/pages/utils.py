@@ -93,8 +93,7 @@ class contactForm(form):
         self.phone = myForm(max_length=100, constraint={
             'number': 'Veillez saisir un numéro de téléphone valide au format +(XXX)XXXXXXXX..'},
                             text=post['phone'])
-        self.company = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire',
-                                                          'required': 'Ce champs est obligatoire'},
+        self.company = myForm(max_length=100,
                               text=post['company'])
         self.message = myForm(max_length=100, constraint={'required': 'Ce champs est obligatoire',
                                                           'required': 'Ce champs est obligatoire'},

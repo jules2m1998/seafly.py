@@ -4,9 +4,7 @@ import markdown2
 from django.shortcuts import redirect
 from pages.models import Pages, contact as Contact
 from .utils import contactForm, splitUrl, devisForm, send_email_template
-from django.contrib import messages
-from django.core.mail import send_mail, EmailMultiAlternatives
-from django.template.loader import get_template
+from django.db.models import Q
 
 
 def getPageDB(request, pagename):
@@ -114,3 +112,24 @@ def getDevis(request):
             context['success'] = 'Demande de devis enregistrée avec succès'
 
     return render(request, "pages/devis.html", context)
+
+
+def search(request):
+    if request.GET and request.GET['q']:
+        q = request.GET['q']
+        pages = Pages.objects.filter(
+            Q(title__contains=q) |
+            Q(title_en__contains=q) |
+            Q(title_th__contains=q) |
+            Q(content__contains=q) |
+            Q(content_en__contains=q) |
+            Q(content_th__contains=q)
+        )
+        context = {
+            'results': pages,
+            'query': q,
+            'ln': request.LANGUAGE_CODE
+        }
+        return render(request, "pages/search.html", context)
+    else:
+        return redirect("/")

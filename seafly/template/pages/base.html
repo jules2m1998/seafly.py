@@ -101,17 +101,21 @@
                     </div>
                     <transition name="translate">
                         <div class="search--bar align--item" v-if="is_search">
-                            <div class="search--elt">
-                                <input type="text"
-                                       placeholder="{% trans 'Rechercher...' %}"
-                                       class="search--input"
-                                       v-model="my_search"
-                                       id="search"
-                                >
-                                <v-btn icon class="btn--item input-btn" @click.prevent="search" id="go">
-                                    <v-icon>search</v-icon>
-                                </v-btn>
-                            </div>
+                            <form action="search" method="get" style="width: 100%">
+                                <div class="search--elt">
+                                    <input type="text"
+                                           placeholder="{% trans 'Rechercher...' %}"
+                                           class="search--input"
+                                           v-model="my_search"
+                                           id="search"
+                                           name="q"
+                                    >
+                                    <v-btn type="submit" icon class="btn--item input-btn" id="go">
+                                        <v-icon>search</v-icon>
+                                    </v-btn>
+                                </div>
+                            </form>
+
                             <v-btn icon class="btn--item input-btn" @click.prevent="closed">
                                 <v-icon color="primary" class="">close</v-icon>
                             </v-btn>
@@ -172,68 +176,113 @@
 
 
     <footer>
-        <class id="bottom" class="text--primary" app>
-            <v-container>
-                <div class="footer--items">
-                    <div class="footer--item" :style="{width: item.width + '%'}" v-for="(item, key) in footers" :key="key">
-                        <div class="footer--item--title">
-                            <h3>[[ item.name ]]</h3>
-                        </div>
-                        <div class="footer--item--content text--primary">
-                            <ul>
-                                <li v-for="(subitem , key) in item.links" :key="key"><a :href="subitem.to !== undefined ? subitem.to : subitem.route">[[ subitem.name ]]</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-                    <div class="footer--item" style="width: 23%">
-                        <div class="footer--item--title">
-                            <h3>{{ contactUs }}</h3>
-                        </div>
-                        <div class="footer--item--content">
-                            <div class="footer--item--subtitle">
-                                {% trans "Sea Fly Services Co., Ltd." %}
-                            </div>
-                            <div class="align--item">
-                                <ul style="width: 65%">
-                                    <li v-for="contact in contacts" :key="contact"><a href="contact">[[ contact ]]</a></li>
-                                    <li>
-                                        <v-btn class="ma-2 white--text" style="background: #3B5998; color: white" x-small fab color="facebook">
-                                            <v-icon>fab fa-facebook-f</v-icon>
-                                        </v-btn>
-                                        <v-btn class="ma-2 white--text" style="background: #2867B2; color: white" x-small fab color="linkedin">
-                                            <v-icon>fab fa-linkedin-in</v-icon>
-                                        </v-btn>
-                                    </li>
-                                </ul>
-                                <div class="map pr-3" style="width: 35%">
-                                    <a href="contact"><img src="{% static 'pages/img/bottom-map.jpg' %}" alt="" style="width: 100%"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="footer--item" style="width: 25%; border-right: 1px solid #dddddd;">
-                        <div class="footer--item--title">
-                            {% trans 'Nos réseaux' as reseaux %}
-                            <h3>{{ reseaux }}</h3>
-                        </div>
-                        <div class="footer--item--content">
-                            <div class="footer--item--content">
-                                <div class="imgs">
-                                    <a href="/"><img src="{% static 'pages/img/ftcc-logo.png' %}"></a>
-                                    <a href="/"><img src="{% static 'pages/img/east-west.jpg' %}"></a>
-                                    <a href="/"><img src="{% static 'pages/img/5star-logo.jpg' %}"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <class id="bottom" class="text--primary">
+            <v-app class="ma-0 pa-0" style="height: auto">
+                <div class="float--button">
+                    <v-dialog v-model="dialog" persistent max-width="300px">
+                      <template v-slot:activator="{ on }">
+                        <v-btn class="mx-2" fab dark color="teal" v-on="on">
+                          <v-icon dark>mail_outline</v-icon>
+                        </v-btn>
+                      </template>
+                        <form action="contact" method="post">{% csrf_token %}
+                          <v-card class="card__my">
+                          <span class="mini--form--description"><p>Offline</p><p>Please fill out the form below and we will get back to you as soon as possible.</p></span>
+                            <v-card-text class="mt-5" style="margin-top: 50px">
+                              <v-container>
+                                    <v-text-field
+                                            label="{% trans 'Nom' %}"
+                                            prepend-inner-icon="person"
+                                            name="name"
+                                            required
+                                    ></v-text-field>
+                                    <v-text-field
+                                            label="{% trans 'Email' %}"
+                                            prepend-inner-icon="email"
+                                            name="email"
+                                            required
+                                    ></v-text-field>
+                                    <v-textarea
+                                            outlined
+                                            name="message"
+                                            label="{% trans 'Votre message' %}"
+                                            required
+                                    ></v-textarea>
+                                  <input type="text" name="phone" style="display: none" value="">
+                                  <input type="text" name="company" style="display: none" value="">
+                              </v-container>
+                            </v-card-text>
+                            <v-card-actions>
+                              <v-spacer></v-spacer>
+                              <v-btn color="primary" text @click="dialog = false">Fermer</v-btn>
+                              <v-btn color="blue darken-1" text type="submit">{% trans 'Envoyer' %}</v-btn>
+                            </v-card-actions>
+                          </v-card>
+                        </form>
+                    </v-dialog>
                 </div>
-                    <div class="footer--bar"><div class="footer--copy">{% trans '©Sea Fly Services - 2018 tous droits réservés.' %}</div><div class="footer--dev">{% trans 'Developpé par' %}
-                    <a href="#" style="color: var(--primary)">ChickDev.cm</a></div></div>
-            </v-container>
+                <v-container>
+                    <div class="footer--items">
+                        <div class="footer--item" :style="{width: item.width + '%'}" v-for="(item, key) in footers" :key="key">
+                            <div class="footer--item--title">
+                                <h3>[[ item.name ]]</h3>
+                            </div>
+                            <div class="footer--item--content text--primary">
+                                <ul>
+                                    <li v-for="(subitem , key) in item.links" :key="key"><a :href="subitem.to !== undefined ? subitem.to : subitem.route">[[ subitem.name ]]</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="footer--item" style="width: 23%">
+                            <div class="footer--item--title">
+                                <h3>{{ contactUs }}</h3>
+                            </div>
+                            <div class="footer--item--content">
+                                <div class="footer--item--subtitle">
+                                    {% trans "Sea Fly Services Co., Ltd." %}
+                                </div>
+                                <div class="align--item">
+                                    <ul style="width: 65%">
+                                        <li v-for="contact in contacts" :key="contact"><a href="contact">[[ contact ]]</a></li>
+                                        <li>
+                                            <v-btn class="ma-2 white--text" style="background: #3B5998; color: white" x-small fab color="facebook">
+                                                <v-icon>fab fa-facebook-f</v-icon>
+                                            </v-btn>
+                                            <v-btn class="ma-2 white--text" style="background: #2867B2; color: white" x-small fab color="linkedin">
+                                                <v-icon>fab fa-linkedin-in</v-icon>
+                                            </v-btn>
+                                        </li>
+                                    </ul>
+                                    <div class="map pr-3" style="width: 35%">
+                                        <a href="contact"><img src="{% static 'pages/img/bottom-map.jpg' %}" alt="" style="width: 100%"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="footer--item" style="width: 25%; border-right: 1px solid #dddddd;">
+                            <div class="footer--item--title">
+                                {% trans 'Nos réseaux' as reseaux %}
+                                <h3>{{ reseaux }}</h3>
+                            </div>
+                            <div class="footer--item--content">
+                                <div class="footer--item--content">
+                                    <div class="imgs">
+                                        <a href="/"><img src="{% static 'pages/img/ftcc-logo.png' %}"></a>
+                                        <a href="/"><img src="{% static 'pages/img/east-west.jpg' %}"></a>
+                                        <a href="/"><img src="{% static 'pages/img/5star-logo.jpg' %}"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="footer--bar"><div class="footer--copy">{% trans '©Sea Fly Services - 2018 tous droits réservés.' %}</div><div class="footer--dev">{% trans 'Developpé par' %}
+                        <a href="#" style="color: var(--primary)">ChickDev.cm</a></div></div>
+                </v-container>
+            </v-app>
         </class>
     </footer>
 
@@ -482,7 +531,8 @@
                     "{% trans '93/1 Soi Suntornsiri, Huaikwang,' %}",
                     "{% trans 'Bangkok,Thailand 10310' %}",
                     "{% trans 'Tel: +66(0) 26903523 - 7' %}"
-                ]
+                ],
+              dialog: false,
             }),
             mounted(){
                 document.getElementById('bottom').style.visibility = 'visible';

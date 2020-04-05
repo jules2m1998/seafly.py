@@ -30,6 +30,7 @@ urlpatterns += i18n_patterns(
     path('specification', views.getPages),
     path('contact', views.getContact),
     path('promos', views.getPages),
+    path('search', views.search),
     path('convert', views.getPages),
     path('devis', views.getDevis),
     path('incoterms', views.getPages),
